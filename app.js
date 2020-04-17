@@ -25,7 +25,7 @@ let environment = process.argv[2];
 let connectionString;
 if (environment ===  "local") {
   connectionString = "mongodb://localhost:27017/restApiDB";
-} else if (environemnt === "prod") {
+} else if (environment === "prod") {
   connectionString = "mongodb+srv://dumpsterteam:Dumpsterdivers123#@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
 }
 
