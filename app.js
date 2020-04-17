@@ -10,19 +10,29 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var trashRouter = require('./routes/trash');
 
-
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// Getting the correct MongoDB connection string for the right environment
+let environment = process.argv[2];
+let connectionString;
+if (environment ===  "local") {
+  connectionString = "mongodb://localhost:27017/restApiDB";
+} else if (environemnt === "prod") {
+  connectionString = "mongodb+srv://dumpsterteam:Dumpsterdivers123#@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
+}
+
 // Connect to Mongoose and set connection variable
-mongoose.connect("mongodb://localhost:27017/restApiDB",
+mongoose.connect(connectionString,
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 var db = mongoose.connection;
