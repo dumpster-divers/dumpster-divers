@@ -1,66 +1,30 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 
-var indexRouter = require('./routes/indexRouter');
-var usersRouter = require('./routes/userRouter');
-var trashRouter = require('./routes/trashRouter');
+const app = express();
 
-var app = express();
+require("./models");
 
-require("./models/trash");
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-// Configure bodyparser to handle post requests
-app.use(bodyParser.urlencoded({extended: true}));
+// use the body-parser middleware, which parses request bodies into req.body
+// support parsing of json
 app.use(bodyParser.json());
+// support parsing of urlencoded bodies (e.g. for forms)
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Getting the correct MongoDB connection string for the right environment
-let environment = process.argv[2];
-let connectionString;
-if (environment ===  "local") {
-  connectionString = "mongodb://localhost:27017/restApiDB";
-} else if (environment === "prod") {
-  connectionString = "mongodb+srv://dumpsterteam:b5aP7iDFZWeEhc9J@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
-}
-
-// Connect to Mongoose and set connection variable
-mongoose.connect(connectionString,
-    {useNewUrlParser: true, useUnifiedTopology: true});
-
-var db = mongoose.connection;
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/trash', trashRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+// GET home page
+app.get("/", (req, res) => {
+  res.send("<H1>Library System</H1>");
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// handle author-management related requests
+// first import the author router
+const trashRouter = require("./routes/trashRouter");
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// the author routes are added onto the end of '/author-management'
+app.use("/trash", trashRouter);
+
+// start app and listen for incoming requests on port
+app.listen(process.env.PORT || 3000, () => {
+  console.log("The library app is running!");
 });
 
-module.exports = app;
