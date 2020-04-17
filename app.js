@@ -6,11 +6,13 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var trashRouter = require('./routes/trash');
+var indexRouter = require('./routes/indexRouter');
+var usersRouter = require('./routes/userRouter');
+var trashRouter = require('./routes/trashRouter');
 
 var app = express();
+
+require("./models/trash");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

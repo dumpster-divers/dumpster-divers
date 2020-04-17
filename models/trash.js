@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');// Setup schema
-var tallySchema = mongoose.Schema({
+const mongoose = require('mongoose');// Setup schema
+
+const trashSchema = new mongoose.Schema({
     number: Number
-});// Export Book model
-var Trash = module.exports = mongoose.model('trashNumber', tallySchema);module.exports.get = function (callback, limit) {
-    Trash.find(callback).limit(limit);
-}
+});
+
+const Trash = mongoose.model("trash", trashSchema, "trash");
+module.exports = Trash;

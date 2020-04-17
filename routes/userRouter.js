@@ -1,8 +1,8 @@
 var express = require('express');
-var router = express.Router();
+var userRouter = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+userRouter.get('/', function(req, res, next) {
     // Comment out this line:
     //res.send('respond with a resource');
 
@@ -16,4 +16,4 @@ router.get('/', function(req, res, next) {
     }]);
 });
 
-module.exports = router;
+module.exports = userRouter;
