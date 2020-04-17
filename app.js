@@ -16,8 +16,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-
-
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
