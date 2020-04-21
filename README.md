@@ -17,5 +17,5 @@ MONGO_PASSWORD=<PASSWORD_TO_MONGODB_DATABASE>
 
 
 # Testing Instructions
-- localhost:3001/ should display site
-- localhost:3001/trash should give a response
+- localhost:3000/ should display the site
+- localhost:3000/trash should give a response
