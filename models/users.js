@@ -2,16 +2,44 @@ module.exports = [
 
 {
   "id":"1",
-  "username":"winnie",
+  "username":"a",
   "dateJoined":"20/04",
-  "trashRecycled":"000",
+  "trashRecycled":1,
 },
 
 {
   "id":"2",
-  "username":"pooh",
+  "username":"aa",
   "dateJoined":"20/04",
-  "trashRecycled":"020",
+  "trashRecycled":1,
+},
+
+{
+  "id":"3",
+  "username":"b",
+  "dateJoined":"20/04",
+  "trashRecycled":120,
+},
+
+{
+  "id":"4",
+  "username":"c",
+  "dateJoined":"20/04",
+  "trashRecycled":66,
+},
+
+{
+  "id":"5",
+  "username":"d",
+  "dateJoined":"20/04",
+  "trashRecycled":50,
+},
+
+{
+  "id":"6",
+  "username":"e",
+  "dateJoined":"20/04",
+  "trashRecycled":20,
 },
 
 ];

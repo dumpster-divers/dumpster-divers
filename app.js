@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/userRouter');
 var trashRouter = require('./routes/trash');
 
 
@@ -34,8 +34,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/highscore', usersRouter);
 app.use('/trash', trashRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -53,10 +54,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// handle user highscore related requests
-// first import the user router
-const userRouter = require("./routes/userRouter");
-// the user routes are added onto the end of '/highscore'
-app.use("/highscore", userRouter);
 
 module.exports = app;

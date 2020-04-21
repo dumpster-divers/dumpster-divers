@@ -7,7 +7,8 @@ const userRouter = express.Router();
 const userController = require('../controllers/userController.js');
 
 // handle the GET request on root of author-management path,
-// i.e. get all authors
+// test get all users
+userRouter.get('/', userController.getAllUsers);
 userRouter.get('/top-users', userController.getTopUsers);
 
 // export the router
