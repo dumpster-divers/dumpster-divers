@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
 
-const Trash = mongoose.model("trash");
+const Tally = mongoose.model("tally");
 
 // trash/global-count: get current trash count
 const getRemaining = async (req, res) => {
     try {
-        const trashCount = await Trash.find();
+        const trashCount = await Tally.find();
         return res.send(trashCount);
     } catch (err) {
         res.status(400);
@@ -17,14 +17,14 @@ const getRemaining = async (req, res) => {
 // trash/increment-user-count: decrase the global count and increase user's total processed
 const postIncrease = async (req, res) => {
     // Get current count
-    const trashCount = await Trash.find();
+    const trashCount = await Tally.find();
     let remaining = trashCount[0].globalRemaining;
     
     // Don't let count fall below 0
     remaining = Math.max(0, remaining-req.body.count)
     
     // Update count
-    Trash.updateOne({}, 
+    Tally.updateOne({}, 
         {globalRemaining: parseInt(remaining)},
         {},
         (err) => {
