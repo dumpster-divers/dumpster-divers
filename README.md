@@ -18,4 +18,4 @@ INFO30005 Web Information Technologies Project.
 
 # Testing Instructions
 - localhost:3000/ should display the site
-- localhost:3000/trash should give a response
+- localhost:3000/api/trash/global-count should give a response
