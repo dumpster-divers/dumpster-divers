@@ -1,11 +1,6 @@
 // provide the controller a link to the user model
 var users = require('../models/users.js');
 
-// test function to handle a request to get all users
-const getAllUsers = (req, res) => {
-  res.send(users); // return the list of users
-};
-
 // Function to handle a request to get the 10 users with highest scores
 const getTopUsers = (req, res) => {
   sortedUsers = users.sortBy('trashRecycled');
@@ -23,5 +18,5 @@ Array.prototype.sortBy = function(p) {
 
 // Remember to export the callbacks
 module.exports = {
-  getTopUsers, getAllUsers,
+  getTopUsers,
 };
