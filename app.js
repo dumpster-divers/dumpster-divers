@@ -53,4 +53,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// handle user highscore related requests
+// first import the user router
+const userRouter = require("./routes/userRouter");
+// the user routes are added onto the end of '/highscore'
+app.use("/highscore", userRouter);
+
 module.exports = app;
