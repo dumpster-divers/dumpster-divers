@@ -9,24 +9,24 @@ const getAllUsers = (req, res) => {
 };
 
 //Generate a unique id, ensuring it doesn't already exist in database
-const generateId = async () => {
-  let generatedusername = gfy.generateCombination(2, "-", true);
+const generateUniqueId = async () => {
+  let generatedUsername = gfy.generateCombination(2, "-", true);
 
   //Check whether username exists already
-  let doesExist = await Users.exists({ username: generatedusername });
+  let usernameUsed = await Users.exists({ username: generatedUsername });
 
-  if (doesExist) {
-    return generateId();
-  } else {
+  if (!usernameUsed) {
     return new Promise(resolve => {
-      resolve(generatedusername);
+      resolve(generatedUsername);
     });
+  } else {
+    return generateUniqueId();
   }
 };
 
 const addUser = async (req, res) => {
   let newUser = Users();
-  let username = await generateId();
+  let username = await generateUniqueId();
 
   newUser.name = req.body.name;
   newUser.dateJoined = Date.now();
