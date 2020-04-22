@@ -36,7 +36,8 @@ const addUser = async (req, res) => {
   newUser.save((err, user) => {
     if (err) {
       console.log("Failed to save user");
-      res.error("Failed to save user");
+      res.status(500);
+      res.render('error', {error: err});
     } else {
       res.send({
         name: req.body.name,
