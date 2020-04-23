@@ -16,7 +16,19 @@ Array.prototype.sortBy = function(p) {
   });
 }
 
+const getHighscoreByID = (req, res) => {
+  // search for user in the database via their ID
+  const user = users.find(user => user.id === req.params.id);
+  if (user){
+    res.send(user); // send back the user details
+  }
+  else{
+    // if an user is not found, return user does not exist.
+    res.send('User Does Not Exist');
+  }
+};
+
 // Remember to export the callbacks
 module.exports = {
-  getTopUsers,
+  getTopUsers, getHighscoreByID,
 };
