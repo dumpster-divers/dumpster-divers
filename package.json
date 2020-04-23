@@ -2,6 +2,7 @@
   "name": "react-backend",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "concurrently \"node app.js\" \"cd frontend && npm run start\"",
     "start:prod": "node app.js",

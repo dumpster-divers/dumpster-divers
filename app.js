@@ -8,9 +8,8 @@ const app = express();
 
 app.use(express.static(path.join(process.env.PWD, 'client/build')));
 // Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 // Trash count related requests
 const trashRouter = require("./routes/trashRouter");
@@ -20,6 +19,6 @@ const highscoreRouter = require('./routes/highscoreRouter');
 app.use("/api/highscore", highscoreRouter);
 
 // start app and listen for incoming requests on port
-app.listen(process.env.PORT || 5000, () => {
-  console.log("App is running on port " + (process.env.PORT || 5000));
+app.listen(process.env.PORT || 3000, () => {
+  console.log("App is running on port " + (process.env.PORT || 3000));
 });
