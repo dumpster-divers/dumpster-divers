@@ -8,8 +8,8 @@ const app = express();
 
 app.use(express.static(path.join(process.env.PWD, 'frontend/build')));
 // Middleware
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Trash count related requests
 const trashRouter = require("./routes/trashRouter");
