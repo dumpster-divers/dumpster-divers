@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js prod",
+    "start": "concurrently \"node app.js\" \"cd frontend && npm run start\"",
     "local": "node app.js local"
   },
   "engines": {
