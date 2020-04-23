@@ -6,6 +6,10 @@
     "start": "node app.js prod",
     "local": "node app.js local"
   },
+  "engines": {
+    "npm": "6.x",
+    "node": "13.x"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
