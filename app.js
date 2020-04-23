@@ -5,16 +5,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-// View engine
-app.set('view engine', 'jade');
-
+app.use(express.static(path.join(process.env.PWD, 'client/build')));
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Home page request
-const indexRouter = require("./routes/index")
-app.use("/", indexRouter)
 
 // Trash count related requests
 const trashRouter = require("./routes/trashRouter");
