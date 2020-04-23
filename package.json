@@ -4,7 +4,7 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"node app.js\" \"cd frontend && npm run start\"",
+    "start": "concurrently -n \"express,react\" -c \"yellow,blue\" \"nodemon app.js\" \"cd frontend && npm run start\"",
     "install": "cd frontend && npm install",
     "start:prod": "node app.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
