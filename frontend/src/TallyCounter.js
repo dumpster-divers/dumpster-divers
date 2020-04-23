@@ -1,20 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
-class TallyCounter extends React.Component {
-  state = {
-    count: 0
-  }
-  componentDidMount () {
-    fetch('/api/trash/global-count')
+const TallyCounter = props => {
+  const [count, setCount] = useState(0);
+  //Mount
+  useEffect(() => {
+    updateCount();
+  }, []);
+
+  const updateCount = () => {
+    fetch("/api/trash/global-count")
       .then(res => res.json())
-      .then(res => this.setState({count: res[0].globalRemaining}))
+      .then(res => setCount(res[0].globalRemaining));
   }
-  render () {
-    return (<>
-        {this.state.count}
-      </>)
+
+  const decrementDBCount = () => {
+    fetch("/api/trash/increment-user-count", {
+      method:'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          userId: 0,
+          count: 1
+      })
+    }).then((res) => {updateCount()});
 
   }
-}
+
+  const handleIncrementClick = () => {
+    setCount(count - 1);
+    decrementDBCount();
+  }
+
+  return (
+    <>
+      <p>Tally is {count}</p>
+      <div className="App-link" onClick={handleIncrementClick}>
+        Learn React
+      </div>
+    </>
+  );
+};
 
 export default TallyCounter;
