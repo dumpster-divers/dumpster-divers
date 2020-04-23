@@ -6,7 +6,7 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(process.env.PWD, 'client/build')));
+app.use(express.static(path.join(process.env.PWD, 'frontend/build')));
 // Middleware
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
