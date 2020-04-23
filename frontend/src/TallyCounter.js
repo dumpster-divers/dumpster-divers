@@ -37,7 +37,7 @@ const TallyCounter = props => {
     <>
       <p>Tally is {count}</p>
       <div className="App-link" onClick={handleIncrementClick}>
-        Learn React
+        Decrement Tally
       </div>
     </>
   );
