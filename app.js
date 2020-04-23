@@ -19,6 +19,6 @@ const highscoreRouter = require('./routes/highscoreRouter');
 app.use("/api/highscore", highscoreRouter);
 
 // start app and listen for incoming requests on port
-app.listen(process.env.PORT || 3000, () => {
-  console.log("App is running on port " + (process.env.PORT || 3000));
+app.listen(process.env.PORT || 5000, () => {
+  console.log("App is running on port " + (process.env.PORT || 5000));
 });
