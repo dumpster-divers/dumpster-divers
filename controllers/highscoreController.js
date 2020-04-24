@@ -4,18 +4,6 @@ const mongoose = require("mongoose");
 var users = require('../models/users');
 //var users = mongoose.model("Users");
 
-// test function to handle a request to get all users
-const getAllUsers = async (req, res) => {
-
-  try {
-    const all_users = await users.find();
-    return res.send(all_users);
-  } catch (err) {
-    res.status(400);
-    return res.send("Database query failed");
-  }
-};
-
 // Function to handle a request to get the 10 users with highest scores
 const getTopUsers = async (req, res) => {
   const all_users = await users.find();
@@ -31,9 +19,10 @@ Array.prototype.sortBy = function(p) {
   });
 }
 
-const getHighscoreByID = (req, res) => {
+const getHighscoreByID = async (req, res) => {
+  const all_users = await users.find();
   // search for user in the database via their ID
-  const user = users.find(user => user.id === req.params.id);
+  const user = all_users.find(user => user.id === req.params.id);
   if (user){
     res.send(user); // send back the user details
   }
@@ -47,5 +36,4 @@ const getHighscoreByID = (req, res) => {
 module.exports = {
   getTopUsers,
   getHighscoreByID,
-  getAllUsers,
 };
