@@ -9,6 +9,9 @@ const highscoreController = require('../controllers/highscoreController.js');
 // handle the GET request on root of author-management path,
 highscoreRouter.get('/top-users', highscoreController.getTopUsers);
 highscoreRouter.get('/:id', highscoreController.getHighscoreByID);
+// test route
+highscoreRouter.get('/', highscoreController.getAllUsers);
+
 
 
 // export the router
