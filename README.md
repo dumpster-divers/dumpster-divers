@@ -13,7 +13,11 @@ INFO30005 Web Information Technologies Project.
 `MONGO_PASSWORD=<PASSWORD_TO_MONGODB_DATABASE>`
 
 # Running Instructions
-1. Run `npm start`. For live updates, run `nodemon` 
+1. Run `npm start`
+2. View Frontend changes at http://localhost:3000. View backend changes at http://localhost:5000
+
+/Note: quick reload is enabled so there is no need to restart server unless you
+are change node dependencies/
 
 
 # Testing Instructions
