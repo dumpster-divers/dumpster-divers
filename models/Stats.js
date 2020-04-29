@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Schema for api/trash
-const tallySchema = new mongoose.Schema({
+const statsSchema = new mongoose.Schema({
     globalRemaining: {
         type: Number,
         required: true,
@@ -10,5 +10,4 @@ const tallySchema = new mongoose.Schema({
 });
 
 // Export
-const Tally = mongoose.model("tally", tallySchema, "tally");
-module.exports = Tally;
+module.exports =  mongoose.model("Stats", statsSchema, "Stats");

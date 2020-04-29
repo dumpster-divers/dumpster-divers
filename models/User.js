@@ -12,4 +12,4 @@ const userSchema = new mongoose.Schema({
   processedTotal: Number
 });
 
-module.exports = mongoose.model("Users", userSchema, "Users");
+module.exports = mongoose.model("User", userSchema, "User");
