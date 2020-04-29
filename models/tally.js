@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const tallySchema = new mongoose.Schema({
     globalRemaining: {
         type: Number,
-        required: true
+        required: true,
+        default: 100000
     }
 });
 
