@@ -23,6 +23,11 @@ const postIncrease = async (req, res) => {
     return res.send()
 }
 
+const unimplemented = (req, res) => {
+    res.send("Unimplemented Function");
+}
+
 module.exports = {
-    postIncrease
+    postIncrease,
+    unimplemented
 }

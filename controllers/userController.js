@@ -32,10 +32,12 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  return () => (res.send("Unimplemented endpoint"))
+  //TODO
+  res.send("Unimplemented endpoint");
 }
 
 const updateUser = (req, res) => {
+  //TODO
   res.send("Unimplemented endpoint");
 }
 
