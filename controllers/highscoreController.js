@@ -1,24 +1,28 @@
-// provide the controller a link to the user model
-var users = require('../models/users.js');
+const mongoose = require("mongoose");
+
+// import user model
+var users = require('../models/users');
+//var users = mongoose.model("Users");
 
 // Function to handle a request to get the 10 users with highest scores
-const getTopUsers = (req, res) => {
-  sortedUsers = users.sortBy('trashRecycled');
+const getTopUsers = async (req, res) => {
+  const all_users = await users.find();
+  sortedUsers = all_users.sortBy('processedTotal');
   topUsers = sortedUsers.slice(0, 10);
-
   res.send(topUsers); // return the list of top 10 users
 };
 
-// Sort array of objects by an attribute function
+// Function to sort array of objects by an attribute
 Array.prototype.sortBy = function(p) {
   return this.slice(0).sort(function(a,b) {
     return (a[p] > b[p]) ? -1 : (a[p] < b[p]) ? 1 : 0;
   });
 }
 
-const getHighscoreByID = (req, res) => {
+const getHighscoreByID = async (req, res) => {
+  const all_users = await users.find();
   // search for user in the database via their ID
-  const user = users.find(user => user.id === req.params.id);
+  const user = all_users.find(user => user.id === req.params.id);
   if (user){
     res.send(user); // send back the user details
   }
@@ -28,7 +32,8 @@ const getHighscoreByID = (req, res) => {
   }
 };
 
-// Remember to export the callbacks
+// Export the callbacks
 module.exports = {
-  getTopUsers, getHighscoreByID,
+  getTopUsers,
+  getHighscoreByID,
 };
