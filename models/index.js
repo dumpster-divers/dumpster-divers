@@ -3,12 +3,18 @@ require('dotenv').config()
 const mongoose = require("mongoose");
 
 // Connect to MongoDB
-CONNECTION_STRING = "mongodb+srv://dumpsterteam:<password>@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
-MONGO_URL = CONNECTION_STRING.replace("<password>", process.env.MONGO_PASSWORD);
+if (process.argv[1] == "prod") {
+  CONNECTION_STRING = "mongodb+srv://dumpsterteam:<password>@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
+  MONGO_URL = CONNECTION_STRING.replace("<password>", process.env.MONGO_PASSWORD);
+} else if (process.argv[1] == "local") {
+  MONGO_URL =  "mongodb://localhost/dumpsterdiverlocal"
+} else {
+  console.err("Argument provided is incorrect");
+  console.err(process.argv[1]);
+  process.exit(1);
+}
 
-console.log(MONGO_URL);
-
-mongoose.connect(MONGO_URL || "mongodb://localhost/dumpsterdiverlocal", {
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
