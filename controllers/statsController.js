@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 // import user model
 var users = require('../models/users');
+const Tally = mongoose.model("tally");
 //var users = mongoose.model("Users");
 
 // Function to handle a request to get the 10 users with highest scores
@@ -33,8 +34,22 @@ Array.prototype.sortBy = function(p) {
   });
 }
 
+
+// trash/global-count: get current trash count
+const getRemaining = async (req, res) => {
+  try {
+    const trashCount = await Tally.find();
+    return res.send(trashCount);
+  } catch (err) {
+    res.status(400);
+    console.log(err)
+    return res.send("Database query failed");
+  }
+}
+
 // Export the callbacks
 module.exports = {
   getTopUsers,
   getHighscoreByID,
+  getRemaining
 };

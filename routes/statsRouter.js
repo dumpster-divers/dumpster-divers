@@ -4,12 +4,11 @@ const express = require('express');
 const statsRouter = express.Router();
 
 // require the user controller
-const highscoreController = require('../controllers/statsController.js');
+const statsController = require('../controllers/statsController.js');
 
-// handle the GET request on root of author-management path,
-statsRouter.get('/top-users', highscoreController.getTopUsers);
-statsRouter.get('/:id', highscoreController.getHighscoreByID);
-
+statsRouter.get('/highscores', statsController.getTopUsers);
+statsRouter.get('/user-highscore/:id', statsController.getHighscoreByID);
+statsRouter.get('/global-count', statsController.getRemaining);
 
 // export the router
 module.exports = statsRouter;

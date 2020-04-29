@@ -32,7 +32,7 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  res.send("Unimplemented endpoint");
+  return () => (res.send("Unimplemented endpoint"))
 }
 
 const updateUser = (req, res) => {
@@ -57,5 +57,7 @@ const generateUniqueId = async () => {
 
 module.exports = {
   addUser,
-  getAllUsers
+  getAllUsers,
+  deleteUser,
+  updateUser
 };
