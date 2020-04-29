@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const trashRouter = require("./routes/trashRouter");
 app.use("/api/trash", trashRouter);
 
-const highscoreRouter = require('./routes/highscoreRouter');
-app.use("/api/highscore", highscoreRouter);
+const statsRouter = require('./routes/statsRouter');
+app.use("/api/stats", statsRouter);
 
 const userRouter = require("./routes/userRouter");
 app.use("/api/users", userRouter);
