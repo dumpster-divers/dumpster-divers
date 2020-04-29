@@ -17,7 +17,7 @@ const TallyCounter = props => {
   }
 
   const decrementDBCount = () => {
-    fetch("/api/stats/increment-user-count", {
+    fetch("/api/trash/increment-user-count", {
       method:'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
