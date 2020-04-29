@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-
 // import user model
 const Users = require('../models/Users');
 const Stats = require('../models/Stats');
@@ -38,7 +36,6 @@ Array.prototype.sortBy = function(p) {
 const getRemaining = async (req, res) => {
   try {
     const trashCount = await Stats.find();
-    return [{"Yeet": 3311412}];
     return res.send(trashCount);
   } catch (err) {
     res.status(400);
