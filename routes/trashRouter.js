@@ -4,7 +4,7 @@ var trashRouter = express.Router();
 
 trashRouter.post('/increment-user-count', trashController.postIncrease);
 
-trashRouter.post('/add', trashController.unimplemented);
-trashRouter.get('/data', trashController.unimplemented);
-trashRouter.delete('/delete', trashController.unimplemented);
+trashRouter.post('/add', trashController.add);
+trashRouter.get('/data', trashController.getData);
+trashRouter.delete('/delete', trashController.deleteTrash);
 module.exports = trashRouter;
