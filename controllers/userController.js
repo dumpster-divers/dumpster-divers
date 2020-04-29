@@ -31,6 +31,14 @@ const addUser = async (req, res) => {
   });
 };
 
+const deleteUser = (req, res) => {
+  res.send("Unimplemented endpoint");
+}
+
+const updateUser = (req, res) => {
+  res.send("Unimplemented endpoint");
+}
+
 //Generate a unique id, ensuring it doesn't already exist in database
 const generateUniqueId = async () => {
   let generatedUsername = gfy.generateCombination(2, "-", true);
