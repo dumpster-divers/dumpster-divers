@@ -8,22 +8,6 @@ const getAllUsers = (req, res) => {
   });
 };
 
-//Generate a unique id, ensuring it doesn't already exist in database
-const generateUniqueId = async () => {
-  let generatedUsername = gfy.generateCombination(2, "-", true);
-
-  //Check whether username exists already
-  let usernameUsed = await Users.exists({ username: generatedUsername });
-
-  if (!usernameUsed) {
-    return new Promise(resolve => {
-      resolve(generatedUsername);
-    });
-  } else {
-    return generateUniqueId();
-  }
-};
-
 const addUser = async (req, res) => {
   let newUser = Users();
   let username = await generateUniqueId();
@@ -45,6 +29,22 @@ const addUser = async (req, res) => {
       });
     }
   });
+};
+
+//Generate a unique id, ensuring it doesn't already exist in database
+const generateUniqueId = async () => {
+  let generatedUsername = gfy.generateCombination(2, "-", true);
+
+  //Check whether username exists already
+  let usernameUsed = await Users.exists({ username: generatedUsername });
+
+  if (!usernameUsed) {
+    return new Promise(resolve => {
+      resolve(generatedUsername);
+    });
+  } else {
+    return generateUniqueId();
+  }
 };
 
 module.exports = {

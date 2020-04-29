@@ -12,12 +12,6 @@ const getTopUsers = async (req, res) => {
   res.send(topUsers); // return the list of top 10 users
 };
 
-// Function to sort array of objects by an attribute
-Array.prototype.sortBy = function(p) {
-  return this.slice(0).sort(function(a,b) {
-    return (a[p] > b[p]) ? -1 : (a[p] < b[p]) ? 1 : 0;
-  });
-}
 
 const getHighscoreByID = async (req, res) => {
   const all_users = await users.find();
@@ -31,6 +25,13 @@ const getHighscoreByID = async (req, res) => {
     res.send('User Does Not Exist');
   }
 };
+
+// Function to sort array of objects by an attribute
+Array.prototype.sortBy = function(p) {
+  return this.slice(0).sort(function(a,b) {
+    return (a[p] > b[p]) ? -1 : (a[p] < b[p]) ? 1 : 0;
+  });
+}
 
 // Export the callbacks
 module.exports = {
