@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const Users = require("../models/users");
+const Users = require("../models/Users");
 const gfy = require("gfycat-style-urls");
 
 const getAllUsers = (req, res) => {
-  Users.find({}, (err, users) => {
+  User.find({}, (err, users) => {
     res.send(users);
   });
 };

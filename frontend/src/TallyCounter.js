@@ -10,7 +10,10 @@ const TallyCounter = props => {
   const updateCount = () => {
     fetch("/api/stats/global-count")
       .then(res => res.json())
-      .then(res => setCount(res[0].globalRemaining));
+      .then(res => {
+        console.log(res);
+        return setCount(res[0].globalRemaining);
+      });
   }
 
   const decrementDBCount = () => {
