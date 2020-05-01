@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Trash count related requests
-const trashRouter = require("./routes/trashRouter");
-app.use("/api/trash", trashRouter);
+const gameRouter = require("./routes/gameRouter");
+app.use("/api/game", gameRouter);
 
 const statsRouter = require('./routes/statsRouter');
 app.use("/api/stats", statsRouter);

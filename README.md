@@ -37,6 +37,9 @@ are change node dependencies/
 # PUT /users/update
 - Update a user's information.
 
+# GET /users/getAll
+- Get information of every user.
+
 # Highscore route
 # GET stats/user-position
 - Find the user's position on the highscore leaderboard.
@@ -52,7 +55,7 @@ are change node dependencies/
 # GET game/data
 - Grab the next trash items to sort in a game round.
 
-# GET game/add-session-stats
+# POST game/add-session-stats
 - Notify server a user's score from a round, decrementing global count and storing in user info.
 
 # GET game/global-count

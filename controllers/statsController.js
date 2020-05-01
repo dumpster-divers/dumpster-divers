@@ -1,6 +1,5 @@
 // import user model
 const Users = require('../models/Users');
-const Stats = require('../models/Stats');
 
 // Function to handle a request to get the 10 users with highest scores
 const getTopUsers = async (req, res) => {
@@ -31,22 +30,13 @@ Array.prototype.sortBy = function(p) {
   });
 }
 
-
-// trash/global-count: get current trash count
-const getRemaining = async (req, res) => {
-  try {
-    const trashCount = await Stats.find();
-    return res.send(trashCount);
-  } catch (err) {
-    res.status(400);
-    console.log(err)
-    return res.send("Database query failed");
-  }
-}
+const getUserRecord = (req, res) => {
+  res.send("Unimplemented Function");
+};
 
 // Export the callbacks
 module.exports = {
   getTopUsers,
   getHighscoreByID,
-  getRemaining
+  getUserRecord
 };
