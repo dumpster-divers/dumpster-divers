@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Stats = require('../models/Stats');
 const Users = require('../models/Users');
+const Trash = require('../models/Trash');
 
 // game/add-session-stats: decrase the global count and increase user's total processed
 const addSessionStats = async (req, res) => {
@@ -17,12 +18,13 @@ const addSessionStats = async (req, res) => {
       console.log(err);
     }
   });
-  
+
   return res.send();
 };
 
 const getData = (req, res) => {
-  res.send("Unimplemented Function");
+  var randomTrash = generateRandomTrash();
+  res.send(randomTrash);
 };
 
 // trash/global-count: get current trash count
@@ -35,6 +37,13 @@ const getRemaining = async (req, res) => {
     console.log(err)
     return res.send("Database query failed");
   }
+}
+
+//function to give a random trash
+generateRandomTrash = function(){
+  var randomID = Math.floor((Math.random()*5)+1);
+  var randomTrash = Trash.find(randomTrash => randomTrash.id === randomID);
+  return randomTrash;
 }
 
 module.exports = {
