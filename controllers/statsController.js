@@ -9,18 +9,21 @@ const getTopUsers = async (req, res) => {
   res.send(topUsers); // return the list of top 10 users
 };
 
-
 const getHighscoreByID = async (req, res) => {
   const all_users = await Users.find();
   // search for user in the database via their ID
   const user = all_users.find(user => user.id === req.params.id);
   if (user){
-    res.send(user); // send back the user details
+    res.send(user.processedRecord); // send back the user details
   }
   else{
     // if an user is not found, return user does not exist.
     res.send('User Does Not Exist');
   }
+};
+
+const getUserRecord = (req, res) => {
+  res.send("Unimplemented Function");
 };
 
 // Function to sort array of objects by an attribute
@@ -29,10 +32,6 @@ Array.prototype.sortBy = function(p) {
     return (a[p] > b[p]) ? -1 : (a[p] < b[p]) ? 1 : 0;
   });
 }
-
-const getUserRecord = (req, res) => {
-  res.send("Unimplemented Function");
-};
 
 // Export the callbacks
 module.exports = {

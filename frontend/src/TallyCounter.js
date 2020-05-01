@@ -8,7 +8,7 @@ const TallyCounter = props => {
   }, []);
 
   const updateCount = () => {
-    fetch("/api/stats/global-count")
+    fetch("/api/game/global-count")
       .then(res => res.json())
       .then(res => {
         console.log(res);
@@ -17,7 +17,7 @@ const TallyCounter = props => {
   }
 
   const decrementDBCount = () => {
-    fetch("/api/trash/increment-user-count", {
+    fetch("api/game/add-session-stats", {
       method:'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',

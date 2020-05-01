@@ -3,7 +3,7 @@ const Users = require("../models/Users");
 const gfy = require("gfycat-style-urls");
 
 const getAllUsers = (req, res) => {
-  User.find({}, (err, users) => {
+  Users.find({}, (err, users) => {
     res.send(users);
   });
 };
@@ -14,7 +14,8 @@ const addUser = async (req, res) => {
 
   newUser.name = req.body.name;
   newUser.dateJoined = Date.now();
-  newUser.processedTotal = req.body.processedTotal;
+  newUser.processedTotal = req.body.processedTotal !== undefined ? req.body.processedTotal: 0
+  newUser.processedRecord = req.body.processedRecord !== undefined ? req.body.processedRecord: 0
   newUser.username = username;
 
   newUser.save((err, user) => {
