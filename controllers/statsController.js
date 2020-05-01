@@ -1,4 +1,4 @@
-
+const mongoose = require("mongoose");
 
 // import user model
 const Users = require('../models/Users');
@@ -12,12 +12,12 @@ const getTopUsers = async (req, res) => {
 };
 
 const getHighscoreByID = async (req, res) => {
-  const all_users = await users.find();
+  const all_users = await Users.find();
   sortedUsers = all_users.sortBy('processedTotal');
   // search for user in the database via their ID
   const user = all_users.find(user => user.id === req.params.id);
   if (user){
-    userRank = sortedUsers.indexOf(user);
+    userRank = sortedUsers.indexOf(user)+1;
     res.send({user,userRank});
   }
   else{
