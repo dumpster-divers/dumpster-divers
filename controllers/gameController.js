@@ -23,7 +23,7 @@ const addSessionStats = async (req, res) => {
 };
 
 const getData = (req, res) => {
-  var randomTrash = generateRandomTrash();
+  var randomTrash = generateNRandomTrash(3);
   res.send(randomTrash);
 };
 
@@ -37,6 +37,15 @@ const getRemaining = async (req, res) => {
     console.log(err)
     return res.send("Database query failed");
   }
+}
+
+//function to generate an array of random trash
+generateNRandomTrash = function(n){
+  var randomTrash = [];
+  for(i=0;i<n;i++){
+    randomTrash.push(generateRandomTrash());
+  }
+  return randomTrash;
 }
 
 //function to give a random trash
