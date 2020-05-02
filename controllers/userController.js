@@ -33,18 +33,20 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  Users.findByIdAndRemove(req.body.username, options, function (err) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.status(204)
-    }
+  Users.findOneAndRemove({"username": req.body.username}, (err, deletedUser) => {
+    if (err) return res.status(500).send(err);
+
+    const response = {
+      message: "User successfully deleted",
+      username: deletedUser.username
+    };
+    return res.status(200).send(response);
   });
 }
 
 const updateUser = (req, res) => {
   let newUser = req.body;
-  Users.findOneAndUpdate({"username": newUser.username}, newUser, options,function (err) {
+  Users.findOneAndUpdate({"username": newUser.username}, newUser, {},function (err) {
     if (err) {
       res.send(err);
     } else {
