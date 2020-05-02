@@ -12,7 +12,7 @@ const getTopUsers = async (req, res) => {
 const getHighscoreByID = async (req, res) => {
   const all_users = await Users.find();
   // search for user in the database via their ID
-  const user = all_users.find(user => user.id === req.params.id);
+  const user = all_users.find(user => user.username === req.params.id);
   if (user){
     res.send(user.processedRecord); // send back the user details
   }
