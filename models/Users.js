@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   },
   name: String,
   dateJoined: Date,
-  processedTotal: Number
+  processedTotal: Number,
+  processedRecord: Number
 });
 
 module.exports = mongoose.model("Users", userSchema, "Users");

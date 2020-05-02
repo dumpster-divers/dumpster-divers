@@ -26,3 +26,37 @@ are change node dependencies/
 # Testing Instructions
 - localhost:3000/ should display the site
 - localhost:3000/api/trash/global-count should give a response
+
+# User route
+# POST /users/add
+- Create a new persistent user account and generate a unique username.
+
+# DELETE /users/delete
+- Remove a user's information.
+
+# PUT /users/update
+- Update a user's information.
+
+# GET /users/get-all
+- Get information of every user.
+
+# Highscore route
+# GET stats/user-position
+- Find the user's position on the highscore leaderboard.
+
+# GET stats/highscores
+- ?head?postcode
+- Get the highscores of the top (head) users in (postcode region).
+
+# GET stats/user-record
+- Get the all-time high score of a user
+
+# Game route
+# GET game/data
+- Grab the next trash items to sort in a game round.
+
+# POST game/add-session-stats
+- Notify server a user's score from a round, decrementing global count and storing in user info.
+
+# GET game/global-count
+- The amount of trash remaining globally.

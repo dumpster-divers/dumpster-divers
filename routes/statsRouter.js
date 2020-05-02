@@ -8,7 +8,7 @@ const statsController = require('../controllers/statsController.js');
 
 statsRouter.get('/highscores', statsController.getTopUsers);
 statsRouter.get('/user-highscore/:id', statsController.getHighscoreByID);
-statsRouter.get('/global-count', statsController.getRemaining);
+statsRouter.get('/user-record', statsController.getUserRecord);
 
 // export the router
 module.exports = statsRouter;
