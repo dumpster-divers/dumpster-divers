@@ -8,7 +8,7 @@ const TallyCounter = props => {
   }, []);
 
   const updateCount = () => {
-    fetch("/api/game/global-count")
+    fetch("api/game/global-count")
       .then(res => res.json())
       .then(res => {
         console.log(res);

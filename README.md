@@ -37,7 +37,7 @@ are change node dependencies/
 # PUT /users/update
 - Update a user's information.
 
-# GET /users/getAll
+# GET /users/get-all
 - Get information of every user.
 
 # Highscore route
