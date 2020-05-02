@@ -46,12 +46,10 @@ const deleteUser = (req, res) => {
 
 const updateUser = (req, res) => {
   let newUser = req.body;
-  Users.findOneAndUpdate({"username": newUser.username}, newUser, {},function (err) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.status(204);
-    }
+  Users.findOneAndUpdate({"username": newUser.username}, newUser, {new: true}, (err, updatedUser) => {
+    if (err) return res.status(500).send(err);
+
+    res.send(updatedUser);
   });
 }
 
