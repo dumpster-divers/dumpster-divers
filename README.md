@@ -25,7 +25,7 @@ are change node dependencies/
 
 # Testing Instructions
 - localhost:3000/ should display the site
-- localhost:3000/api/trash/global-count should give a response
+- localhost:5000/api/trash/global-count should give a response
 
 # User route
 # POST /users/add
