@@ -116,3 +116,9 @@ dist
 
 # Idea files
 ./idea/
+/.idea/vcs.xml
+/.idea/.gitignore
+/.idea/dumpster-divers.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/jsLibraryMappings.xml
