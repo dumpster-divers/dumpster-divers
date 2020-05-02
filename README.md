@@ -51,7 +51,7 @@ are change node dependencies/
 - Get the all-time high score of a user
 
 # Game route
-# GET game/data/:amount
+# GET game/data?amount=n
 - Grab the requested amount of trash items to sort in a game round.
 
 # POST game/add-session-stats
