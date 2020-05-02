@@ -24,7 +24,8 @@ const addSessionStats = async (req, res) => {
 
 //get random trash for a level
 const getData = (req, res) => {
-  var randomTrash = generateNRandomTrash(5);
+  var amount = req.params.amount;
+  var randomTrash = generateNRandomTrash(amount);
   res.send(randomTrash);
 };
 
@@ -51,7 +52,7 @@ generateNRandomTrash = function(n){
 
 //function to give a random trash
 generateRandomTrash = function(){
-  var randomID = Math.floor((Math.random()*10)+1);
+  var randomID = Math.floor((Math.random()*Trash.length)+1);
   var randomTrash = Trash.find(randomTrash => randomTrash.id === randomID);
   return randomTrash;
 }
