@@ -33,8 +33,13 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  //TODO
-  res.send("Unimplemented endpoint");
+  Users.findByIdAndRemove(req.body.username, function (err) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.status(204)
+    }
+  });
 }
 
 const updateUser = (req, res) => {
