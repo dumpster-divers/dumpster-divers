@@ -7,7 +7,7 @@ const statsRouter = express.Router();
 const statsController = require('../controllers/statsController.js');
 
 statsRouter.get('/leaderboard', statsController.getTopUsers);
-statsRouter.get('/user-highscore/:id', statsController.getHighscoreByID);
+statsRouter.get('/user-highscore/:username', statsController.getHighscoreByID);
 statsRouter.get('/user-record', statsController.getUserRecord);
 
 // export the router
