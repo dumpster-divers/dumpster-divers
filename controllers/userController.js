@@ -33,7 +33,7 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  Users.findByIdAndRemove(req.body.username, function (err) {
+  Users.findByIdAndRemove(req.body.username, options, function (err) {
     if (err) {
       res.send(err);
     } else {
@@ -43,8 +43,14 @@ const deleteUser = (req, res) => {
 }
 
 const updateUser = (req, res) => {
-  //TODO
-  res.send("Unimplemented endpoint");
+  let newUser = req.body;
+  Users.findOneAndUpdate({"username": newUser.username}, newUser, options,function (err) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.status(204);
+    }
+  });
 }
 
 //Generate a unique id, ensuring it doesn't already exist in database
