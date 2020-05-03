@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Users = require("../models/Users");
 const gfy = require("gfycat-style-urls");
 

@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Stats = require('../models/Stats');
 const Users = require('../models/Users');
 const Trash = require('../models/Trash');
