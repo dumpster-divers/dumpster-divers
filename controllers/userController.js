@@ -3,6 +3,7 @@ const gfy = require("gfycat-style-urls");
 
 const getAllUsers = (req, res) => {
   Users.find({}, (err, users) => {
+    if (err) return res.status(500).send(err);
     res.send(users);
   });
 };
