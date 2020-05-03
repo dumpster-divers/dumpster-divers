@@ -51,7 +51,6 @@ const getRemaining = async (req, res) => {
 
 const updateUserSessions = async (count, username) => {
   // Update procesesdTotal and get current record
-  console.log(count);
   const user = await Users.findOneAndUpdate(
     {username: username},
     {$inc: {processedTotal: count}}
