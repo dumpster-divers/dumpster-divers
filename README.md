@@ -95,6 +95,7 @@ Response Body:
     "name": "John Citizen",
     "dateJoined": "2020-04-22T06:28:06.536Z",
     "processedTotal": 68,
+    "processedRecord": 8,
     "username": "Beautiful-Luxuriant-Termite",
     "__v": 0
   },
@@ -103,6 +104,7 @@ Response Body:
     "name": "Ada Lovelace",
     "dateJoined": "2020-04-22T06:28:08.450Z",
     "processedTotal": 10,
+    "processedRecord": 10,
     "username": "Boiling-Feeble-Fish",
     "__v": 0
   }
