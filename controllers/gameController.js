@@ -16,9 +16,10 @@ const addSessionStats = async (req, res) => {
   remaining = Math.max(0, remaining - req.body.count);
 
   // Decrease global count count
-  Stats.updateOne({}, { globalRemaining: parseInt(remaining) }, {}, err => {
-    if (err) console.log(err);
-  });
+  Stats.updateOne({}, 
+    {globalRemaining: parseInt(remaining) }, 
+    {}, err => { if (err) console.log(err);}
+  );
  
   // Increment user count  (optional)
   if (req.body.username !== undefined) {
@@ -52,9 +53,8 @@ const updateUserSessions = async (count, username) => {
   // Update procesesdTotal and get current record
   const user = await Users.findOneAndUpdate(
     {username: username},
-    {$inc: {processedTotal: count}}, 
-    err => {if (err) console.log(err);}
-  ).select('processedRecord');
+    {$inc: {processedTotal: count}}
+  );
 
   // Update record if higher
   if (count > user.processedRecord) {
