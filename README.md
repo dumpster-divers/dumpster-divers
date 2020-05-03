@@ -57,7 +57,31 @@ Response Body upon a Succesful Request
 ```
 
 **PUT /api/users/update**
+
 - Update a user's information.
+
+Request Body
+``` json
+{
+   "username":"Big-Fluffy-Elephant",
+   * any options from [name, dateJoined, processedTotal, processedRecord]
+   e.g:
+   "processedRecord": 42
+}
+```
+
+Response Body upon a Succesful Request (Returns document of updated User)
+``` json
+{
+    "name": "Steven",
+    "dateJoined": "2020-05-03T03:34:43.650Z",
+    "processedTotal": 420,
+    "processedRecord": 42,
+    "username": "Big-Fluffy-Elephant",
+}
+```
+
+Extra values of response removed for verbosity
 
 **GET /api/users/get-all**
 
