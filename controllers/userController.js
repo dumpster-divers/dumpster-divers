@@ -33,6 +33,11 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
+  if (req.body.username === undefined) {
+    res.send("Error: Missing 'username' in body");
+    return;
+  }
+
   Users.findOneAndRemove({"username": req.body.username}, (err, deletedUser) => {
     if (err) return res.status(500).send(err);
 
@@ -40,13 +45,19 @@ const deleteUser = (req, res) => {
       message: "User successfully deleted",
       username: deletedUser.username
     };
-    return res.status(200).send(response);
+    return res.send(response);
   });
 }
 
 const updateUser = (req, res) => {
+  if (req.body.username === undefined) {
+    res.send("Error: Missing 'username' in body");
+    return;
+  }
+
+  let username = req.body.username;
   let newUser = req.body;
-  Users.findOneAndUpdate({"username": newUser.username}, newUser, {new: true}, (err, updatedUser) => {
+  Users.findOneAndUpdate({"username": username}, newUser, {new: true}, (err, updatedUser) => {
     if (err) return res.status(500).send(err);
 
     res.send(updatedUser);
