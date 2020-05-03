@@ -14,7 +14,7 @@ https://dumpster-divers-test.herokuapp.com/
 ### Feature One: Users
 
 
-**`POST /users/add`**:
+***`POST /api/users/add`***:
 
 Create a new persistent user account and generate a unique username.
 
@@ -37,16 +37,16 @@ Response Body
 
 * `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts to use our software*
 
-**`DELETE /users/delete*: Remove a user's information`**
+***`DELETE /api/users/delete*: Remove a user's information`***
 
 ``` json
 
 ```
 
-**PUT /users/update**
+**PUT /api/users/update**
 - Update a user's information.
 
-**GET /users/get-all**
+**GET /api/users/get-all**
 
 - Get information of every user.
 
@@ -74,9 +74,9 @@ Response Body:
 
 ### Feature Two: User Statistics
 
-**GET stats/user-highscore/:username**
+**GET /api/stats/user-highscore?username=""**
 - Find the user's position on the highscore leaderboard.
-Query: `http://localhost:5000/api/stats/user-highscore?username=Uppity-Illegal-Elephant`
+Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-highscore?username=Uppity-Illegal-Elephant`
 
 Example Response Body
 ``` json
@@ -93,7 +93,7 @@ Example Response Body
   "userRank": 6
 }
 ```
-**GET stats/leaderboard**
+**GET /api/stats/leaderboard**
 - Get the top 10 users with the highest scores.
 ``` json
 [
@@ -120,9 +120,9 @@ Example Response Body
 ```
 
 
-**GET stats/user-record**
+**GET /api/stats/user-record**
 - Get the all-time high score of a user
-Query: `http://localhost:5000/api/stats/user-record?username=Uppity-Illegal-Elephant`
+Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-record?username=Uppity-Illegal-Elephant`
 
 Example Response Body: 
 ``` json 
@@ -132,7 +132,7 @@ Example Response Body:
 ```
 
 ### Feature Three: Game
-**GET game/data/:amount**
+**GET /api/game/data/:amount**
 - Grab the requested amount of trash items to sort in a game round.
 Example Response Body: 
 ``` json 
@@ -148,7 +148,7 @@ Example Response Body:
 ]
 ```
 
-***POST game/add-session-stats***
+***POST /api/game/add-session-stats***
 - Notify server a user's score from a round, decrementing global count and storing in user info.
 Request Body Example:
 ``` json 
@@ -159,7 +159,9 @@ Request Body Example:
 ```
 Count: Number of trash recycled.
 Username: The username of the user
-# GET game/global-count
+
+
+***GET /api/game/global-count***
 - The amount of trash remaining globally.
 
 Response Body Example:
