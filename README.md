@@ -39,8 +39,21 @@ Response Body
 
 ***`DELETE /api/users/delete*: Remove a user's information`***
 
-``` json
+Deletes a user based on their unique generated username
 
+Request Body
+``` json
+{
+   "username":"Big-Fluffy-Elephant",
+}
+```
+
+Response Body upon a Succesful Request
+``` json
+{
+      "message": "User successfully deleted",
+      "username": "Big-Fluffy-Elephant"
+}
 ```
 
 **PUT /api/users/update**
