@@ -15,7 +15,7 @@ https://dumpster-divers-test.herokuapp.com/
 This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database. To delete a user, pass in the unique username of the user, and the user profile will be deleted on the database.
 
 
-***`POST /api/users/add`***:
+***`POST https://dumpster-divers.herokuapp.com/api/users/add`***:
 
 Create a new persistent user account and generate a unique username.
 
@@ -38,7 +38,7 @@ Response Body
 
  `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts to use our software
 
-***`DELETE /api/users/delete*: Remove a user's information`***
+***`DELETE https://dumpster-divers.herokuapp.com/api/users/delete: Remove a user's information`***
 
 Deletes a user based on their unique generated username
 
@@ -57,7 +57,7 @@ Response Body upon a Succesful Request
 }
 ```
 
-**PUT /api/users/update**
+**PUT https://dumpster-divers.herokuapp.com/api/users/update**
 
 - Update a user's information.
 
@@ -83,7 +83,7 @@ Response Body upon a Succesful Request (Returns document of updated User)
 }
 ```
 
-**GET /api/users/get-all**
+**GET https://dumpster-divers.herokuapp.com/api/users/get-all**
 
 - Get information of every user.
 
@@ -112,7 +112,7 @@ Response Body:
 ### Feature Two: User Statistics
 We want users to know that they are part of a collective effort to reduce the global count of waste. This functionality handles user’s record scores, their position globally and the leaderboards that recognise the most dedicated players.
 
-**GET /api/stats/user-highscore?username=""**
+***GET https://dumpster-divers.herokuapp.com/api/stats/user-highscore?username=""***
 
 - Find the user's position on the highscore leaderboard.
 Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-highscore?username=Uppity-Illegal-Elephant`
@@ -132,7 +132,7 @@ Example Response Body
   "userRank": 6
 }
 ```
-**GET /api/stats/leaderboard**
+**GET https://dumpster-divers.herokuapp.com/api/stats/leaderboard**
 - Get the top 10 users with the highest scores.
 
 ``` json
@@ -160,7 +160,7 @@ Example Response Body
 ```
 
 
-**GET /api/stats/user-record**
+**GET https://dumpster-divers.herokuapp.com/api/stats/user-record**
 
 - Get the all-time high score of a user
 Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-record?username=Uppity-Illegal-Elephant`
@@ -175,7 +175,7 @@ Example Response Body:
 ### Feature Three: Game
 This functionality contains the core gameplay elements. It outputs random trash for the user to sort in a session, then processes a user’s score from the session, updating the global and user counts. The progress against the global count remaining trash can be seen by other users.
 
-**GET /api/game/data/:amount**
+**GET https://dumpster-divers.herokuapp.com/api/game/data/:amount**
 - Grab the requested amount of trash items to sort in a game round.
 Example Response Body: 
 ``` json 
@@ -191,7 +191,7 @@ Example Response Body:
 ]
 ```
 
-***POST /api/game/add-session-stats***
+***POST https://dumpster-divers.herokuapp.com/api/game/add-session-stats***
 - Notify server a user's score from a round, decrementing global count and storing in user info.
 Request Body Example:
 ``` json 
@@ -204,7 +204,7 @@ Count: Number of trash recycled.
 Username: The username of the user
 
 
-***GET /api/game/global-count***
+***GET https://dumpster-divers.herokuapp.com/api/game/global-count***
 - The amount of trash remaining globally.
 
 Response Body Example:
