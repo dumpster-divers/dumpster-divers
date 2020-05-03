@@ -38,7 +38,7 @@ Response Body
 
  `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts or remember passwords to use our software
 
-***DELETE https://dumpster-divers.herokuapp.com/api/users/delete: Remove a user's information***
+***DELETE https://dumpster-divers.herokuapp.com/api/users/delete Remove a user's information***
 
 Deletes a user based on their unique generated username
 
@@ -162,7 +162,7 @@ Example Response Body
 ```
 
 
-**GET https://dumpster-divers.herokuapp.com/api/stats/user-record**
+**GET https://dumpster-divers.herokuapp.com/api/stats/user-record?username=""**
 
 - Get the all-time high score of a user
 Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-record?username=Uppity-Illegal-Elephant`
