@@ -13,7 +13,7 @@ const getHighscoreByID = async (req, res) => {
   const allUsers = await Users.find();
   const sortedUsers = allUsers.sortBy("processedTotal");
   // search for user in the database via their ID
-  const user = allUsers.find(user => user.username === req.params.username);
+  const user = allUsers.find(user => user.username === req.query.username);
   if (user) {
     const userRank = sortedUsers.indexOf(user) + 1;
     res.send({ user, userRank });
@@ -26,7 +26,7 @@ const getHighscoreByID = async (req, res) => {
 const getUserRecord = (req, res) => {
   Users.find(
     {
-      username: req.params.username
+      username: req.query.username
     },
     (err, docs) => {
       if (err) {
