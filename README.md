@@ -9,7 +9,7 @@
 Heroku Site
 https://dumpster-divers-test.herokuapp.com/
 
-## Features
+## Features + Example JSON requests
 
 ### Feature One: Users
 
@@ -93,15 +93,26 @@ Response Body:
 
 ***POST game/add-session-stats***
 - Notify server a user's score from a round, decrementing global count and storing in user info.
-Request Body
+Request Body Example:
 ``` json 
 {
-	“count”: <the number of trash recycled in this session>
-   “username”: <the username of the user>
+	“count”: 10,
+	“username”: "username"
 }
 ```
+Count: Number of trash recycled.
+Username: The username of the user
 # GET game/global-count
 - The amount of trash remaining globally.
 
+Response Body Example:
+``` json 
+[
+  {
+    "_id": "5e9ef5bb1c9d440000f74095",
+    "globalRemaining": 22
+  }
+]
+``` 
 
 
