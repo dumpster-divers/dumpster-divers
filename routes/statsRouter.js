@@ -1,10 +1,6 @@
 const express = require('express');
-
-// add user router
-const statsRouter = express.Router();
-
-// require the user controller
 const statsController = require('../controllers/statsController.js');
+const statsRouter = express.Router();
 
 statsRouter.get('/leaderboard', statsController.getTopUsers);
 statsRouter.get('/user-highscore/:username', statsController.getHighscoreByID);

@@ -1,6 +1,6 @@
-var express = require("express");
-var userController = require("../controllers/userController");
-var userRouter = express.Router();
+const express = require("express");
+const userController = require("../controllers/userController");
+const userRouter = express.Router();
 
 userRouter.get("/get-all", userController.getAllUsers);
 userRouter.post("/add", userController.addUser);
