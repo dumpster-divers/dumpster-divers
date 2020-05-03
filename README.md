@@ -91,9 +91,15 @@ Response Body:
 #### GET game/data/:amount
 - Grab the requested amount of trash items to sort in a game round.
 
-# POST game/add-session-stats
+***POST game/add-session-stats***
 - Notify server a user's score from a round, decrementing global count and storing in user info.
-
+Request Body
+``` json 
+{
+	“count”: <the number of trash recycled in this session>
+   “username”: <the username of the user>
+}
+```
 # GET game/global-count
 - The amount of trash remaining globally.
 
