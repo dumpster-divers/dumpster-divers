@@ -15,7 +15,7 @@ https://dumpster-divers-test.herokuapp.com/
 This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database. To delete a user, pass in the unique username of the user, and the user profile will be deleted on the database.
 
 
-***`POST https://dumpster-divers.herokuapp.com/api/users/add`***:
+***POST https://dumpster-divers.herokuapp.com/api/users/add***:
 
 Create a new persistent user account and generate a unique username.
 
@@ -38,7 +38,7 @@ Response Body
 
  `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts to use our software
 
-***`DELETE https://dumpster-divers.herokuapp.com/api/users/delete: Remove a user's information`***
+***DELETE https://dumpster-divers.herokuapp.com/api/users/delete: Remove a user's information***
 
 Deletes a user based on their unique generated username
 
