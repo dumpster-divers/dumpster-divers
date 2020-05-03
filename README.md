@@ -60,15 +60,14 @@ Response Body upon a Succesful Request
 
 - Update a user's information.
 
-Request Body
+Example Request Body
 ``` json
 {
    "username":"Big-Fluffy-Elephant",
-   * any options from [name, dateJoined, processedTotal, processedRecord]
-   e.g:
    "processedRecord": 42
 }
 ```
+Can add any options from `[name, dateJoined, processedTotal, processedRecord]`
 
 Response Body upon a Succesful Request (Returns document of updated User)
 ``` json
