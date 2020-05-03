@@ -75,21 +75,78 @@ Response Body:
 ### Feature Two: User Statistics
 
 **GET stats/user-highscore/:username**
-
-
 - Find the user's position on the highscore leaderboard.
+Query: `http://localhost:5000/api/stats/user-highscore?username=Uppity-Illegal-Elephant`
 
+Example Response Body
+``` json
+{
+  "user": {
+    "_id": "5eabf0595d2dec08f4faab51",
+    "name": "Matt",
+    "dateJoined": "2020-05-01T09:48:09.389Z",
+    "processedTotal": 5,
+    "processedRecord": 5,
+    "username": "Uppity-Illegal-Elephant",
+    "__v": 0
+  },
+  "userRank": 6
+}
+```
 **GET stats/leaderboard**
-
-
 - Get the top 10 users with the highest scores.
+``` json
+[
+  {
+    "_id": "5eae3bd388097f0017b37561",
+    "name": "Postman Collection!",
+    "dateJoined": "2020-05-03T03:34:43.650Z",
+    "processedTotal": 6969,
+    "processedRecord": 42,
+    "username": "Spectacular-Efficacious-Ostrich",
+    "__v": 0
+  },
+  {
+    "_id": "5ead8b995599d20017610975",
+    "name": "Winnie2",
+    "dateJoined": "2020-05-02T15:02:49.151Z",
+    "processedTotal": 606,
+    "processedRecord": 1,
+    "username": "Male-Fixed-Bee",
+    "__v": 0
+  }
+  ...
+]
+```
+
 
 **GET stats/user-record**
 - Get the all-time high score of a user
+Query: `http://localhost:5000/api/stats/user-record?username=Uppity-Illegal-Elephant`
+
+Example Response Body: 
+``` json 
+{
+  "record": 5
+}
+```
 
 ### Feature Three: Game
-#### GET game/data/:amount
+**GET game/data/:amount**
 - Grab the requested amount of trash items to sort in a game round.
+Example Response Body: 
+``` json 
+[
+  {
+    "id": 7,
+    "name": "plastic straw"
+  },
+  {
+    "id": 2,
+    "name": "glass bottle"
+  }
+]
+```
 
 ***POST game/add-session-stats***
 - Notify server a user's score from a round, decrementing global count and storing in user info.
