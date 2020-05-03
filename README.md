@@ -196,8 +196,8 @@ Example Response Body:
 Request Body Example:
 ``` json 
 {
-	“count”: 10,
-	“username”: "username"
+	"count": 10,
+	"username": "username"
 }
 ```
 Count: Number of trash recycled.
