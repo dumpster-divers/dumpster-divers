@@ -37,4 +37,3 @@ db.once("open", async () => {
 
 require("./Stats");
 require("./Users");
-require("./Trash")
