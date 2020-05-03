@@ -199,7 +199,7 @@ Request Body Example:
 ``` json 
 {
 	"count": 10,
-	"username": ""Uppity-Illegal-Elephant"
+	"username": "Uppity-Illegal-Elephant"
 }
 ```
 Count: Number of trash recycled.
