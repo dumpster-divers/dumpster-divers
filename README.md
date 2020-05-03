@@ -41,13 +41,13 @@ are change node dependencies/
 - Get information of every user.
 
 # Highscore route
-# GET stats/user-highscore/:username
+# GET stats/user-highscore?username=<username>
 - Find the user's position on the highscore leaderboard.
 
 # GET stats/leaderboard
 - Get the top 10 users with the highest scores.
 
-# GET stats/user-record
+# GET stats/user-record?username=<username>
 - Get the all-time high score of a user
 
 # Game route
