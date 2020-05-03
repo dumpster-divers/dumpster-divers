@@ -62,7 +62,7 @@ const updateUser = (req, res) => {
   let newUser = req.body;
   Users.findOneAndUpdate({"username": username}, newUser, {new: true}, (err, updatedUser) => {
     if (err) return res.status(500).send(err);
-    if (!deletedUser) return res.send("User not found");
+    if (!updatedUser) return res.send("User not found");
 
     res.send(updatedUser);
   });
