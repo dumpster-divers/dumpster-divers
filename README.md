@@ -175,7 +175,7 @@ Example Response Body:
 ### Feature Three: Game
 This functionality contains the core gameplay elements. It outputs random trash for the user to sort in a session, then processes a user’s score from the session, updating the global and user counts. The progress against the global count remaining trash can be seen by other users.
 
-**GET https://dumpster-divers.herokuapp.com/api/game/data/:amount**
+**GET https://dumpster-divers.herokuapp.com/api/game/data?amount=2**
 - Grab the requested amount of trash items to sort in a game round.
 Example Response Body: 
 ``` json 
