@@ -34,7 +34,7 @@ const addUser = async (req, res) => {
 
 const deleteUser = (req, res) => {
   if (req.body.username === undefined) {
-    res.status(500).send("Error: Missing 'username' in body");
+    res.send("Error: Missing 'username' in body");
     return;
   }
 
@@ -45,13 +45,13 @@ const deleteUser = (req, res) => {
       message: "User successfully deleted",
       username: deletedUser.username
     };
-    return res.status(200).send(response);
+    return res.send(response);
   });
 }
 
 const updateUser = (req, res) => {
   if (req.body.username === undefined) {
-    res.status(500).send("Error: Missing 'username' in body");
+    res.send("Error: Missing 'username' in body");
     return;
   }
 
