@@ -1,8 +1,8 @@
-var express = require('express');
-var gameController = require('../controllers/gameController')
-var gameRouter = express.Router();
+const express = require('express');
+const gameController = require('../controllers/gameController')
+const gameRouter = express.Router();
 
-gameRouter.get('/data/:amount', gameController.getData);
+gameRouter.get('/data', gameController.getData);
 gameRouter.post('/add-session-stats', gameController.addSessionStats);
 gameRouter.get('/global-count', gameController.getRemaining);
 

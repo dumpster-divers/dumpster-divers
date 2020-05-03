@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 // Schema for api/users
 const userSchema = new mongoose.Schema({
-  id: String,
   username: {
     type: String,
     index: true

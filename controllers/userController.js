@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
 const Users = require("../models/Users");
 const gfy = require("gfycat-style-urls");
 
 const getAllUsers = (req, res) => {
   Users.find({}, (err, users) => {
+    if (err) return res.status(500).send(err);
     res.send(users);
   });
 };
@@ -33,21 +33,36 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
+  // If body doesn't exist or username not specified
+  if (req.body.username === undefined) {
+    res.send("Error: Missing 'username' in body");
+    return;
+  }
+
   Users.findOneAndRemove({"username": req.body.username}, (err, deletedUser) => {
     if (err) return res.status(500).send(err);
+    if (!deletedUser) return res.send("User not found");
 
     const response = {
       message: "User successfully deleted",
       username: deletedUser.username
     };
-    return res.status(200).send(response);
+    return res.send(response);
   });
 }
 
 const updateUser = (req, res) => {
+  // If body doesn't exist or username not specified
+  if (req.body.username === undefined) {
+    res.send("Error: Missing 'username' in body");
+    return;
+  }
+
+  let username = req.body.username;
   let newUser = req.body;
-  Users.findOneAndUpdate({"username": newUser.username}, newUser, {new: true}, (err, updatedUser) => {
+  Users.findOneAndUpdate({"username": username}, newUser, {new: true}, (err, updatedUser) => {
     if (err) return res.status(500).send(err);
+    if (!updatedUser) return res.send("User not found");
 
     res.send(updatedUser);
   });

@@ -122,3 +122,11 @@ dist
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/jsLibraryMappings.xml
+
+dumpster-divers.iml
+
+.idea/workspace.xml
+
+.gradle/
+
+.idea/dictionaries/stevenhuyn.xml

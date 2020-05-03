@@ -1,13 +1,9 @@
 const express = require('express');
-
-// add user router
+const statsController = require('../controllers/statsController.js');
 const statsRouter = express.Router();
 
-// require the user controller
-const statsController = require('../controllers/statsController.js');
-
 statsRouter.get('/leaderboard', statsController.getTopUsers);
-statsRouter.get('/user-highscore/:username', statsController.getHighscoreByID);
+statsRouter.get('/user-highscore', statsController.getHighscoreByID);
 statsRouter.get('/user-record', statsController.getUserRecord);
 
 // export the router

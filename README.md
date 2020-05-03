@@ -113,6 +113,7 @@ Response Body:
 We want users to know that they are part of a collective effort to reduce the global count of waste. This functionality handles user’s record scores, their position globally and the leaderboards that recognise the most dedicated players.
 
 **GET /api/stats/user-highscore?username=""**
+
 - Find the user's position on the highscore leaderboard.
 Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-highscore?username=Uppity-Illegal-Elephant`
 
@@ -133,6 +134,7 @@ Example Response Body
 ```
 **GET /api/stats/leaderboard**
 - Get the top 10 users with the highest scores.
+
 ``` json
 [
   {
@@ -159,6 +161,7 @@ Example Response Body
 
 
 **GET /api/stats/user-record**
+
 - Get the all-time high score of a user
 Query: `https://dumpster-divers-test.herokuapp.com/api/stats/user-record?username=Uppity-Illegal-Elephant`
 
