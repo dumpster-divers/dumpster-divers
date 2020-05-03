@@ -12,6 +12,7 @@ https://dumpster-divers-test.herokuapp.com/
 ## Features + Example JSON requests
 
 ### Feature One: Users
+This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database. To delete a user, pass in the unique username of the user, and the user profile will be deleted on the database.
 
 
 ***`POST /api/users/add`***:
@@ -109,6 +110,7 @@ Response Body:
 ```
 
 ### Feature Two: User Statistics
+We want users to know that they are part of a collective effort to reduce the global count of waste. This functionality handles user’s record scores, their position globally and the leaderboards that recognise the most dedicated players.
 
 **GET /api/stats/user-highscore?username=""**
 - Find the user's position on the highscore leaderboard.
@@ -168,6 +170,8 @@ Example Response Body:
 ```
 
 ### Feature Three: Game
+This functionality contains the core gameplay elements. It outputs random trash for the user to sort in a session, then processes a user’s score from the session, updating the global and user counts. The progress against the global count remaining trash can be seen by other users.
+
 **GET /api/game/data/:amount**
 - Grab the requested amount of trash items to sort in a game round.
 Example Response Body: 
