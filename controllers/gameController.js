@@ -78,8 +78,7 @@ generateNRandomTrash = function(n){
 //function to give a random trash
 generateRandomTrash = function(){
   let randomID = Math.floor((Math.random() * Trash.length) + 1);
-  let randomTrash = Trash.find(randomTrash => randomTrash.id === randomID);
-  return randomTrash;
+  return Trash.find(randomTrash => randomTrash.id === randomID);
 }
 
 module.exports = {
