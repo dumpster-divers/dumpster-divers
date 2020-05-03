@@ -73,15 +73,15 @@ Can add any options from `[name, dateJoined, processedTotal, processedRecord]`
 Response Body upon a Succesful Request (Returns document of updated User)
 ``` json
 {
+    "_id": "5e9fe3f69e4c567c7ea840be"
     "name": "Steven",
     "dateJoined": "2020-05-03T03:34:43.650Z",
     "processedTotal": 420,
     "processedRecord": 42,
     "username": "Big-Fluffy-Elephant",
+    "__v": 0
 }
 ```
-
-Extra values of response removed for verbosity
 
 **GET /api/users/get-all**
 
