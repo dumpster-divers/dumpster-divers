@@ -36,7 +36,7 @@ Response Body
 }
 ```
 
- `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts to use our software
+ `Username` is a uniquely assigned string of words designed to be kept private. It is done this way to support the demographic of the program (kids) so they don't have to create accounts or remember passwords to use our software
 
 ***DELETE https://dumpster-divers.herokuapp.com/api/users/delete: Remove a user's information***
 
