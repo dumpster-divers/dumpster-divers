@@ -33,7 +33,7 @@ const getUserRecord = (req, res) => {
         console.log(err);
         res.status(500).send(user);
       } else if (!user) {
-        return res.send("Query found nothing");
+        return res.send("User Does Not Exist");
       } else {
         res.send({record: user.processedRecord});
       }
