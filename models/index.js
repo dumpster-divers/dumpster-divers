@@ -17,7 +17,6 @@ if (DB_LOCATION == "prod") {
   }
 }
 
-
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -38,3 +37,4 @@ db.once("open", async () => {
 
 require("./Stats");
 require("./Users");
+require("./Trash")
