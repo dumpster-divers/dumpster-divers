@@ -4,18 +4,18 @@ const Users = require("../models/Users");
 // Function to handle a request to get the 10 users with highest scores
 const getTopUsers = async (req, res) => {
   const allUsers = await Users.find();
-  sortedUsers = allUsers.sortBy("processedTotal");
-  topUsers = sortedUsers.slice(0, 10);
+  const sortedUsers = allUsers.sortBy("processedTotal");
+  const topUsers = sortedUsers.slice(0, 10);
   res.send(topUsers); // return the list of top 10 users
 };
 
 const getHighscoreByID = async (req, res) => {
   const allUsers = await Users.find();
-  sortedUsers = allUsers.sortBy("processedTotal");
+  const sortedUsers = allUsers.sortBy("processedTotal");
   // search for user in the database via their ID
   const user = allUsers.find(user => user.username === req.params.username);
   if (user) {
-    userRank = sortedUsers.indexOf(user) + 1;
+    const userRank = sortedUsers.indexOf(user) + 1;
     res.send({ user, userRank });
   } else {
     // if an user is not found, return user does not exist.

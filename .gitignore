@@ -126,3 +126,7 @@ dist
 dumpster-divers.iml
 
 .idea/workspace.xml
+
+.gradle/
+
+.idea/dictionaries/stevenhuyn.xml

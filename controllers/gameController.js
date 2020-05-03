@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Stats = require('../models/Stats');
 const Users = require('../models/Users');
 const Trash = require('../models/Trash');
@@ -32,8 +31,8 @@ const addSessionStats = async (req, res) => {
 //get random trash for a level
 const getData = (req, res) => {
   // Get 1 by default
-  var amount = req.query.amount !== undefined ? req.query.amount: 1;
-  var randomTrash = generateNRandomTrash(amount);
+  const amount = req.query.amount !== undefined ? req.query.amount: 1;
+  const randomTrash = generateNRandomTrash(amount);
   res.send(randomTrash);
 };
 
@@ -68,8 +67,8 @@ const updateUserSessions = async (count, username) => {
 
 //function to generate an array of random trash
 generateNRandomTrash = function(n){
-  var randomTrash = [];
-  for(i=0;i<n;i++){
+  let randomTrash = [];
+  for (i = 0; i < n; i++){
     randomTrash.push(generateRandomTrash());
   }
   return randomTrash;
@@ -77,9 +76,8 @@ generateNRandomTrash = function(n){
 
 //function to give a random trash
 generateRandomTrash = function(){
-  var randomID = Math.floor((Math.random()*Trash.length)+1);
-  var randomTrash = Trash.find(randomTrash => randomTrash.id === randomID);
-  return randomTrash;
+  let randomID = Math.floor((Math.random() * Trash.length) + 1);
+  return Trash.find(randomTrash => randomTrash.id === randomID);
 }
 
 module.exports = {

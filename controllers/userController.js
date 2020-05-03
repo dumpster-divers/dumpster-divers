@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
 const Users = require("../models/Users");
 const gfy = require("gfycat-style-urls");
 
 const getAllUsers = (req, res) => {
   Users.find({}, (err, users) => {
+    if (err) return res.status(500).send(err);
     res.send(users);
   });
 };
@@ -33,6 +33,7 @@ const addUser = async (req, res) => {
 };
 
 const deleteUser = (req, res) => {
+  // If body doesn't exist or username not specified
   if (req.body.username === undefined) {
     res.send("Error: Missing 'username' in body");
     return;
@@ -50,6 +51,7 @@ const deleteUser = (req, res) => {
 }
 
 const updateUser = (req, res) => {
+  // If body doesn't exist or username not specified
   if (req.body.username === undefined) {
     res.send("Error: Missing 'username' in body");
     return;
