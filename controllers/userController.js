@@ -41,6 +41,7 @@ const deleteUser = (req, res) => {
 
   Users.findOneAndRemove({"username": req.body.username}, (err, deletedUser) => {
     if (err) return res.status(500).send(err);
+    if (!deletedUser) return res.send("User not found");
 
     const response = {
       message: "User successfully deleted",
@@ -61,6 +62,7 @@ const updateUser = (req, res) => {
   let newUser = req.body;
   Users.findOneAndUpdate({"username": username}, newUser, {new: true}, (err, updatedUser) => {
     if (err) return res.status(500).send(err);
+    if (!deletedUser) return res.send("User not found");
 
     res.send(updatedUser);
   });
