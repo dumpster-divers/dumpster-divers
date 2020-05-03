@@ -73,7 +73,7 @@ Can add any options from `[name, dateJoined, processedTotal, processedRecord]`
 Response Body upon a Succesful Request (Returns document of updated User)
 ``` json
 {
-    "_id": "5e9fe3f69e4c567c7ea840be"
+    "_id": "5e9fe3f69e4c567c7ea840be",
     "name": "Steven",
     "dateJoined": "2020-05-03T03:34:43.650Z",
     "processedTotal": 420,
