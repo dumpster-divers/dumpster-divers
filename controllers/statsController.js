@@ -24,16 +24,17 @@ const getHighscoreByID = async (req, res) => {
 };
 
 const getUserRecord = (req, res) => {
-  Users.find(
+  Users.findOne(
     {
       username: req.query.username
     },
-    (err, docs) => {
+    (err, user) => {
       if (err) {
         console.log(err);
-        res.status(500).send(docs);
+        res.status(500).send(user);
+      } else if (!user) {
+        return res.send("Query found nothing");
       } else {
-        let user = docs[0];
         res.send({record: user.processedRecord});
       }
     }
