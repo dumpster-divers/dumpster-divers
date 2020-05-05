@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/dumpster_diver.png";
 import "../App.css";
 import TallyCounter from "../TallyCounter";
+import ActionButton from "../shared/ActionButton";
 
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const FrontPage = () => {
         </p>
         <Link to="/game">Dive In</Link>
         <Link to="/signup">Sign Up</Link>
+        <ActionButton />
       </header>
     </div>
   );
