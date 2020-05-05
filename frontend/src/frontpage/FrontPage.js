@@ -1,9 +1,9 @@
-import React from 'react';
-import logo from './assets/dumpster_diver.png';
-import './App.css';
-import TallyCounter from './TallyCounter'
+import React from "react";
+import logo from "../assets/dumpster_diver.png";
+import "../App.css";
+import TallyCounter from "../TallyCounter";
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const FrontPage = () => {
   return (
@@ -12,13 +12,13 @@ const FrontPage = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Count is <TallyCounter/>
+          Count is <TallyCounter />
         </p>
         <Link to="/game">Dive In</Link>
         <Link to="/signup">Sign Up</Link>
       </header>
     </div>
   );
-}
+};
 
 export default FrontPage;
