@@ -15,12 +15,16 @@ const ActionButton = (props) => {
         backgroundColor: "#FFC045",
         fontFamily: "Roboto",
         textTransform: "none",
+        textDecoration: "none",
         "&:hover, &$focusVisible": {
           backgroundColor: "#efb84a",
         },
         "&:active": {
           boxShadow: "inset 10px 10px 20px #CC9D3F"
         }
+      },
+      link: {
+        textDecoration: "none",
       }
     })
   );
@@ -28,7 +32,7 @@ const ActionButton = (props) => {
   const classes = useStyles();
 
   return (
-    <Link to={props.to}>
+    <Link to={props.to} className={classes.link}>
       <Button
         variant="contained"
         color={"primary"}
