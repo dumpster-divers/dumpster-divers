@@ -7,7 +7,7 @@
 #### Developer? [Click here](./devREADME.md)
 
 Heroku Site
-https://dumpster-divers-test.herokuapp.com/
+https://dumpster-divers.herokuapp.com/
 
 ## Features + Example JSON requests
 
