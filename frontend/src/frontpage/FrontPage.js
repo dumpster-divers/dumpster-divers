@@ -5,19 +5,18 @@ import TallyCounter from "../TallyCounter";
 import ActionButton from "../shared/ActionButton";
 
 import { Link } from "react-router-dom";
+import GameContainer from "../shared/GameContainer";
 
 const FrontPage = () => {
   return (
     <div className="App">
       <h1>Dumpster Divers</h1>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Count is <TallyCounter />
-        </p>
-        <Link to="/game">Dive In</Link>
-        <Link to="/signup">Sign Up</Link>
-        <ActionButton />
+        <GameContainer>
+          <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/signup">Sign Up</Link>
+          <ActionButton to="/game"/>
+        </GameContainer>
       </header>
     </div>
   );

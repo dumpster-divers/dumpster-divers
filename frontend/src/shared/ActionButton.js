@@ -1,8 +1,9 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
-const ActionButton = () => {
+const ActionButton = (props) => {
   const useStyles = makeStyles(() =>
     createStyles({
       button: {
@@ -27,14 +28,16 @@ const ActionButton = () => {
   const classes = useStyles();
 
   return (
-    <Button
-      variant="contained"
-      color={"primary"}
-      size="large"
-      className={classes.button}
-    >
-      Dive In!
-    </Button>
+    <Link to={props.to}>
+      <Button
+        variant="contained"
+        color={"primary"}
+        size="large"
+        className={classes.button}
+      >
+        Dive In!
+      </Button>
+    </Link>
   );
 };
 
