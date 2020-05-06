@@ -14,7 +14,7 @@ const FrontPage = () => {
         <GameContainer>
           <img src={logo} className="App-logo" alt="logo" />
           <Link to="/signup">Sign Up</Link>
-          <ActionButton to="/game"/>
+          <ActionButton to="/game" buttonText={"Dive In!"}/>
         </GameContainer>
       </header>
     </div>
