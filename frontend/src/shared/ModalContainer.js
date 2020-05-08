@@ -28,7 +28,7 @@ export default function MouseOverPopover(props) {
 
   return (
     <div>
-      <div
+      <div style={{display: "inline-block"}}
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
         >
@@ -43,8 +43,8 @@ export default function MouseOverPopover(props) {
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: 'center',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'top',
