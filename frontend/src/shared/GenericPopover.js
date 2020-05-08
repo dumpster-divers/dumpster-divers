@@ -1,8 +1,6 @@
-import React          from 'react';
-import Popover        from '@material-ui/core/Popover';
-import Typography     from '@material-ui/core/Typography';
+import React, {useState} from 'react';
+import Popover from '@material-ui/core/Popover';
 import { makeStyles } from '@material-ui/core/styles';
-import GameContainer  from "./GameContainer";
 
 /*
   popover: the element to display when hovered over
@@ -16,7 +14,7 @@ const GenericPopover = ({popover, children}) => {
   }));
 
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
