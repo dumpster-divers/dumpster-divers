@@ -3,7 +3,10 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
-const ActionButton = (props) => {
+const ActionButton = ({color="yellow", children, to, buttonText}) => {
+  const colorToHex = {
+    "yellow": "#FFC045",
+  }
   const useStyles = makeStyles(() =>
     createStyles({
       button: {
@@ -12,19 +15,19 @@ const ActionButton = (props) => {
         fontSize: "34px",
         width: "400px",
         height: "75px",
-        backgroundColor: "#FFC045",
+        backgroundColor: colorToHex[color],
         fontFamily: "Roboto",
         textTransform: "none",
         textDecoration: "none",
         "&:hover, &$focusVisible": {
-          backgroundColor: "#efb84a",
+          backgroundColor: "#efb84a"
         },
         "&:active": {
           boxShadow: "inset 10px 10px 20px #CC9D3F"
         }
       },
       link: {
-        textDecoration: "none",
+        textDecoration: "none"
       }
     })
   );
@@ -32,14 +35,14 @@ const ActionButton = (props) => {
   const classes = useStyles();
 
   return (
-    <Link to={props.to} className={classes.link}>
+    <Link to={to} className={classes.link}>
       <Button
         variant="contained"
         color={"primary"}
         size="large"
         className={classes.button}
       >
-        Dive In!
+        {buttonText}
       </Button>
     </Link>
   );
