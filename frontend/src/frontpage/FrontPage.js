@@ -8,16 +8,11 @@ import GameContainer from "../shared/GameContainer";
 
 const FrontPage = () => {
   return (
-    <div className="App">
-      <h1>Dumpster Divers</h1>
-      <header className="App-header">
-        <GameContainer>
-          <img src={logo} className="App-logo" alt="logo" />
-          <Link to="/signup">Sign Up</Link>
-          <ActionButton to="/game"/>
-        </GameContainer>
-      </header>
-    </div>
+    <GameContainer>
+      <img src={logo} className="App-logo" alt="logo" />
+      <Link to="/signup">Sign Up</Link>
+      <ActionButton to="/game" />
+    </GameContainer>
   );
 };
 
