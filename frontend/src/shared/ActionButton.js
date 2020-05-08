@@ -18,7 +18,7 @@ const ActionButton = ({ color = "yellow", children, to, buttonText, onClick}) =>
         fontFamily: "Roboto",
         textTransform: "none",
         textDecoration: "none",
-        "&:hover, &$focusVisible": {
+        "&:hover, &focusVisible": {
           backgroundColor: "#efb84a",
           textDecoration: "none"
         },
