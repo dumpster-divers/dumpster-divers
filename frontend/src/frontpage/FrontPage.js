@@ -6,18 +6,22 @@ import ActionButton from "../shared/ActionButton";
 import { Link } from "react-router-dom";
 import GameContainer from "../shared/GameContainer";
 
-import ReactHover       from 'react-hover';
-import { makeStyles }   from '@material-ui/core/styles';
-import Card             from '@material-ui/core/Card';
-import CardActions      from '@material-ui/core/CardActions';
-import CardContent      from '@material-ui/core/CardContent';
-import Button           from '@material-ui/core/Button';
-import Typography       from '@material-ui/core/Typography';
 import MouseOverPopover from "../shared/GenericPopover";
+import {makeStyles}     from "@material-ui/core/styles";
 
 const FrontPage = () => {
+  const useStyles = makeStyles((theme) => ({
+    popover: {
+      padding: "20px"
+    }
+  }));
+
+  const classes = useStyles();
+
   const popover = (
-    <Typography>Hi I'm the popover message!</Typography>
+    <div className={classes.popover}>
+      <h1>Hi I'm the popover message!</h1>
+    </div>
   )
 
   return (
