@@ -21,6 +21,7 @@ const FrontPage = () => {
   const popover = (
     <div className={classes.popover}>
       <h1>Hi I'm the popover message!</h1>
+      <p>We are Dumpster Divers, welcome!</p>
     </div>
   )
 
