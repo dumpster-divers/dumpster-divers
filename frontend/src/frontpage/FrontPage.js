@@ -12,7 +12,7 @@ import {makeStyles}     from "@material-ui/core/styles";
 const FrontPage = () => {
   const useStyles = makeStyles((theme) => ({
     popover: {
-      padding: "20px"
+      margin: "20px"
     }
   }));
 

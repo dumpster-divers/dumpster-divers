@@ -1,9 +1,14 @@
-import React from 'react';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
+import React          from 'react';
+import Popover        from '@material-ui/core/Popover';
+import Typography     from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import GameContainer  from "./GameContainer";
 
-export default function GenericPopover(props) {
+/*
+  popover: the element to display when hovered over
+  children: which elements when hovered over will trigger the popover
+ */
+const GenericPopover = ({popover, children}) => {
   const useStyles = makeStyles((theme) => ({
     popover: {
       pointerEvents: 'none',
@@ -29,7 +34,7 @@ export default function GenericPopover(props) {
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
         >
-        {props.children}
+        {children}
       </div>
       <Popover
         id="mouse-over-popover"
@@ -50,8 +55,10 @@ export default function GenericPopover(props) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        {props.popover}
+        {popover}
       </Popover>
     </div>
   );
 }
+
+export default GenericPopover;
