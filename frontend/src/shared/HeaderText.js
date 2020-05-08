@@ -20,9 +20,9 @@ const HeaderText = (props) => {
     const classes = useStyles();
   
     return (
-    <Typography variant="h1" className={classes.typography}>
-        {props.children}
-    </Typography>
+        <Typography variant="h1" className={classes.typography}>
+            {props.children}
+        </Typography>
     );
   };
   
