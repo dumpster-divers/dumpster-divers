@@ -1,11 +1,11 @@
 import React from "react";
 import GameContainer from "../shared/GameContainer";
-import SignupForm from "./SignupForm";
+import SignUpForm from "./SignUpForm";
 
 const Signup = () => {
   return (
     <GameContainer>
-      <SignupForm />
+      <SignUpForm />
     </GameContainer>
   );
 };
