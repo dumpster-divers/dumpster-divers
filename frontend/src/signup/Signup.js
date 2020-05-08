@@ -1,13 +1,13 @@
 import React from "react";
 import GameContainer from "../shared/GameContainer";
-import TextEntry from "../shared/TextEntry";
+import SignupForm from "./SignupForm";
 
 const Signup = () => {
   return (
     <GameContainer>
-      <TextEntry>nice</TextEntry>
+      <SignupForm />
     </GameContainer>
   );
-}
+};
 
 export default Signup;
