@@ -8,22 +8,19 @@ import Signup from "./signup/Signup";
 export default function App() {
   return (
     <div className="App">
-      <h1>Dumpster Divers</h1>
-      <header className="App-header">
-        <Router>
-          <Switch>
-            <Route path="/game">
-              <Game />
-            </Route>
-            <Route path="/signup">
-              <Signup />
-            </Route>
-            <Route path="/">
-              <FrontPage />
-            </Route>
-          </Switch>
-        </Router>
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/game">
+            <Game />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/">
+            <FrontPage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

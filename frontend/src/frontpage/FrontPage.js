@@ -10,7 +10,7 @@ import GameContainer from "../shared/GameContainer";
 
 const FrontPage = () => {
   return (
-    <GameContainer>
+    <GameContainer width="75%">
       <HeaderText>Dumpster Divers</HeaderText>
       <img src={logo} className="App-logo" alt="logo" />
       <Link to="/signup">Sign Up</Link>
