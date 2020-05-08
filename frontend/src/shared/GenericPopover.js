@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MouseOverPopover(props) {
+export default function GenericPopover(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -53,7 +53,7 @@ export default function MouseOverPopover(props) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography>I use Popover.</Typography>
+        {props.popover}
       </Popover>
     </div>
   );

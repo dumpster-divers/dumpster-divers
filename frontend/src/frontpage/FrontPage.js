@@ -13,9 +13,12 @@ import CardActions      from '@material-ui/core/CardActions';
 import CardContent      from '@material-ui/core/CardContent';
 import Button           from '@material-ui/core/Button';
 import Typography       from '@material-ui/core/Typography';
-import MouseOverPopover from "../shared/ModalContainer";
+import MouseOverPopover from "../shared/GenericPopover";
 
 const FrontPage = () => {
+  const popover = (
+    <Typography>Hi I'm the popover message!</Typography>
+  )
 
   return (
     <div className="App">
