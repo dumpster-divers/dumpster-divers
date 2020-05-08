@@ -1,10 +1,11 @@
 import React from "react";
 import GameContainer from "../shared/GameContainer";
+import TextEntry from "../shared/TextEntry";
 
 const Signup = () => {
   return (
     <GameContainer>
-      This will be the signup page
+      <TextEntry>nice</TextEntry>
     </GameContainer>
   );
 }
