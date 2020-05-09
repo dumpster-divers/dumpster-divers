@@ -41,10 +41,12 @@
   position: absolute;
   width: 88.81px;
   height: 86.11px;
-  left: 312px;
+  left: 311.5px;
   top: 178px;
-
 }
+
+#GoBackButtonA:hover path { fill: #FFA4A4 }
+#GoBackButtonA:hover rect { fill: #FFE9E9 }
 
 .heading1 {
   position: absolute;
@@ -71,7 +73,7 @@
   position: absolute;
   left: 13.41%;
   right: 13.41%;
-  top: 52%;
+  top: 50%;
   bottom: 59.45%;
 
   font-family: Roboto;
@@ -80,4 +82,14 @@
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+}
+
+.signupbutton {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 60%;
+  bottom: 0%;
+  margin-top: 100px;
+
 }
