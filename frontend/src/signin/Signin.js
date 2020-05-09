@@ -3,11 +3,11 @@ import GameContainer from "../shared/GameContainer";
 import ActionButton from "../shared/ActionButton";
 import GoBackButton from "../shared/GoBackButton";
 
-const Signup = () => {
+const Signin = () => {
   return (
     <GameContainer>
-      <h1 class="heading1"> Sign Up </h1>
-      <p class="text1">it's quick and easy, just enter any username that you want to use</p>
+      <h1 class="heading1"> Enter Your Unique Username </h1>
+      <p class="text1">this is the unique username given to you when you signed up</p>
       <div class="signupbutton">
         <ActionButton to="/game" />
       </div>
@@ -16,4 +16,4 @@ const Signup = () => {
   );
 }
 
-export default Signup;
+export default Signin;

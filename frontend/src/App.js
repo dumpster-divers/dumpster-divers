@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FrontPage from "./frontpage/FrontPage";
 import Game from "./game/Game";
 import Signup from "./signup/Signup";
+import Signin from "./signin/Signin";
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
             </Route>
             <Route path="/signup">
               <Signup />
+            </Route>
+            <Route path="/signin">
+              <Signin />
             </Route>
             <Route path="/">
               <FrontPage />
