@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+#GoBackButton{
+  position: absolute;
+  width: 88.81px;
+  height: 86.11px;
+  left: 312px;
+  top: 178px;
+}
