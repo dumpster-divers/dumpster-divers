@@ -8,7 +8,9 @@ const Signup = () => {
     <GameContainer>
       <h1 class="heading1"> Sign Up </h1>
       <p class="text1">it's quick and easy, just enter any username that you want to use</p>
-      <ActionButton class="signupbutton" to="/game" />
+      <div class="signupbutton">
+        <ActionButton to="/game" />
+      </div>
       <GoBackButton/>
     </GameContainer>
   );
