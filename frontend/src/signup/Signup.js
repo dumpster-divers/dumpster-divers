@@ -6,10 +6,10 @@ import GoBackButton from "../shared/GoBackButton";
 const Signup = () => {
   return (
     <GameContainer>
-      <h1> Sign Up </h1>
-      <p>it's quick and easy, just enter any username that you want to use</p>
+      <h1 class="heading1"> Sign Up </h1>
+      <p class="text1">it's quick and easy, just enter any username that you want to use</p>
       <ActionButton to="/game" />
-    <GoBackButton/>
+      <GoBackButton/>
     </GameContainer>
   );
 }
