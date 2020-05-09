@@ -43,6 +43,10 @@
   height: 86.11px;
   left: 311.5px;
   top: 179px;
+  filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
+}
+#GoBackButton:active {
+  filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
 }
 
 #GoBackButtonA:hover path { fill: #FFA4A4 }
