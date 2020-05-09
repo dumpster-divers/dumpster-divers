@@ -37,6 +37,27 @@
   }
 }
 
+.Small-link-div {
+  position: absolute;
+  left: 55%;
+  right: 0%;
+  top: 36%;
+  bottom: 0%;
+}
+
+.Small-link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  color: #76603E;
+}
+
 #GoBackButton {
   position: absolute;
   width: 88.81px;
