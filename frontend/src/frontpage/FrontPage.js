@@ -16,11 +16,11 @@ const FrontPage = () => {
             <Link to="/signup" class="Small-link">Sign Up</Link>
             <Link to="/signin" class="Small-link">Sign In</Link>
           </div>
-          <div id="frontpage-button">
-            <ActionButton to="/game" buttonText={"Dive In!"} />
-            <div id="move-diver">
-              <img src={logo} id="homepage-mascot" alt="logo" />
-            </div>
+          <h1 class="heading-homepage">Welcome to Dumpster Divers</h1>
+          <p class="about-us">about us description coming soon...</p>
+          <div class="button-container">
+            <div id="mascot"><img src={logo} alt="logo" /></div>
+            <div id="homepage-button"><ActionButton to="/game" buttonText={"Dive In!"} /></div>
           </div>
         </GameContainer>
       </header>
