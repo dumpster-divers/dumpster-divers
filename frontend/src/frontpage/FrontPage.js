@@ -10,21 +10,6 @@ import MouseOverPopover from "../shared/GenericPopover";
 import {makeStyles}     from "@material-ui/core/styles";
 
 const FrontPage = () => {
-  const useStyles = makeStyles((theme) => ({
-    popover: {
-      margin: "20px"
-    }
-  }));
-
-  const classes = useStyles();
-
-  const popover = (
-    <div className={classes.popover}>
-      <h1>Hi I'm the popover message!</h1>
-      <p>We are Dumpster Divers, welcome!</p>
-    </div>
-  )
-
   return (
     <div className="App">
       <h1>Dumpster Divers</h1>
