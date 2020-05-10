@@ -3,6 +3,9 @@ import logo from "../assets/dumpster_diver.png";
 import "../App.css";
 import ActionButton from "../shared/ActionButton";
 
+import { Link } from "react-router-dom";
+import GameContainer from "../shared/GameContainer";
+
 const FrontPage = () => {
   return (
     <div className="App">
