@@ -5,6 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 /*
   popover: the element to display when hovered over
   children: which elements when hovered over will trigger the popover
+
+  usage:
+  <GenericPopover popover={PopoverElement}>
+    {Children Here}
+  </GenericPopover>
  */
 const GenericPopover = ({popover, children}) => {
   const useStyles = makeStyles((theme) => ({
