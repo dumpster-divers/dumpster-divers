@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef, createRef} from "react";
 
 import {createStyles, makeStyles} from '@material-ui/core/styles';
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-const Timer = ({maxCount, onFinish, enabled, startTime}) => {
+const Timer = ({maxCount, onFinish, enabled}) => {
     // Styles
     const useStylesBorder = makeStyles(() =>
         createStyles({
@@ -26,58 +26,49 @@ const Timer = ({maxCount, onFinish, enabled, startTime}) => {
     const classes = useStylesBorder();
     
     const [proportion, setProportion] = useState(100);
-    const [initTime, setInitTime] = useState(startTime);
+    const [initTime, setInitTime] = useState(Date.now() / 1000);
     const [isEnabled, setIsEnabled] = useState(false);
-        console.log(initTime);
-    useEffect(() => {
-        setInitTime(startTime);
-    }, [startTime]);
 
+    const ref = createRef();
+    ref.current = Date.now() / 1000;
+    //ref.current = initTime;
     // Timed updates
-    const startTimer = () => {
- /*        if (initTime === 0) {
-            setInitTime(Date.now() / 1000);
-        } */
-        const interval = setInterval(() => {
-            //console.log(initTime)
-            if (initTime ===0) {
-                console.log(':(')
-                return;
-            }
 
-            //console.log(enabled);
-            if (!enabled) clearInterval(interval);
-            //console.log(initTime);
-            //console.log(Date.now() / 1000);
-            const count = Math.max(maxCount - (Date.now() / 1000 - initTime), 0);
-            //console.log(count);
-            // Timer over
-            if (count === 0) {
-                onFinish();
-                setInitTime(0);
-                clearInterval(interval);
-            }
-            setProportion((count/maxCount)*100);
-        }, 300);
-        
-        // Cleanup by stopping the interval timer
-        return () => clearInterval(interval);
-    }
 
     // Countdown reset handling
     useEffect(() => {
+        const startTimer = () => {
+            const interval = setInterval(() => {
+                //console.log(enabled);
+                //console.log(initTime);
+                //console.log(Date.now() / 1000);
+                const count = Math.max(maxCount - (Date.now() / 1000 - ref.current), 0);
+                console.log(count);
+                // Timer over
+                if (count === 0) {
+                    onFinish();
+                    //setInitTime(1000000000000000000000)
+                    clearInterval(interval);
+                }
+                setProportion((count/maxCount)*100);
+            }, 100);
+            
+            // Cleanup by stopping the interval timer
+            return () => clearInterval(interval);
+        }
+
         if (!enabled) {
             setProportion(100);
         }
 
-        // Timer got switched on, start
+        // Timer got switched on, it start
         if (!isEnabled && enabled) {
+            ref.current = Date.now() / 1000
             startTimer();
-            //setInitTime(Date.now() / 1000);
             console.log('updating timer!')
         }
         setIsEnabled(enabled);
-    }, [enabled, isEnabled]);
+    }, [enabled, isEnabled, initTime, maxCount, onFinish]);
 
     return (
         <div id="timer">
