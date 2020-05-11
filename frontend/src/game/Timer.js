@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, createRef} from "react";
+import React, {useEffect, useState, createRef} from "react";
 
 import {createStyles, makeStyles} from '@material-ui/core/styles';
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -7,7 +7,7 @@ const Timer = ({maxCount, onFinish, enabled}) => {
     // Styles
     const useStylesBorder = makeStyles(() =>
         createStyles({
-            // Background bar
+            // Background 
             root: {
                 height: 15,
                 borderRadius: 20,
@@ -24,51 +24,42 @@ const Timer = ({maxCount, onFinish, enabled}) => {
     );
 
     const classes = useStylesBorder();
-    
+
+    // Timer logic
     const [proportion, setProportion] = useState(100);
-    const [initTime, setInitTime] = useState(Date.now() / 1000);
     const [isEnabled, setIsEnabled] = useState(false);
 
-    const ref = createRef();
-    ref.current = Date.now() / 1000;
-    //ref.current = initTime;
-    // Timed updates
+    // Make the start time accessible to the interval
+    // https://github.com/cheungseol/cheungseol.github.io/issues/20
+    const initTimeRef = createRef();
+    initTimeRef.current = Date.now() / 1000;
 
-
-    // Countdown reset handling
     useEffect(() => {
         const startTimer = () => {
+            // Interval updates
             const interval = setInterval(() => {
-                //console.log(enabled);
-                //console.log(initTime);
-                //console.log(Date.now() / 1000);
-                const count = Math.max(maxCount - (Date.now() / 1000 - ref.current), 0);
-                console.log(count);
+                const count = Math.max(maxCount - (Date.now() / 1000 - initTimeRef.current), 0);
                 // Timer over
                 if (count === 0) {
                     onFinish();
-                    //setInitTime(1000000000000000000000)
                     clearInterval(interval);
                 }
                 setProportion((count/maxCount)*100);
             }, 100);
-            
-            // Cleanup by stopping the interval timer
-            return () => clearInterval(interval);
         }
 
+        // Default state
         if (!enabled) {
             setProportion(100);
         }
 
-        // Timer got switched on, it start
+        // Timer got switched on, reset and begin counting
         if (!isEnabled && enabled) {
-            ref.current = Date.now() / 1000
+            initTimeRef.current = Date.now() / 1000;
             startTimer();
-            console.log('updating timer!')
         }
         setIsEnabled(enabled);
-    }, [enabled, isEnabled, initTime, maxCount, onFinish]);
+    }, [enabled, isEnabled, maxCount, onFinish, initTimeRef]);
 
     return (
         <div id="timer">
