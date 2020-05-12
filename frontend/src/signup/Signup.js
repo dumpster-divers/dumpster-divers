@@ -6,12 +6,14 @@ import SignUpForm from "./SignUpForm";
 const Signup = () => {
   return (
     <GameContainer>
-      <h1 class="heading1"> Sign Up </h1>
-      <p class="text1">it's quick and easy, just enter any username that you want to use</p>
-      <div class="signupbutton">
+      <h1 className="heading1"> Sign Up </h1>
+      <p className="text1">
+        it's quick and easy, just enter your name (this will be shown publicly)
+      </p>
+      <div className="userForm">
         <SignUpForm />
       </div>
-      <GoBackButton/>
+      <GoBackButton />
     </GameContainer>
   );
 };
