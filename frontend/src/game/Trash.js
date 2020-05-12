@@ -1,26 +1,26 @@
 import React from "react";
 import { useDrag } from 'react-dnd'
 import { ItemTypes } from './Constants'
-
+import trash_1           from "../assets/trash_1.png";
+import trash_2           from "../assets/trash_2.png";
 /**
  * Your Component
  */
 const Trash = ({isGood}) => {
 
   const text = isGood ? "good" : "bad";
+  const src = isGood ? trash_1 : trash_2;
 
   const [{ opacity }, dragRef] = useDrag({
     item: { type: text },
     collect: monitor => ({
-      opacity: monitor.isDragging() ? 0.5 : 1,
+      opacity: monitor.isDragging() ? 0 : 1,
     }),
   })
 
 
   return (
-    <div ref={dragRef} style={{ opacity }}>
-      {text}
-    </div>
+    <img ref={dragRef} style={{opacity}} src={src} alt="This be trash"/>
   )
 }
 
