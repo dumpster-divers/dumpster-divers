@@ -2,14 +2,13 @@ import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const ActionButton = ({ color = "yellow", buttonText, onClick}) => {
+const ActionButton = ({ color = "yellow", children, to, buttonText, onClick}) => {
   const colorToHex = {
     yellow: "#FFC045"
   };
   const useStyles = makeStyles(() =>
     createStyles({
       button: {
-        marginTop: "inherit",
         color: "white",
         borderRadius: "37.5px",
         fontSize: "34px",

@@ -13,9 +13,9 @@ const Signin = () => {
       <div className="userForm">
         <SignInForm/>
       </div>
-      <GoBackButton />
+      <GoBackButton/>
     </GameContainer>
   );
-};
+}
 
 export default Signin;

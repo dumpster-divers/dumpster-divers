@@ -38,33 +38,28 @@
 }
 
 #GoBackButton {
-  position: relative;
+  position: absolute;
   width: 88.81px;
   height: 86.11px;
-  left: -598px;
-  top: 0;
+  left: 311.49px;
+  top: 178px;
   filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
 }
-#GoBackButton:hover {
-}
-
 #GoBackButton:active {
   filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
 }
 
-#GoBackButtonA:hover path {
-  fill: #e66e6e;
-}
+#GoBackButtonA:hover path { fill: #FFA4A4 }
 #GoBackButtonA:hover rect { fill: #FFE9E9 }
 
 .heading1 {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 0%;
+  right: 0%;
   top: 37%;
-  bottom: 0;
+  bottom: 0%;
 
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
@@ -85,7 +80,7 @@
   top: 50%;
   bottom: 59.45%;
 
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -93,12 +88,12 @@
   text-align: center;
 }
 
-.userForm {
+.signupbutton {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  bottom: 0;
+  left: 0%;
+  right: 0%;
+  top: 60%;
+  bottom: 0%;
   margin-top: 100px;
 
 }
