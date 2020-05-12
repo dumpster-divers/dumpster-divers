@@ -4,21 +4,26 @@
 
 .yellow-part {
   position: relative;
+  border: black solid;
   align-content: center;
-  border: white solid;
   width: 1279px;
   height: 781px;
   left: -25px;
 }
 
-.yellow-part-game {
+#yellow-part {
   position: relative;
+  border: black solid;
+  align-content: center;
   width: 1279px;
   height: 781px;
   left: -25px;
-  top: -158px;
 }
 
+.modal {
+  position: relative !important;
+  align-content: center;
+}
 
 .App-logo {
   height: 40vmin;
@@ -187,4 +192,26 @@
   right: 0;
   top: 40%;
   margin-top: 100px;
+}
+
+.modal-h1 {
+  position:absolute;
+  width: 358px;
+  height: 61px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+
+  color: #EDEDED;
+
+}
+
+.modal-graphic {
+  border: white solid;
+  position: absolute;
+  left:50%
 }

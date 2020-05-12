@@ -1,16 +1,21 @@
-import React, { userState } from "react";
+import React from "react";
 import GameContainer  from "../shared/GameContainer";
 import GenericPopover from "../shared/GenericPopover";
 import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBin from "./IncorrectBin";
 
+
 const Game = () => {
 	return (
 	  <GameContainer>
+		<div className="yellow-part" id="yellow-part">
 			<GenericPopover popover={HeaderPopover()}>
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>
-			<IncorrectBin/>
+			<div>
+			  <IncorrectBin/>
+			</div>
+		</div>
 		</GameContainer>
 	);
 }
