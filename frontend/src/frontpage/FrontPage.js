@@ -13,6 +13,8 @@ const FrontPage = () => {
       <header className="App-header">
         <GameContainer>
           <img src={logo} className="App-logo" alt="logo" />
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/signin">Sign In</Link>
           <Link to="/game">
             <ActionButton to="/game" buttonText={"Dive In!"}/>
           </Link>
