@@ -2,7 +2,7 @@ import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const ActionButton = ({ color = "yellow", children, to, buttonText, onClick}) => {
+const ActionButton = ({ color = "yellow", buttonText, onClick}) => {
   const colorToHex = {
     yellow: "#FFC045"
   };

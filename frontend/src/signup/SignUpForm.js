@@ -44,8 +44,8 @@ const SignUpForm = () => {
 
   return (
     <>
-      <TextEntry value={value} onChange={onChange} />
-      <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
+      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"}/>
+      <ActionButton buttonText={"Sign Up!"} onClick={handleClick}/>
     </>
   );
 };

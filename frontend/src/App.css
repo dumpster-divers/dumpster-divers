@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.yellow-part {
+  position: relative;
+  align-content: center;
+  width: 1279px;
+  height: 781px;
+  left: -25px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,12 +45,34 @@
   }
 }
 
+.Small-link-div {
+  position: absolute;
+  right:15px;
+  top:5px;
+
+}
+
+.Small-link {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  color: #76603E;
+}
+
 #GoBackButton {
   position: absolute;
   width: 88.81px;
   height: 86.11px;
-  left: 311.49px;
-  top: 178px;
+  left: 0;
+  top: 0;
   filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
 }
 #GoBackButton:active {
@@ -54,21 +84,54 @@
 
 .heading1 {
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 37%;
-  bottom: 0%;
+  left: 0;
+  right: 0;
+  top: 25%;
+  bottom: 0;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
   line-height: 75px;
-/* identical to box height */
 
   text-align: center;
 
   color: #4D4125;
+
+}
+
+.heading-homepage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+
+  text-align: center;
+
+  color: #4D4125;
+
+}
+
+.about-us {
+  color: #4D4125;
+  position: absolute;
+  left: 13.41%;
+  right: 13.41%;
+  top: 300px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
 
 }
 
@@ -77,10 +140,10 @@
   position: absolute;
   left: 13.41%;
   right: 13.41%;
-  top: 50%;
+  top: 40%;
   bottom: 59.45%;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -90,10 +153,49 @@
 
 .signupbutton {
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 60%;
-  bottom: 0%;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: 0;
   margin-top: 100px;
 
 }
+
+.signinbutton {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  margin-top: 100px;
+
+}
+
+.frontpage-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 65%;
+  bottom: 0;
+  margin-top: 100px;
+  z-index: 10;
+}
+
+#mascot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin-top: 100px;
+}
+
+
+.button-container {
+  height:500px;
+  width:500px;
+  border: white solid;
+  position: relative;
+  margin: auto;
+  bottom:0;
+
+  }
