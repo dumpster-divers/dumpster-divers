@@ -12,14 +12,27 @@ const FrontPage = () => {
       <h1>Dumpster Divers</h1>
       <header className="App-header">
         <GameContainer>
-          <img src={logo} className="App-logo" alt="logo" />
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/signin">Sign In</Link>
-          <ActionButton to="/game" buttonText={"Dive In!"}/>
+          <div className="yellow-part">
+            <div className="frontpage-button">
+              <ActionButton to="/game" buttonText={"Dive In!"} />
+            </div>
+            <div id="mascot">
+              <img src={logo} alt="logo" />
+            </div>
+            <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
+            <p className="about-us">about us description coming soon...</p>
+            <div className="Small-link-div">
+              <Link to="/signup" className="Small-link">Sign Up</Link>
+              <Link to="/signin" className="Small-link">Sign In</Link>
+            </div>
+          </div>
         </GameContainer>
       </header>
     </div>
   );
 };
+
+
+
 
 export default FrontPage;
