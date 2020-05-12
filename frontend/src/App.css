@@ -5,7 +5,6 @@
 .yellow-part {
   position: relative;
   align-content: center;
-  position: relative;
   width: 1279px;
   height: 781px;
   left: -25px;
@@ -54,7 +53,7 @@
 }
 
 .Small-link {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -62,8 +61,8 @@
   text-align: center;
   margin-left: 5px;
   margin-right: 5px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 
   color: #76603E;
 }
@@ -72,8 +71,8 @@
   position: absolute;
   width: 88.81px;
   height: 86.11px;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
 }
 #GoBackButton:active {
@@ -85,12 +84,12 @@
 
 .heading1 {
   position: absolute;
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   top: 25%;
-  bottom: 0%;
+  bottom: 0;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
@@ -104,11 +103,11 @@
 
 .heading-homepage {
   position: absolute;
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   top: 150px;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
@@ -127,7 +126,7 @@
   right: 13.41%;
   top: 300px;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -144,7 +143,7 @@
   top: 40%;
   bottom: 59.45%;
 
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -152,40 +151,30 @@
   text-align: center;
 }
 
-.signupbutton {
+.form-module {
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 50%;
-  bottom: 0%;
-  margin-top: 100px;
-
-}
-
-.signinbutton {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 50%;
-  bottom: 0%;
+  left: 0;
+  right: 0;
+  top: 44%;
+  bottom: 0;
   margin-top: 100px;
 
 }
 
 .frontpage-button {
   position: absolute;
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   top: 65%;
-  bottom: 0%;
+  bottom: 0;
   margin-top: 100px;
   z-index: 10;
 }
 
 #mascot {
   position: absolute;
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   top: 40%;
   margin-top: 100px;
 }
@@ -197,6 +186,6 @@
   border: white solid;
   position: relative;
   margin: auto;
-  bottom:0px;
+  bottom:0;
 
   }

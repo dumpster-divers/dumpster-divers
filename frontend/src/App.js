@@ -9,7 +9,6 @@ import Signin from "./signin/Signin";
 export default function App() {
   return (
     <div className="App">
-      <h1>Dumpster Divers</h1>
       <header className="App-header">
         <Router>
           <Switch>
