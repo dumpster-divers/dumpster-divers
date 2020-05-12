@@ -5,10 +5,20 @@
 .yellow-part {
   position: relative;
   align-content: center;
+  border: white solid;
   width: 1279px;
   height: 781px;
   left: -25px;
 }
+
+.yellow-part-game {
+  position: relative;
+  width: 1279px;
+  height: 781px;
+  left: -25px;
+  top: -158px;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -178,14 +188,3 @@
   top: 40%;
   margin-top: 100px;
 }
-
-
-.button-container {
-  height:500px;
-  width:500px;
-  border: white solid;
-  position: relative;
-  margin: auto;
-  bottom:0;
-
-  }
