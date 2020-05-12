@@ -5,6 +5,12 @@ import Timer from "./Timer";
 import GameContainer from "../shared/GameContainer";
 import GenericPopover from "../shared/GenericPopover";
 
+import RecycleBin from "./RecycleBin";
+import TrashBin   from "./TrashBin";
+import Backend    from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
+import Trash           from "./Trash";
+
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(true);
@@ -28,6 +34,13 @@ const Game = () => {
 			<GenericPopover popover={HeaderPopover()}>
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>
+            
+			<DndProvider backend={Backend}>
+				<Trash isGood={true}/>
+				<TrashBin/>
+				<Trash isGood={false}></Trash>
+				<RecycleBin/>
+			</DndProvider>
 		</GameContainer>
 	);
 }
