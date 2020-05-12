@@ -13,7 +13,9 @@ const Timer = ({maxCount, onFinish, enabled}) => {
                 borderRadius: 20,
                 border: "3px solid white",
                 backgroundColor: "rgba(255, 255, 255)", 
-                width: "50%"
+                width: "50%",
+                margin: "0px auto",
+                marginTop: "10px"
             },
             // Progress bar
             bar: {
@@ -30,7 +32,7 @@ const Timer = ({maxCount, onFinish, enabled}) => {
     const [isEnabled, setIsEnabled] = useState(false);
 
     // Make the start time accessible to the interval
-    // https://github.com/cheungseol/cheungseol.github.io/issues/20
+    // https://github.com/facebook/react/issues/14010
     const initTimeRef = createRef();
     initTimeRef.current = Date.now() / 1000;
 

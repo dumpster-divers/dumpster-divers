@@ -1,12 +1,11 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
 
-const ActionButton = ({color="yellow", children, to, buttonText}) => {
+const ActionButton = ({ color = "yellow", buttonText, onClick}) => {
   const colorToHex = {
-    "yellow": "#FFC045",
-  }
+    yellow: "#FFC045"
+  };
   const useStyles = makeStyles(() =>
     createStyles({
       button: {
@@ -19,11 +18,15 @@ const ActionButton = ({color="yellow", children, to, buttonText}) => {
         fontFamily: "Roboto",
         textTransform: "none",
         textDecoration: "none",
-        "&:hover, &$focusVisible": {
-          backgroundColor: "#efb84a"
+        "&:hover, &focusVisible": {
+          backgroundColor: "#efb84a",
+          textDecoration: "none"
         },
         "&:active": {
           boxShadow: "inset 10px 10px 20px #CC9D3F"
+        },
+        "&:visited": {
+          textDecoration: "none"
         }
       },
       link: {
@@ -35,16 +38,17 @@ const ActionButton = ({color="yellow", children, to, buttonText}) => {
   const classes = useStyles();
 
   return (
-    <Link to={to} className={classes.link}>
+    <>
       <Button
         variant="contained"
         color={"primary"}
         size="large"
         className={classes.button}
+        onClick={onClick}
       >
         {buttonText}
       </Button>
-    </Link>
+    </>
   );
 };
 
