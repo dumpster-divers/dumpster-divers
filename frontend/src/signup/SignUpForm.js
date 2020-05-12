@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
 const SignUpForm = () => {
   let [value, setValue] = useState("");
@@ -42,10 +43,24 @@ const SignUpForm = () => {
     return response.json();
   };
 
+
+  const useStyles = makeStyles(() =>
+    createStyles({
+      wow: {
+        marginTop: "15px"
+      }
+    })
+  );
+
+  const classes = useStyles();
+
+
   return (
     <>
-      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"}/>
-      <ActionButton buttonText={"Sign Up!"} onClick={handleClick}/>
+      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"} />
+      <div className={classes.wow}>
+        <ActionButton buttonText={"Sign Up!"} onClick={handleClick}/>
+      </div>
     </>
   );
 };

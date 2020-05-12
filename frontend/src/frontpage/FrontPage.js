@@ -9,7 +9,6 @@ import GameContainer from "../shared/GameContainer";
 const FrontPage = () => {
   return (
     <div className="App">
-      <h1>Dumpster Divers</h1>
       <header className="App-header">
         <GameContainer>
           <div className="yellow-part">
@@ -24,8 +23,12 @@ const FrontPage = () => {
             <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
             <p className="about-us">about us description coming soon...</p>
             <div className="Small-link-div">
-              <Link to="/signup" className="Small-link">Sign Up</Link>
-              <Link to="/signin" className="Small-link">Sign In</Link>
+              <Link to="/signup" className="Small-link">
+                Sign Up
+              </Link>
+              <Link to="/signin" className="Small-link">
+                Sign In
+              </Link>
             </div>
           </div>
         </GameContainer>
@@ -33,8 +36,5 @@ const FrontPage = () => {
     </div>
   );
 };
-
-
-
 
 export default FrontPage;
