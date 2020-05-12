@@ -1,6 +1,6 @@
 import React from "react";
 import GameContainer from "../shared/GameContainer";
-import ActionButton from "../shared/ActionButton";
+import SignInForm from "./SignInForm";
 import GoBackButton from "../shared/GoBackButton";
 
 const Signin = () => {
@@ -11,7 +11,7 @@ const Signin = () => {
         this is the unique username given to you when you signed up
       </p>
       <div className="userForm">
-        <ActionButton to="/game" />
+        <SignInForm/>
       </div>
       <GoBackButton />
     </GameContainer>

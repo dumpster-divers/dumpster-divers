@@ -54,7 +54,7 @@ const SignUpForm = () => {
 
   return (
     <>
-      <TextEntry value={value} onChange={onChange} />
+      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"} />
       <div className={classes.wow}>
         <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
       </div>
