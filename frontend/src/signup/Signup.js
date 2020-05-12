@@ -12,7 +12,7 @@ const Signup = () => {
           it's quick and easy, just enter your name (this will be shown publicly
           in highscores)
         </p>
-        <div className="signinbutton">
+        <div className="form-module">
           <SignUpForm />
         </div>
         <GoBackButton />

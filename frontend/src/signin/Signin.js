@@ -12,8 +12,8 @@ const Signin = () => {
           <p className="text1">
             this is the unique username given to you when you signed up
           </p>
-          <div className="signinbutton">
-            <SignInForm/>
+          <div className="form-module">
+            <SignInForm />
           </div>
           <GoBackButton />
         </div>
