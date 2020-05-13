@@ -16,7 +16,6 @@ const TrashBin = () => {
   if (isOver) {
     colo = "green";
   }
-  console.log(colo);
 
   return (
     <img style={{backgroundColor: colo}} ref={drop} src={bin} alt="hey"/>

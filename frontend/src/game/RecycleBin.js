@@ -17,7 +17,6 @@ const RecycleBin = () => {
     color = "green";
   }
 
-
   return (
     <img style={{backgroundColor: color}} ref={drop} src={bin} alt="hey"/>
   )
