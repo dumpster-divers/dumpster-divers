@@ -7,7 +7,6 @@ import trash_2           from "../assets/trash_2.png";
  * Your Component
  */
 const Trash = ({isGood}) => {
-
   const text = isGood ? "good" : "bad";
   const src = isGood ? trash_1 : trash_2;
 
@@ -17,7 +16,6 @@ const Trash = ({isGood}) => {
       opacity: monitor.isDragging() ? 0 : 1,
     }),
   })
-
 
   return (
     <img ref={dragRef} style={{opacity}} src={src} alt="This be trash"/>
