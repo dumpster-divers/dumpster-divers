@@ -2,6 +2,7 @@ import React from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import SignUpForm from "./SignUpForm";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -15,7 +16,9 @@ const Signup = () => {
         <div className="form-module">
           <SignUpForm />
         </div>
-        <GoBackButton />
+        <Link to="/">
+          <GoBackButton />
+        </Link>
       </div>
     </GameContainer>
   );
