@@ -62,7 +62,7 @@ const IncorrectBinModal = ({trashInfo}) => {
           </div>
             <h2 className="modal-title">Oops</h2>
             <p className="modal-content">{trashInfo}</p>
-            <p className="modal-clickout">click anywhere to continue</p>
+            <p className="modal-clickout">click anywhere else to continue</p>
           </div>
         </Fade>
       </Modal>
