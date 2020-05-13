@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   paper: {
-    backgroundColor: 'rgba(97, 74, 52, 0.15)',
+    backgroundColor: 'rgba(220, 148, 81, 0.8)',
     border: '0px',
     outline: 0,
     borderRadius: '40px',
