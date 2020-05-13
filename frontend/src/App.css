@@ -232,3 +232,16 @@
   width:23%;
 }
 
+.modal-sadface {
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 62px;
+  color: #EDEDED;
+  margin-left: auto;
+  margin-right: auto;
+  width:23%;
+}

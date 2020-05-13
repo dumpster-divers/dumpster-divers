@@ -2,6 +2,7 @@ import React from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import SignInForm from "./SignInForm";
+import CantFindUserModal from "./CantFindUserModal";
 
 const Signin = () => {
   return (
@@ -16,6 +17,7 @@ const Signin = () => {
             <SignInForm />
           </div>
           <GoBackButton />
+          <CantFindUserModal/>
         </div>
       </GameContainer>
     </div>
