@@ -3,13 +3,11 @@ import { useDrag } from 'react-dnd'
 import { ItemTypes } from './Constants'
 import trash_1           from "../assets/trash_1.png";
 import trash_2           from "../assets/trash_2.png";
-/**
- * Your Component
- */
+
 const Trash = ({isGood}) => {
   const text = isGood ? "good" : "bad";
   const src = isGood ? trash_1 : trash_2;
-
+  
   const [{ opacity }, dragRef] = useDrag({
     item: { type: text },
     collect: monitor => ({
