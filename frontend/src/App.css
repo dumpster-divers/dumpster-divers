@@ -4,25 +4,10 @@
 
 .yellow-part {
   position: relative;
-  border: black solid;
   align-content: center;
   width: 1279px;
   height: 781px;
   left: -25px;
-}
-
-#yellow-part {
-  position: relative;
-  border: black solid;
-  align-content: center;
-  width: 1279px;
-  height: 781px;
-  left: -25px;
-}
-
-.modal {
-  position: relative !important;
-  align-content: center;
 }
 
 .App-logo {
@@ -194,24 +179,54 @@
   margin-top: 100px;
 }
 
-.modal-h1 {
-  position:absolute;
-  width: 358px;
+.modal-title {
+  padding: 10,10,10,10;
   height: 61px;
+  text-align: center;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
-  line-height: 56px;
+  line-height: 70px;
+  color: #EDEDED;
+
+}
+
+.modal-content {
+  width: 400px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 38px;
+  border: 0pt;
+  background-color: transparent;
   text-align: center;
 
   color: #EDEDED;
 
 }
 
+.modal-clickout {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+
+  color: #EDEDED;
+
+  bottom:0%;
+
+
+}
+
 .modal-graphic {
-  border: white solid;
-  position: absolute;
-  left:50%
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:23%;
 }
