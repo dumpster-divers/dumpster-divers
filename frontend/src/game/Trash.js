@@ -1,6 +1,5 @@
 import React from "react";
 import { useDrag } from 'react-dnd'
-import { ItemTypes } from './Constants'
 import trash_1           from "../assets/trash_1.png";
 import trash_2           from "../assets/trash_2.png";
 
