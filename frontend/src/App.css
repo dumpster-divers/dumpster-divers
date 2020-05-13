@@ -180,27 +180,29 @@
 }
 
 .modal-title {
-  padding: 10,10,10,10;
-  height: 61px;
+  padding: 0px, 0px, ,0px, 0px;
+  margin-top: 0px;
+  margin-bottom: -20px;
+  height:62px;
+  display: block;
   text-align: center;
-
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 70px;
+  font-size: 60px;
+  line-height: 62px;
   color: #EDEDED;
 
 }
 
 .modal-content {
   width: 400px;
+  display: block;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   line-height: 38px;
-  border: 0pt;
   background-color: transparent;
   text-align: center;
 
@@ -209,7 +211,6 @@
 }
 
 .modal-clickout {
-
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
