@@ -38,7 +38,7 @@ const Game = () => {
 			<DndProvider backend={Backend}>
 				<Trash isGood={true}/>
 				<TrashBin/>
-				<Trash isGood={false}></Trash>
+				<Trash isGood={false}/>
 				<RecycleBin/>
 			</DndProvider>
 		</GameContainer>
