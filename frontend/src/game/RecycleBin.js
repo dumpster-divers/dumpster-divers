@@ -12,13 +12,10 @@ const RecycleBin = () => {
     })
   })
 
-  let color = "red";
-  if (isOver) {
-    color = "green";
-  }
+  let color = (isOver) ? "green" : "red";
 
   return (
-    <img style={{backgroundColor: color}} ref={drop} src={bin} alt="hey"/>
+    <img style={{backgroundColor: color}} ref={drop} src={bin} alt="Recycle Bin"/>
   )
 }
 
