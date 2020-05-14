@@ -10,6 +10,7 @@ const TextEntry = ({value, onChange, placeholderText}) => {
         height: "50px",
         borderRadius: "50px",
         padding:"30px",
+        outline: 0,
         fontFamily:"Roboto",
         fontSize:"20px",
         fontWeight:"Bold",
