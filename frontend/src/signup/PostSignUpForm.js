@@ -1,18 +1,18 @@
 import TextEntry from "../shared/TextEntry";
 import React from "react";
-import Cookies from "js-cookie";
 import ActionButton from "../shared/ActionButton";
+import {getName, getUsername} from "../utilities/userManager";
 
 const PostSignUpForm = () => {
   const copyUsername = () => {
-    navigator.clipboard.writeText(Cookies.get("username"))
+    navigator.clipboard.writeText(getUsername())
       .then(null, null)
 
   };
   return (
     <>
       <TextEntry
-        value={Cookies.get("username")}
+        value={getName()}
         onChange={null}
         isDisabled={true}
       />

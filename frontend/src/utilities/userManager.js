@@ -25,9 +25,13 @@ const createUserCookie = (res, err) => {
   }
 };
 
-const getLoggedInUserInfo = () => {
-  return Cookies.get();
+const getUsername = () => {
+  return Cookies.get('username');
 };
+
+const getName = () => {
+  return Cookies.get('name')
+}
 
 const logoutUser = () => {
   Cookies.remove("name");
@@ -38,4 +42,4 @@ const logoutUser = () => {
 const isLoggedIn = () => {
   return Cookies.get('username') !== undefined;
 }
-export { registerUser, createUserCookie, getLoggedInUserInfo , logoutUser, isLoggedIn};
+export { registerUser, createUserCookie, getName, getUsername, logoutUser, isLoggedIn};
