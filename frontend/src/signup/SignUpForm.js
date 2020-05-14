@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import {registerUser} from "../utilities/userManager";
 
 const SignUpForm = () => {
   let [value, setValue] = useState("");
@@ -12,37 +13,9 @@ const SignUpForm = () => {
 
   const handleClick = () => {
     if (value.length > 0) {
-      registerUser();
+      registerUser(value);
     }
   };
-
-  const registerUser = () => {
-    sendRegisterRequest().then((res, err) => {
-      if (!err) {
-        console.log(res.username);
-      } else {
-        console.log("Error getting username");
-      }
-    });
-  };
-
-  const sendRegisterRequest = async () => {
-    let body = {
-      name: value,
-      processedTotal: 0 // TODO: Add this
-    };
-
-    const response = await fetch("api/users/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    });
-
-    return response.json();
-  };
-
 
   const useStyles = makeStyles(() =>
     createStyles({
