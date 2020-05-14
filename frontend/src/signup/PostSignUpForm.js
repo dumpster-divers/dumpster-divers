@@ -1,7 +1,7 @@
 import TextEntry from "../shared/TextEntry";
 import React from "react";
 import ActionButton from "../shared/ActionButton";
-import {getName, getUsername} from "../utilities/userManager";
+import {getUsername} from "../utilities/userManager";
 
 const PostSignUpForm = () => {
   const copyUsername = () => {
@@ -12,7 +12,7 @@ const PostSignUpForm = () => {
   return (
     <>
       <TextEntry
-        value={getName()}
+        value={getUsername()}
         onChange={null}
         isDisabled={true}
       />
