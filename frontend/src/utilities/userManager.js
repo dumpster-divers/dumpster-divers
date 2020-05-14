@@ -1,14 +1,5 @@
-const registerUser = (name) => {
-  sendRegisterRequest(name).then((res, err) => {
-    if (!err) {
-      console.log(res.username);
-    } else {
-      console.log("Error getting username");
-    }
-  });
-};
-
-const sendRegisterRequest = async (name) => {
+import Cookies from "js-cookie";
+const registerUser = async name => {
   let body = {
     name: name,
     processedTotal: 0 // TODO: Add this
@@ -25,4 +16,26 @@ const sendRegisterRequest = async (name) => {
   return response.json();
 };
 
-export {registerUser};
+const createUserCookie = (res, err) => {
+  if (!err) {
+    Cookies.set("name", res.name);
+    Cookies.set("username", res.username);
+  } else {
+    console.log("error");
+  }
+};
+
+const getLoggedInUserInfo = () => {
+  return Cookies.get();
+};
+
+const logoutUser = () => {
+  Cookies.remove("name");
+  Cookies.remove("username");
+};
+
+//Return whether someone is logged in
+const isLoggedIn = () => {
+  return Cookies.get('username') !== undefined;
+}
+export { registerUser, createUserCookie, getLoggedInUserInfo , logoutUser, isLoggedIn};

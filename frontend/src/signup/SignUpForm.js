@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
-import {registerUser} from "../utilities/userManager";
+import {createUserCookie, registerUser} from "../utilities/userManager";
 
 const SignUpForm = () => {
   let [value, setValue] = useState("");
@@ -13,7 +13,8 @@ const SignUpForm = () => {
 
   const handleClick = () => {
     if (value.length > 0) {
-      registerUser(value);
+      registerUser(value)
+        .then(createUserCookie);
     }
   };
 
@@ -27,12 +28,15 @@ const SignUpForm = () => {
 
   const classes = useStyles();
 
-
   return (
     <>
-      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"} />
+      <TextEntry
+        value={value}
+        onChange={onChange}
+        placeholderText={"Your Name"}
+      />
       <div className={classes.wow}>
-        <ActionButton buttonText={"Sign Up!"} onClick={handleClick}/>
+        <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
       </div>
     </>
   );

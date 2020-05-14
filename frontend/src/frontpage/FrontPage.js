@@ -23,7 +23,7 @@ const FrontPage = () => {
             </div>
             <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
             <p className="about-us">about us description coming soon...</p>
-            <LoginModule loggedIn={false}/>
+            <LoginModule/>
           </div>
         </GameContainer>
       </header>
