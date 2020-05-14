@@ -3,7 +3,7 @@ import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { createUserCookie, registerUser } from "../utilities/userManager";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const SignUpForm = () => {
   let [value, setValue] = useState("");
@@ -21,6 +21,13 @@ const SignUpForm = () => {
     }
   };
 
+  const handleSubmit = e => {
+    //Prevent page refresh
+    e.preventDefault();
+    //Do the same thing as submit button
+    handleClick();
+  };
+
   const useStyles = makeStyles(() =>
     createStyles({
       wow: {
@@ -36,12 +43,13 @@ const SignUpForm = () => {
       <TextEntry
         value={value}
         onChange={onChange}
+        onSubmit={handleSubmit}
         placeholderText={"Your Name"}
       />
       <div className={classes.wow}>
         <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
       </div>
-      {redirect && <Redirect to="/postsignup"/> }
+      {redirect && <Redirect to="/postsignup" />}
     </>
   );
 };

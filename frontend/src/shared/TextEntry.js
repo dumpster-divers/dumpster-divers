@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const TextEntry = ({value, onChange, placeholderText, isDisabled}) => {
+const TextEntry = ({value, onChange, placeholderText, isDisabled, onSubmit}) => {
   const useStyles = makeStyles(() =>
     createStyles({
       textEntry: {
@@ -23,7 +23,7 @@ const TextEntry = ({value, onChange, placeholderText, isDisabled}) => {
   let classes = useStyles();
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         value={value}
