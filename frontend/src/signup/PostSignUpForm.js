@@ -11,7 +11,7 @@ const PostSignUpForm = () => {
         isDisabled={true}
       />
     </>
-  );
+);
 
 }
 export default PostSignUpForm;
