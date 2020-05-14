@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const TextEntry = ({value, onChange, placeholderText}) => {
+const TextEntry = ({value, onChange, placeholderText, isDisabled}) => {
   const useStyles = makeStyles(() =>
     createStyles({
       textEntry: {
@@ -30,6 +30,7 @@ const TextEntry = ({value, onChange, placeholderText}) => {
         onChange={onChange}
         placeholder={placeholderText}
         className={classes.textEntry}
+        disabled={isDisabled}
       />
     </form>
   );

@@ -5,6 +5,7 @@ import FrontPage from "./frontpage/FrontPage";
 import Game from "./game/Game";
 import Signup from "./signup/Signup";
 import Signin from "./signin/Signin";
+import PostSignUp from "./signup/PostSignUp";
 
 export default function App() {
   return (
@@ -20,6 +21,9 @@ export default function App() {
             </Route>
             <Route path="/signin">
               <Signin />
+            </Route>
+            <Route path="/postsignup">
+              <PostSignUp/>
             </Route>
             <Route path="/">
               <FrontPage />
