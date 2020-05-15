@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const TextEntry = ({value, onChange, placeholderText}) => {
+const TextEntry = ({value, onChange, placeholderText, isDisabled, onSubmit}) => {
   const useStyles = makeStyles(() =>
     createStyles({
       textEntry: {
@@ -10,6 +10,7 @@ const TextEntry = ({value, onChange, placeholderText}) => {
         height: "50px",
         borderRadius: "50px",
         padding:"30px",
+        outline: 0,
         fontFamily:"Roboto",
         fontSize:"20px",
         fontWeight:"Bold",
@@ -22,13 +23,14 @@ const TextEntry = ({value, onChange, placeholderText}) => {
   let classes = useStyles();
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         value={value}
         onChange={onChange}
         placeholder={placeholderText}
         className={classes.textEntry}
+        disabled={isDisabled}
       />
     </form>
   );

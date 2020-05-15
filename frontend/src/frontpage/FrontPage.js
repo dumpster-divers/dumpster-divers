@@ -5,6 +5,7 @@ import ActionButton from "../shared/ActionButton";
 
 import { Link } from "react-router-dom";
 import GameContainer from "../shared/GameContainer";
+import LoginModule from "./LoginModule";
 
 const FrontPage = () => {
   return (
@@ -22,14 +23,7 @@ const FrontPage = () => {
             </div>
             <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
             <p className="about-us">about us description coming soon...</p>
-            <div className="Small-link-div">
-              <Link to="/signup" className="Small-link">
-                Sign Up
-              </Link>
-              <Link to="/signin" className="Small-link">
-                Sign In
-              </Link>
-            </div>
+            <LoginModule/>
           </div>
         </GameContainer>
       </header>

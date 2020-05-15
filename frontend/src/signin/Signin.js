@@ -2,6 +2,8 @@ import React from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import SignInForm from "./SignInForm";
+import CantFindUserModal from "./CantFindUserModal";
+import {Link} from "react-router-dom";
 
 const Signin = () => {
   return (
@@ -15,7 +17,10 @@ const Signin = () => {
           <div className="form-module">
             <SignInForm />
           </div>
-          <GoBackButton />
+          <Link to="/">
+            <GoBackButton />
+          </Link>
+          <CantFindUserModal/>
         </div>
       </GameContainer>
     </div>
