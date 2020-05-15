@@ -4,9 +4,10 @@ import { ItemTypes }      from './Constants'
 import bin           from "../assets/bin_recycle_orange_1.png";
 import "./bin.css";
 
-const RecycleBin = () => {
+const RecycleBin = (props) => {
   const [{isOver}, drop] = useDrop({
-    accept: ItemTypes.GOOD,
+    accept: "can",
+    drop: (x, y) => props.onDrop(x, y),
     collect: (monitor) => ({
       isOver: !!monitor.isOver()
     })

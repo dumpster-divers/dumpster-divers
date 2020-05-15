@@ -21,6 +21,11 @@ const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(true);
 
+	const handleDrop = (x, y) => {
+		console.log("HELLO!");
+		console.log(x, y);
+	}
+
 	const gameOver = () => {
 		alert("Timer is done!");
 		setIsTimerOn(false);
@@ -41,10 +46,10 @@ const Game = () => {
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>     
 			<DndProvider backend={Backend}>
-				<Trash isGood={true}/>
-				<TrashBin/>
-				<Trash isGood={false}/>
-				<RecycleBin/>
+				<Trash/>
+				<TrashBin onDrop={handleDrop}/>
+				<Trash isGood={false} />
+				<RecycleBin onDrop={handleDrop}/>
 			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info}/>
 		</GameContainer>
