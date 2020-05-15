@@ -5,7 +5,7 @@ import ActionButton from "../shared/ActionButton";
 import { attemptLogin, createUserCookie } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
-const SignInForm = () => {
+const SignInForm = ({onError}) => {
   let [value, setValue] = useState("");
   let [redirect, setRedirect] = useState(false);
 
@@ -17,11 +17,11 @@ const SignInForm = () => {
     if (value.length > 0) {
       attemptLogin(value)
         .then(createUserCookie)
-        .then(() => setRedirect(true))
-        .catch(() => {console.log("yowza")})
+        .then(redirectHome)
+        .catch(onError)
     }
   };
-
+  const redirectHome = () => setRedirect(true);
   const useStyles = makeStyles(() =>
     createStyles({
       wow: {

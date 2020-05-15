@@ -46,10 +46,10 @@ const isLoggedIn = () => {
 const attemptLogin = async (username) => {
   let url = "/api/users/login?username=" + username;
   console.log(url)
-  let response = await fetch(url).json();
+  let response = await fetch(url);
 
   return new Promise((resolve, reject) => {
-    response.then(
+    response.json().then(
       (res, err) => {
         if (res.username === undefined) {
           reject()
