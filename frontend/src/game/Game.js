@@ -21,14 +21,13 @@ const trashApple = {
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
+	const [currentTrash, setCurrentTrash] = useState(getTrash())
 
-	let trashElement;
+	let trashElement = <Trash currentTrash={currentTrash} />;
 	const handleDrop = (x, y) => {
-		let currentTrash = getTrash();
-		trashElement = <Trash currentTrash={currentTrash} />
+		setCurrentTrash(getTrash());
+		trashElement = <Trash id={currentTrash.name} currentTrash={currentTrash} />
 	}
-
-	handleDrop();
 
 	const gameOver = () => {
 		alert("Timer is done!");
