@@ -5,8 +5,9 @@ import trash_2     from "../assets/trash_2.png";
 import {ItemTypes} from "./Constants";
 
 const Trash = ({currentTrash}) => {
+  console.log(currentTrash["name"]);
   const [{ opacity }, dragRef] = useDrag({
-    item: { type: currentTrash["name"] },
+    item: { type: "a" },
     collect: monitor => ({
       opacity: monitor.isDragging() ? 0 : 1,
     }),

@@ -21,13 +21,14 @@ const trashApple = {
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
-	const [currentTrash, setCurrentTrash] = useState(getTrash());
 
+	let trashElement;
 	const handleDrop = (x, y) => {
-		console.log(x, y);
-		console.log(currentTrash);
-		setCurrentTrash(getTrash());
+		let currentTrash = getTrash();
+		trashElement = <Trash currentTrash={currentTrash} />
 	}
+
+	handleDrop();
 
 	const gameOver = () => {
 		alert("Timer is done!");
@@ -49,7 +50,7 @@ const Game = () => {
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>     
 			<DndProvider backend={Backend}>
-				<Trash currentTrash={currentTrash} />
+				{trashElement}
 				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
 			</DndProvider>
