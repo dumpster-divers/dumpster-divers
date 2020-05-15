@@ -117,7 +117,14 @@
   top: 44%;
   bottom: 0;
   margin-top: 100px;
+}
 
+.dive-in {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .frontpage-button {
@@ -135,7 +142,13 @@
   left: 0;
   right: 0;
   top: 40%;
-  margin-top: 100px;
+  margin: 100px auto 0px auto;
+}
+
+@media (max-device-width: 500px) {
+  #mascot img {
+    transform: scale(0.5, 0.5);
+  }
 }
 
 .modal-title {

@@ -5,7 +5,9 @@ const TextEntry = ({value, onChange, placeholderText, isDisabled, onSubmit}) => 
   const useStyles = makeStyles(() =>
     createStyles({
       textEntry: {
-        width: "400px",
+        minWidth: "200px",
+        maxWidth: "400px",
+        width: "35%",
         backgroundColor: "white",
         height: "50px",
         borderRadius: "50px",
