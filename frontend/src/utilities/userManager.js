@@ -46,9 +46,19 @@ const isLoggedIn = () => {
 const attemptLogin = async (username) => {
   let url = "/api/users/login?username=" + username;
   console.log(url)
-  let response = await fetch(url);
+  let response = await fetch(url).json();
 
-  return response.json();
+  return new Promise((resolve, reject) => {
+    response.then(
+      (res, err) => {
+        if (res.username === undefined) {
+          reject()
+        } else {
+          resolve(res);
+        }
+      }
+    )
+  })
 };
 
 export {

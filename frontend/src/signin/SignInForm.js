@@ -17,7 +17,8 @@ const SignInForm = () => {
     if (value.length > 0) {
       attemptLogin(value)
         .then(createUserCookie)
-        .then(() => setRedirect(true));
+        .then(() => setRedirect(true))
+        .catch(() => {console.log("yowza")})
     }
   };
 
