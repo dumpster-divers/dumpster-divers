@@ -7,7 +7,7 @@ import Timer from "./Timer";
 
 import RecycleBin      from "./RecycleBin";
 import TrashBin        from "./TrashBin";
-//import Backend         from 'react-dnd-html5-backend'
+import Backend         from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {getTrash}      from "./GameUtil";
