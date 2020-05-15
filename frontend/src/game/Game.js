@@ -12,12 +12,6 @@ import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {getTrash}      from "./GameUtil";
 
-import TouchBackend from 'react-dnd-touch-backend'
-
-const TouchBackendOptions = {
-	enableMouseEvents: true
-};
-
 //dummy trash object for now
 const trashApple = {
 	id: 1,
@@ -69,7 +63,7 @@ const Game = () => {
 			<GenericPopover popover={HeaderPopover()}>
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>     
-			<DndProvider backend={TouchBackend} options={TouchBackendOptions}>
+			<DndProvider backend={Backend}>
 				{trashElement}
 				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
