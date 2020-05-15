@@ -6,16 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.yellow-part {
-  position: relative;
-  align-content: center;
-/*   width: 67%;
-  height: 72%; */
-  left: -25px;
 }
 
 .App-link {
