@@ -179,13 +179,69 @@
   margin-top: 100px;
 }
 
+.modal-title {
+  padding: 0px, 0px, ,0px, 0px;
+  margin-top: 0px;
+  margin-bottom: -20px;
+  height:62px;
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 62px;
+  color: #EDEDED;
 
-.button-container {
-  height:500px;
-  width:500px;
-  border: white solid;
-  position: relative;
-  margin: auto;
-  bottom:0;
+}
 
- }
+.modal-content {
+  width: 400px;
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 38px;
+  background-color: transparent;
+  text-align: center;
+
+  color: #EDEDED;
+
+}
+
+.modal-clickout {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+
+  color: #EDEDED;
+
+  bottom:0%;
+
+
+}
+
+.modal-graphic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:23%;
+}
+
+.modal-sadface {
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 62px;
+  color: #EDEDED;
+  margin-left: auto;
+  margin-right: auto;
+  width:23%;
+}
