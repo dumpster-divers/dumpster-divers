@@ -59,10 +59,7 @@
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 5px;
 
   color: #76603E;
 }
@@ -186,7 +183,7 @@
   height:62px;
   display: block;
   text-align: center;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;
@@ -198,7 +195,7 @@
 .modal-content {
   width: 400px;
   display: block;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
@@ -211,7 +208,7 @@
 }
 
 .modal-clickout {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
@@ -235,7 +232,7 @@
 .modal-sadface {
   display: block;
   text-align: center;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;

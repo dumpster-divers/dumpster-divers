@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createUserCookie, registerUser } from "../utilities/userManager";
+import { Redirect } from "react-router-dom";
 
 const SignUpForm = () => {
   let [value, setValue] = useState("");
+  let [redirect, setRedirect] = useState(false);
 
   const onChange = event => {
     setValue(event.target.value);
@@ -12,37 +15,18 @@ const SignUpForm = () => {
 
   const handleClick = () => {
     if (value.length > 0) {
-      registerUser();
+      registerUser(value)
+        .then(createUserCookie)
+        .then(() => setRedirect(true));
     }
   };
 
-  const registerUser = () => {
-    sendRegisterRequest().then((res, err) => {
-      if (!err) {
-        console.log(res.username);
-      } else {
-        console.log("Error getting username");
-      }
-    });
+  const handleSubmit = e => {
+    //Prevent page refresh
+    e.preventDefault();
+    //Do the same thing as submit button
+    handleClick();
   };
-
-  const sendRegisterRequest = async () => {
-    let body = {
-      name: value,
-      processedTotal: 0 // TODO: Add this
-    };
-
-    const response = await fetch("api/users/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    });
-
-    return response.json();
-  };
-
 
   const useStyles = makeStyles(() =>
     createStyles({
@@ -54,13 +38,18 @@ const SignUpForm = () => {
 
   const classes = useStyles();
 
-
   return (
     <>
-      <TextEntry value={value} onChange={onChange} placeholderText={"Your Name"} />
+      <TextEntry
+        value={value}
+        onChange={onChange}
+        onSubmit={handleSubmit}
+        placeholderText={"Your Name"}
+      />
       <div className={classes.wow}>
-        <ActionButton buttonText={"Sign Up!"} onClick={handleClick}/>
+        <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
       </div>
+      {redirect && <Redirect to="/postsignup" />}
     </>
   );
 };
