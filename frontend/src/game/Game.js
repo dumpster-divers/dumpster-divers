@@ -5,13 +5,17 @@ import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import Timer from "./Timer";
 
+import RecycleBin from "./RecycleBin";
+import TrashBin   from "./TrashBin";
+import Backend    from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
+import Trash           from "./Trash";
+
 //dummy trash object for now
 const trashApple = {
 	id: 1,
 	info: "this is why you're wrong blah blah blah blah",
 }
-
-
 
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
@@ -35,7 +39,13 @@ const Game = () => {
 			<button onClick={() => newGame(10)}>Start a new game</button>
 			<GenericPopover popover={HeaderPopover()}>
 				<h1>This will be the <em>GAME</em> page eventually</h1>
-			</GenericPopover>
+			</GenericPopover>     
+			<DndProvider backend={Backend}>
+				<Trash isGood={true}/>
+				<TrashBin/>
+				<Trash isGood={false}/>
+				<RecycleBin/>
+			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info}/>
 		</GameContainer>
 	);
