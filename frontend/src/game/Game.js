@@ -5,19 +5,17 @@ import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import Timer from "./Timer";
 
-//dummy trash object for now
-const trashApple = {
-	id: 1,
-	info: "this is why you're wrong blah blah blah blah",
-}
-
-
-
 import RecycleBin from "./RecycleBin";
 import TrashBin   from "./TrashBin";
 import Backend    from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
+
+//dummy trash object for now
+const trashApple = {
+	id: 1,
+	info: "this is why you're wrong blah blah blah blah",
+}
 
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
