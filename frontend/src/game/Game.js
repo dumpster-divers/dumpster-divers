@@ -45,7 +45,6 @@ const Game = () => {
 	}
 
 	const gameOver = () => {
-		alert("Timer is done!");
 		setIsTimerOn(false);
 		setIsStarted(false);
 	}
