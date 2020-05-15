@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TallyCounter = props => {
+const TallyCounter = () => {
   const [count, setCount] = useState(0);
   //Mount
   useEffect(() => {
@@ -14,27 +14,28 @@ const TallyCounter = props => {
         console.log(res);
         return setCount(res[0].globalRemaining);
       });
-  }
+  };
 
   const decrementDBCount = () => {
     fetch("api/game/add-session-stats", {
-      method:'POST',
+      method: "POST",
       headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-          userId: 0,
-          count: 1
+        userId: 0,
+        count: 1
       })
-    }).then((res) => {updateCount()});
-
-  }
+    }).then(() => {
+      updateCount();
+    });
+  };
 
   const handleIncrementClick = () => {
     setCount(count - 1);
     decrementDBCount();
-  }
+  };
 
   return (
     <>
