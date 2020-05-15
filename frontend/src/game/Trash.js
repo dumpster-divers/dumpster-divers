@@ -4,16 +4,16 @@ import trash_1     from "../assets/trash_1.png";
 import trash_2     from "../assets/trash_2.png";
 import {ItemTypes} from "./Constants";
 
-const Trash = ({TYPE}) => {
+const Trash = ({currentTrash}) => {
   const [{ opacity }, dragRef] = useDrag({
-    item: { type: "can" },
+    item: { type: currentTrash["name"] },
     collect: monitor => ({
       opacity: monitor.isDragging() ? 0 : 1,
     }),
   })
-  
+
   return (
-    <img ref={dragRef} style={{opacity}} src={ItemTypes["can"]} alt="This be trash"/>
+    <img ref={dragRef} style={{opacity}} src={ItemTypes[currentTrash.name]} alt="This be trash"/>
   )
 }
 

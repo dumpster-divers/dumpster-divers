@@ -5,11 +5,12 @@ import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import Timer from "./Timer";
 
-import RecycleBin from "./RecycleBin";
-import TrashBin   from "./TrashBin";
-import Backend    from 'react-dnd-html5-backend'
+import RecycleBin      from "./RecycleBin";
+import TrashBin        from "./TrashBin";
+import Backend         from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
+import {getTrash}      from "./GameUtil";
 
 //dummy trash object for now
 const trashApple = {
@@ -20,10 +21,10 @@ const trashApple = {
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(true);
+	const [currentTrash, setCurrentTrash] = useState(getTrash());
 
 	const handleDrop = (x, y) => {
-		console.log("HELLO!");
-		console.log(x, y);
+		setCurrentTrash(getTrash());
 	}
 
 	const gameOver = () => {
@@ -48,7 +49,7 @@ const Game = () => {
 			<DndProvider backend={Backend}>
 				<Trash/>
 				<TrashBin onDrop={handleDrop}/>
-				<Trash isGood={false} />
+				<Trash currentTrash={currentTrash} />
 				<RecycleBin onDrop={handleDrop}/>
 			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info}/>
