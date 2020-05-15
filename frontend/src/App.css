@@ -48,6 +48,21 @@
 #GoBackButtonA:hover path { fill: #FFA4A4 }
 #GoBackButtonA:hover rect { fill: #FFE9E9 }
 
+#ExitGameButton {
+  position: absolute;
+  width: 88.81px;
+  height: 86.11px;
+  left: 0;
+  top: 0;
+  filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
+}
+#ExitGameButton:active {
+  filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
+}
+
+#ExitGameButtonA:hover path { fill: #FFA4A4 }
+#ExitGameButtonA:hover rect { fill: #FFE9E9 }
+
 .heading1 {
   position: absolute;
   left: 0;
@@ -61,6 +76,24 @@
   font-size: calc(10px + 6vmin);
   line-height: calc(10px + 6mvin);
   text-align: center;
+  color: #4D4125;
+}
+
+.heading-postgame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  bottom: 0;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+
+  text-align: center;
+
   color: #4D4125;
 }
 
@@ -213,4 +246,39 @@
   margin-left: auto;
   margin-right: auto;
   width:23%;
+}
+
+.diver-cert-card {
+  position: absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top:33.5%;
+  left:27.5%;
+  width:45%;
+}
+
+.postgame-content {
+  color: #4D4125;
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  right: 10%;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.play-again-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 65%;
+  bottom: 0;
+  margin-top: 100px;
+  z-index: 10;
 }
