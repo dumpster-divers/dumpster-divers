@@ -1,6 +1,6 @@
 import React from "react";
 
-var GoBackButton = function(){
+const GoBackButton = function(){
   return(
     <svg id="GoBackButton" width="89" height="87" viewBox="0 0 89 87" fill="none" xmlns="http://www.w3.org/2000/svg">
       <a id="GoBackButtonA" href="/">
