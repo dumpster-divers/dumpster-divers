@@ -5,11 +5,12 @@ import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import Timer from "./Timer";
 
-import RecycleBin from "./RecycleBin";
-import TrashBin   from "./TrashBin";
-import Backend    from 'react-dnd-html5-backend'
+import RecycleBin      from "./RecycleBin";
+import TrashBin        from "./TrashBin";
+import Backend         from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
+import {getTrash}      from "./GameUtil";
 
 //dummy trash object for now
 const trashApple = {
@@ -19,16 +20,40 @@ const trashApple = {
 
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
-	const [isTimerOn, setIsTimerOn] = useState(true);
+	const [isTimerOn, setIsTimerOn] = useState(false);
+	const [currentTrash, setCurrentTrash] = useState(getTrash())
+	const [points, setPoints] = useState(0);
+	const [isModalOpen, setModalOpen] = useState(false);
+	const [isStarted, setIsStarted] = useState(false);
+
+	let trashElement = <Trash currentTrash={currentTrash} />;
+	const handleDrop = (x, y, recycable) => {
+		console.log(x, y);
+		setCurrentTrash(getTrash());
+		trashElement = (<Trash currentTrash={currentTrash}/>);
+		if (x.recyclable === recycable) {
+			setPoints(points => points + 1);
+		} else {
+			setModalOpen(true);
+			setIsStarted(false);
+			setIsTimerOn(false);
+		}
+	}
+
+	const handleModalClose = () => {
+		setModalOpen(false);
+	}
 
 	const gameOver = () => {
-		alert("Timer is done!");
 		setIsTimerOn(false);
+		setIsStarted(false);
 	}
 
 	const newGame = (gameTime) => {
 		setMaxTime(gameTime);
 		setIsTimerOn(true);
+		setIsStarted(true);
+		setPoints(0);
 	}
 
 	return (
@@ -41,12 +66,13 @@ const Game = () => {
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>     
 			<DndProvider backend={Backend}>
-				<Trash isGood={true}/>
-				<TrashBin/>
-				<Trash isGood={false}/>
-				<RecycleBin/>
+				{isStarted && trashElement}
+				<br/>
+				<TrashBin onDrop={handleDrop}/>
+				<RecycleBin onDrop={handleDrop}/>
+				<p>Points: {points}</p>
 			</DndProvider>
-			<IncorrectBinModal trashInfo={trashApple.info}/>
+			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
 		</GameContainer>
 	);
 }

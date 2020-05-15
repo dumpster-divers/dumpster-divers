@@ -24,29 +24,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IncorrectBinModal = ({trashInfo}) => {
+const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Activate Modal
-      </button>
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-content"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
+        open={isOpen}
+        onClose={onClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -55,7 +43,7 @@ const IncorrectBinModal = ({trashInfo}) => {
           }
         }
       >
-        <Fade in={open}>
+        <Fade in={isOpen}>
           <div className={classes.paper}>
           <div className="modal-graphic">
             <CrossSVG/>
