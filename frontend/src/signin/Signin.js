@@ -6,15 +6,6 @@ import CantFindUserModal from "./CantFindUserModal";
 import { Link } from "react-router-dom";
 
 const Signin = () => {
-  let [errorVisible, setErrorVisible] = useState(false);
-  const handleError = () => {
-    setErrorVisible(true);
-  };
-  const handleClose = () => {
-    console.log("attempted to close");
-    setErrorVisible(false);
-  };
-
   return (
     <GameContainer>
       <div className="yellow-part">
