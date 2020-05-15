@@ -5,8 +5,8 @@ import "./bin.css";
 
 const TrashBin = (props) => {
   const [{isOver}, drop] = useDrop({
-    accept: "a",
-    drop: (x, y) => props.onDrop(x, y),
+    accept: "droppable",
+    drop: (x, y) => props.onDrop(x, y, false),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     })

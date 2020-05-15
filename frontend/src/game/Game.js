@@ -22,13 +22,27 @@ const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
 	const [currentTrash, setCurrentTrash] = useState(getTrash())
+	const [points, setPoints] = useState(0);
+	const [isModalOpen, setModalOpen] = useState(false);
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
-	const handleDrop = (x, y) => {
+	const handleDrop = (x, y, recycable) => {
 		console.log(x, y);
 		setCurrentTrash(getTrash());
-		trashElement = (<Trash currentTrash={currentTrash} />);
+		trashElement = (<Trash currentTrash={currentTrash}/>);
+		if (x.recyclable === recycable) {
+			setPoints(points => points + 1);
+		} else {
+			setModalOpen(true);
+		}
 	}
+
+	const handleModalClose = () => {
+		setModalOpen(false);
+	}
+
+
+
 
 	const gameOver = () => {
 		alert("Timer is done!");
@@ -53,8 +67,9 @@ const Game = () => {
 				{trashElement}
 				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
+				<p>Points: {points}</p>
 			</DndProvider>
-			<IncorrectBinModal trashInfo={trashApple.info}/>
+			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
 		</GameContainer>
 	);
 }

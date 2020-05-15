@@ -6,7 +6,7 @@ const Trash = ({currentTrash}) => {
   console.log(currentTrash["name"]);
 
   const [{ opacity }, dragRef] = useDrag({
-    item: {type: "a", trash: currentTrash["name"]},
+    item: {type: "droppable", recyclable: currentTrash.recyclable},
     collect: monitor => ({
       opacity: monitor.isDragging() ? 0 : 1,
     }),
