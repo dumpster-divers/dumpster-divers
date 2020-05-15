@@ -64,9 +64,25 @@ const updateUser = (req, res) => {
     if (err) return res.status(500).send(err);
     if (!updatedUser) return res.send("User not found");
 
-    res.send(updatedUser);
-  });
-}
+      res.send(updatedUser);
+    }
+  );
+};
+
+const loginUser = async (req, res) => {
+  const allUsers = await Users.find();
+  // search for user in the database via their ID
+  const user = allUsers.find(user => user.username === req.query.username);
+  if (user) {
+    res.send({
+      username: user.username,
+      name: user.name
+    });
+  } else {
+    // if an user is not found, return user does not exist.
+    res.send("User Does Not Exist");
+  }
+};
 
 //Generate a unique id, ensuring it doesn't already exist in database
 const generateUniqueId = async () => {
@@ -88,5 +104,6 @@ module.exports = {
   addUser,
   getAllUsers,
   deleteUser,
-  updateUser
+  updateUser,
+  loginUser
 };
