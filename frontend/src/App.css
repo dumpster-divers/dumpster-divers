@@ -1,33 +1,12 @@
 .App {
   text-align: center;
-}
-
-.yellow-part {
-  position: relative;
-  align-content: center;
-  width: 1279px;
-  height: 781px;
-  left: -25px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #7EC8DD;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -36,20 +15,10 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .Small-link-div {
   position: absolute;
   right:15px;
   top:5px;
-
 }
 
 .Small-link {
@@ -59,8 +28,8 @@
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-  margin: 0 5px;
 
+  margin: 0 5px;
   color: #76603E;
 }
 
@@ -89,13 +58,10 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
-
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6mvin);
   text-align: center;
-
   color: #4D4125;
-
 }
 
 .heading-homepage {
@@ -107,13 +73,10 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
-
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6vmin);
   text-align: center;
-
   color: #4D4125;
-
 }
 
 .about-us {
@@ -126,10 +89,9 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: calc(8px + 1vmin);
+  line-height: calc(10px + 2vmin);
   text-align: center;
-
 }
 
 .text1 {
@@ -143,8 +105,8 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin);
   text-align: center;
 }
 
@@ -155,7 +117,14 @@
   top: 44%;
   bottom: 0;
   margin-top: 100px;
+}
 
+.dive-in {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .frontpage-button {
@@ -173,15 +142,22 @@
   left: 0;
   right: 0;
   top: 40%;
-  margin-top: 100px;
+  margin: 100px auto 0px auto;
+}
+
+@media (max-device-width: 500px) {
+  #mascot img {
+    transform: scale(0.5, 0.5);
+  }
 }
 
 .modal-title {
-  padding: 0px, 0px, ,0px, 0px;
+  padding: 0px 0px 0px 0px;
   margin-top: 0px;
   margin-bottom: -20px;
   height:62px;
   display: block;
+
   text-align: center;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -189,20 +165,19 @@
   font-size: 60px;
   line-height: 62px;
   color: #EDEDED;
-
 }
 
 .modal-content {
-  width: 400px;
-  display: block;
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   line-height: 38px;
+
+  width: 400px;
+  display: block;
   background-color: transparent;
   text-align: center;
-
   color: #EDEDED;
 
 }
@@ -214,12 +189,8 @@
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-
   color: #EDEDED;
-
   bottom:0%;
-
-
 }
 
 .modal-graphic {
@@ -230,13 +201,14 @@
 }
 
 .modal-sadface {
-  display: block;
   text-align: center;
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;
   line-height: 62px;
+
+  display: block;
   color: #EDEDED;
   margin-left: auto;
   margin-right: auto;
