@@ -9,8 +9,8 @@ const GameContainer = props => {
         backgroundColor: "#FFDA7A",
         borderRadius: "20px",
         position: "absolute",
-        width: "74%",
-        height: "74%",
+        width: "71%",
+        height: "81%",
         maxWidth: "100%",
         margin: "0 auto"
       }

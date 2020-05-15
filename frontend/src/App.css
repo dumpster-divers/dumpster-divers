@@ -159,7 +159,6 @@
   font-size: 60px;
   line-height: 62px;
   color: #EDEDED;
-
 }
 
 .modal-content {
@@ -172,7 +171,6 @@
   line-height: 38px;
   background-color: transparent;
   text-align: center;
-
   color: #EDEDED;
 
 }
@@ -184,12 +182,8 @@
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-
   color: #EDEDED;
-
   bottom:0%;
-
-
 }
 
 .modal-graphic {
