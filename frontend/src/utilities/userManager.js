@@ -26,12 +26,12 @@ const createUserCookie = (res, err) => {
 };
 
 const getUsername = () => {
-  return Cookies.get('username');
+  return Cookies.get("username");
 };
 
 const getName = () => {
-  return Cookies.get('name')
-}
+  return Cookies.get("name");
+};
 
 const logoutUser = () => {
   Cookies.remove("name");
@@ -40,6 +40,23 @@ const logoutUser = () => {
 
 //Return whether someone is logged in
 const isLoggedIn = () => {
-  return Cookies.get('username') !== undefined;
-}
-export { registerUser, createUserCookie, getName, getUsername, logoutUser, isLoggedIn};
+  return Cookies.get("username") !== undefined;
+};
+
+const attemptLogin = async (username) => {
+  let url = "/api/users/login?username=" + username;
+  console.log(url)
+  let response = await fetch(url);
+
+  return response.json();
+};
+
+export {
+  registerUser,
+  createUserCookie,
+  getName,
+  getUsername,
+  logoutUser,
+  isLoggedIn,
+  attemptLogin
+};

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
+import { attemptLogin, createUserCookie } from "../utilities/userManager";
+import { Redirect } from "react-router-dom";
 
 const SignInForm = () => {
   let [value, setValue] = useState("");
+  let [redirect, setRedirect] = useState(false);
 
   const onChange = event => {
     setValue(event.target.value);
@@ -12,8 +15,9 @@ const SignInForm = () => {
 
   const handleClick = () => {
     if (value.length > 0) {
-      //TODO: Create some sort of state and log the user in
-      console.log(value)
+      attemptLogin(value)
+        .then(createUserCookie)
+        .then(() => setRedirect(true));
     }
   };
 
@@ -25,14 +29,25 @@ const SignInForm = () => {
     })
   );
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    handleClick();
+  };
+
   const classes = useStyles();
 
   return (
     <>
-      <TextEntry value={value} onChange={onChange} placeholderText={"Your Username"}/>
+      <TextEntry
+        value={value}
+        onChange={onChange}
+        placeholderText={"Your Username"}
+        onSubmit={handleSubmit}
+      />
       <div className={classes.wow}>
         <ActionButton buttonText={"Sign In"} onClick={handleClick} />
       </div>
+      {redirect && <Redirect to="/" />}
     </>
   );
 };

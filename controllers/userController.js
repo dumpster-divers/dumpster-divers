@@ -80,7 +80,7 @@ const loginUser = async (req, res) => {
     });
   } else {
     // if an user is not found, return user does not exist.
-    res.send("User Does Not Exist");
+    res.send({error: "User Does Not Exist"});
   }
 };
 
