@@ -20,7 +20,7 @@ const trashApple = {
 
 const Game = () => {
 	const [maxTime, setMaxTime] = useState(5);
-	const [isTimerOn, setIsTimerOn] = useState(true);
+	const [isTimerOn, setIsTimerOn] = useState(false);
 	const [currentTrash, setCurrentTrash] = useState(getTrash());
 
 	const handleDrop = (x, y) => {
