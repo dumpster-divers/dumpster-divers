@@ -1,4 +1,7 @@
+import canSource from "../assets/can.png";
+import strawSource from "../assets/straw.png";
+
 export const ItemTypes = {
-  GOOD: "good",
-  BAD: "bad"
+  "can": canSource,
+  "straw": strawSource
 }

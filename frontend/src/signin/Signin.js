@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import SignInForm from "./SignInForm";
 import CantFindUserModal from "./CantFindUserModal";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Signin = () => {
+  let [errorVisible, setErrorVisible] = useState(false);
+  const handleError = () => {
+    setErrorVisible(true);
+  };
+  const handleClose = () => {
+    console.log("attempted to close");
+    setErrorVisible(false);
+  };
+
   return (
     <GameContainer>
       <div className="yellow-part">
