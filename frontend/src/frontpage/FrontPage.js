@@ -9,25 +9,21 @@ import LoginModule from "./LoginModule";
 
 const FrontPage = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <GameContainer>
-          <div className="yellow-part">
-            <div className="frontpage-button">
-              <Link to="/game">
-                <ActionButton to="/game" buttonText={"Dive In!"} />
-              </Link>
-            </div>
-            <div id="mascot">
-              <img src={logo} alt="logo" />
-            </div>
-            <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
-            <p className="about-us">about us description coming soon...</p>
-            <LoginModule/>
-          </div>
-        </GameContainer>
-      </header>
-    </div>
+    <GameContainer>
+      <div className="yellow-part">
+        <div className="frontpage-button">
+          <Link to="/game">
+            <ActionButton to="/game" buttonText={"Dive In!"} />
+          </Link>
+        </div>
+        <div id="mascot">
+          <img src={logo} alt="logo" />
+        </div>
+        <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
+        <p className="about-us">about us description coming soon...</p>
+        <LoginModule/>
+      </div>
+    </GameContainer>
   );
 };
 

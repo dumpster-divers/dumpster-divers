@@ -10,7 +10,6 @@ import PostSignUp from "./signup/PostSignUp";
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <Router>
           <Switch>
             <Route path="/game">
@@ -30,7 +29,6 @@ export default function App() {
             </Route>
           </Switch>
         </Router>
-      </header>
     </div>
   );
 }

@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background-color: #7EC8DD;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .yellow-part {
@@ -19,17 +27,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #7EC8DD;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -177,7 +174,7 @@
 }
 
 .modal-title {
-  padding: 0px, 0px, ,0px, 0px;
+  padding: 0px, 0px, 0px, 0px;
   margin-top: 0px;
   margin-bottom: -20px;
   height:62px;
