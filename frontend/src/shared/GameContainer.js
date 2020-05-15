@@ -8,8 +8,11 @@ const GameContainer = props => {
       container: {
         backgroundColor: "#FFDA7A",
         borderRadius: "20px",
-        width: "1425px",
-        height: "783px",
+        position: "absolute",
+        width: "74%",
+        height: "74%",
+        maxWidth: "100%",
+        margin: "0 auto"
       }
     })
   );
