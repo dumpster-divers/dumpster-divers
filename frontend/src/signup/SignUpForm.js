@@ -8,6 +8,7 @@ import { Redirect } from "react-router-dom";
 const SignUpForm = () => {
   let [value, setValue] = useState("");
   let [redirect, setRedirect] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   const onChange = event => {
     setValue(event.target.value);
@@ -15,6 +16,7 @@ const SignUpForm = () => {
 
   const handleClick = () => {
     if (value.length > 0) {
+      setLoading(true);
       registerUser(value)
         .then(createUserCookie)
         .then(() => setRedirect(true));
@@ -47,7 +49,7 @@ const SignUpForm = () => {
         placeholderText={"Your Name"}
       />
       <div className={classes.wow}>
-        <ActionButton buttonText={"Sign Up!"} onClick={handleClick} />
+        <ActionButton buttonText={"Sign Up!"} onClick={handleClick} loading={loading} />
       </div>
       {redirect && <Redirect to="/postsignup" />}
     </>
