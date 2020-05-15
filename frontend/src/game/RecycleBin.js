@@ -5,7 +5,7 @@ import "./bin.css";
 
 const RecycleBin = (props) => {
   const [{isOver}, drop] = useDrop({
-    accept: "can",
+    accept: "a",
     drop: (x, y) => props.onDrop(x, y),
     collect: (monitor) => ({
       isOver: !!monitor.isOver()

@@ -25,8 +25,9 @@ const Game = () => {
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
 	const handleDrop = (x, y) => {
+		console.log(x, y);
 		setCurrentTrash(getTrash());
-		trashElement = <Trash id={currentTrash.name} currentTrash={currentTrash} />
+		trashElement = (<Trash currentTrash={currentTrash} />);
 	}
 
 	const gameOver = () => {

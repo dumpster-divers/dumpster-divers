@@ -1,11 +1,12 @@
-import React       from "react";
-import { useDrag } from 'react-dnd'
+import React, {useEffect} from "react";
+import { useDrag }        from 'react-dnd'
 import {ItemTypes} from "./Constants";
 
 const Trash = ({currentTrash}) => {
   console.log(currentTrash["name"]);
+
   const [{ opacity }, dragRef] = useDrag({
-    item: { type: currentTrash["name"] },
+    item: {type: "a", trash: currentTrash["name"]},
     collect: monitor => ({
       opacity: monitor.isDragging() ? 0 : 1,
     }),
