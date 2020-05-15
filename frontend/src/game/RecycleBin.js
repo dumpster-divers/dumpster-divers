@@ -1,12 +1,11 @@
 import React              from "react";
 import {useDrop} from 'react-dnd'
-import { ItemTypes }      from './Constants'
 import bin           from "../assets/bin_recycle_orange_1.png";
 import "./bin.css";
 
 const RecycleBin = (props) => {
   const [{isOver}, drop] = useDrop({
-    accept: "can",
+    accept: ["can"],
     drop: (x, y) => props.onDrop(x, y),
     collect: (monitor) => ({
       isOver: !!monitor.isOver()

@@ -24,6 +24,8 @@ const Game = () => {
 	const [currentTrash, setCurrentTrash] = useState(getTrash());
 
 	const handleDrop = (x, y) => {
+		console.log(x, y);
+		console.log(currentTrash);
 		setCurrentTrash(getTrash());
 	}
 
@@ -47,9 +49,8 @@ const Game = () => {
 				<h1>This will be the <em>GAME</em> page eventually</h1>
 			</GenericPopover>     
 			<DndProvider backend={Backend}>
-				<Trash/>
-				<TrashBin onDrop={handleDrop}/>
 				<Trash currentTrash={currentTrash} />
+				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
 			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info}/>
