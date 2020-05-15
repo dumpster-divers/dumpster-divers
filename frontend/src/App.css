@@ -19,7 +19,6 @@
   position: absolute;
   right:15px;
   top:5px;
-
 }
 
 .Small-link {
@@ -29,8 +28,8 @@
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-  margin: 0 5px;
 
+  margin: 0 5px;
   color: #76603E;
 }
 
@@ -59,13 +58,10 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
-
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6mvin);
   text-align: center;
-
   color: #4D4125;
-
 }
 
 .heading-homepage {
@@ -77,13 +73,10 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
-
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6vmin);
   text-align: center;
-
   color: #4D4125;
-
 }
 
 .about-us {
@@ -96,10 +89,9 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: calc(8px + 1vmin);
+  line-height: calc(10px + 2vmin);
   text-align: center;
-
 }
 
 .text1 {
@@ -113,8 +105,8 @@
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin);
   text-align: center;
 }
 
@@ -147,11 +139,12 @@
 }
 
 .modal-title {
-  padding: 0px, 0px, 0px, 0px;
+  padding: 0px 0px 0px 0px;
   margin-top: 0px;
   margin-bottom: -20px;
   height:62px;
   display: block;
+
   text-align: center;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -162,13 +155,14 @@
 }
 
 .modal-content {
-  width: 400px;
-  display: block;
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   line-height: 38px;
+
+  width: 400px;
+  display: block;
   background-color: transparent;
   text-align: center;
   color: #EDEDED;
@@ -194,13 +188,14 @@
 }
 
 .modal-sadface {
-  display: block;
   text-align: center;
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 60px;
   line-height: 62px;
+
+  display: block;
   color: #EDEDED;
   margin-left: auto;
   margin-right: auto;
