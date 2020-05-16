@@ -1,10 +1,13 @@
 import React from "react";
+import ReactOdometer from "react-odometerjs";
+import 'odometer/themes/odometer-theme-minimal.css';
+import "./bin.css"
 
 const ScoreCounter = ({score}) => {
 
     return (
         <div className="scoreCounter">
-            <p>{score}</p>
+            <ReactOdometer value = {score} />
         </div>
     )
 }

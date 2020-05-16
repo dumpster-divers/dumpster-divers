@@ -5,3 +5,21 @@
 .incorrect {
     background: red;
 }
+
+/* 'Offical' duration workaround: https://github.com/HubSpot/odometer/issues/91 */
+.odometer.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+    -webkit-transition-duration: 600ms !important;
+    -moz-transition-duration: 600ms !important;
+    -ms-transition-duration: 600ms !important;
+    -o-transition-duration: 600ms !important;
+    transition-duration: 600ms !important
+}
+
+.scoreCounter {
+    color: white;
+    background-color: #efb84a;
+    border-radius: 20px;
+    max-width: 70px;
+    font-size: 28px;
+    margin: 0 auto;
+}
