@@ -27,5 +27,15 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.3",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
