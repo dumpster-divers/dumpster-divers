@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PostGame                     from "./PostGame";
-import Game                from "./Game";
+import PostGame from "./PostGame";
+import Game from "./Game";
 
 const GamePage = () => {
   const [showGame, setShowGame] = useState(true);

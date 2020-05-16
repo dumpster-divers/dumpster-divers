@@ -3,9 +3,15 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, disabled=false}) => {
+const ActionButton = ({
+  color = "yellow",
+  buttonText,
+  onClick,
+  loading = false,
+  disabled = false,
+}) => {
   const colorToHex = {
-    yellow: "#FFC045"
+    yellow: "#FFC045",
   };
   const useStyles = makeStyles((theme) =>
     createStyles({
@@ -13,11 +19,11 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, di
         color: "white",
         borderRadius: "37.5px",
         fontSize: "36px",
-        [theme.breakpoints.up('md')]: {
-          fontSize: "36px"
+        [theme.breakpoints.up("md")]: {
+          fontSize: "36px",
         },
-        [theme.breakpoints.down('md')]: {
-          fontSize: "28px"
+        [theme.breakpoints.down("md")]: {
+          fontSize: "28px",
         },
         minWidth: "200px",
         maxWidth: "400px",
@@ -29,18 +35,18 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, di
         textDecoration: "none",
         "&:hover, &focusVisible": {
           backgroundColor: "#efb84a",
-          textDecoration: "none"
+          textDecoration: "none",
         },
         "&:active": {
-          boxShadow: "inset 10px 10px 20px #CC9D3F"
+          boxShadow: "inset 10px 10px 20px #CC9D3F",
         },
         "&:visited": {
-          textDecoration: "none"
-        }
+          textDecoration: "none",
+        },
       },
       link: {
-        textDecoration: "none"
-      }
+        textDecoration: "none",
+      },
     })
   );
 
@@ -56,7 +62,7 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, di
         onClick={onClick}
         disabled={disabled}
       >
-        {loading ? (<CircularProgress/>) : (buttonText)}
+        {loading ? <CircularProgress /> : buttonText}
       </Button>
     </>
   );

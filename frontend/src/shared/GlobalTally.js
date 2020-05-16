@@ -28,10 +28,10 @@ const GlobalTally = () => {
         marginRight: "auto",
         marginTop: "-25px",
         fontSize: "15px",
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
-          padding: "10px 0"
-        }
+          padding: "10px 0",
+        },
       },
       text: {
         color: "#4d4125",
@@ -40,11 +40,11 @@ const GlobalTally = () => {
         marginLeft: "30px",
         verticalAlign: "middle",
         paddingTop: "8px",
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
-          paddingTop: "0px"
-        }
-      }
+          paddingTop: "0px",
+        },
+      },
     })
   );
 

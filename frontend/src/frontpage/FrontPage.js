@@ -14,10 +14,14 @@ const FrontPage = () => {
   return (
     <GameContainer>
       <h1 className="heading-homepage">Welcome to Dumpster Divers</h1>
-      <p className="about-us">Did you know that 61% of Australians are unclear on what could be recycled? 
-      It may not be as easy as you think! Putting a recyclable item in the incorrect bin or not treating a contaminated 
-      item correctly means that recyclable items end up in the landfill. Dumpster Divers is here to teach you all about 
-      household rubbish sorting in a fun way. Dive in with us, you might be surprised! </p>
+      <p className="about-us">
+        Did you know that 61% of Australians are unclear on what could be
+        recycled? It may not be as easy as you think! Putting a recyclable item
+        in the incorrect bin or not treating a contaminated item correctly means
+        that recyclable items end up in the landfill. Dumpster Divers is here to
+        teach you all about household rubbish sorting in a fun way. Dive in with
+        us, you might be surprised!{" "}
+      </p>
       <div className="dive-in">
         <div className="frontpage-button">
           <Link to="/game">
@@ -28,9 +32,9 @@ const FrontPage = () => {
           <img src={logo} alt="logo" />
         </div>
       </div>
-      <LoginModule/>
-      <GlobalTally/>
-      <LoginModule/>
+      <LoginModule />
+      <GlobalTally />
+      <LoginModule />
     </GameContainer>
   );
 };

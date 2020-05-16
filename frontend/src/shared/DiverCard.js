@@ -9,13 +9,13 @@ const DiverCard = ({ points = 0 }) => {
 
   const useStyles = makeStyles((theme) =>
     createStyles({
-      wrapper: { 
-        display: "flex", 
+      wrapper: {
+        display: "flex",
         justifyContent: "center",
-        position: "relative" 
+        position: "relative",
       },
       card: {
-        position: "relative"
+        position: "relative",
       },
       points: {
         position: "absolute",
@@ -25,15 +25,14 @@ const DiverCard = ({ points = 0 }) => {
         fontSize: "15px",
         marginTop: "50px",
         marginLeft: "45px",
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up("sm")]: {
           fontSize: "25px",
           marginTop: "85px",
-          marginLeft: "70px"
-
+          marginLeft: "70px",
         },
         textAlign: "left",
         fontWeight: "bold",
-      }
+      },
     })
   );
 
