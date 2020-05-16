@@ -9,9 +9,9 @@ import TrashBin        from "./TrashBin";
 import Backend         from 'react-dnd-html5-backend'
 import TouchBackend    from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
-import Trash           from "./Trash";
-import {getTrash}    from "../utilities/gameManager";
-import TrashHolder     from "./TrashHolder";
+import Trash                        from "./Trash";
+import {getTrash, postSessionStats} from "../utilities/gameManager";
+import TrashHolder                  from "./TrashHolder";
 import ActionButton    from "../shared/ActionButton";
 
 const Game = ({points, setPoints, setShowGame}) => {
@@ -60,14 +60,16 @@ const Game = ({points, setPoints, setShowGame}) => {
 		return allTrash[Math.floor(Math.random() * allTrash.length)]
 	}
 
-	const handleIncorrectModalClose = () => {
+	const handleIncorrectModalClose = async () => {
 		setIncorrectModalOpen(false);
 		setShowGame(false);
+		await postSessionStats(points);
 	}
 
-	const handleTimeOutModalClose = () => {
+	const handleTimeOutModalClose = async () => {
 		setTimeOutModalOpen(false);
 		setShowGame(false);
+		await postSessionStats(points);
 	}
 
 	const handleTimeOut = () => {

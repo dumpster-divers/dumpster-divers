@@ -27,7 +27,7 @@ const postSessionStats = async (points) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(body)
-  }
+  });
 }
 
 export {

@@ -1,20 +1,11 @@
-import React, { useState } from "react";
-import PostGame            from "./PostGame";
+import React, {useEffect, useState} from "react";
+import PostGame                     from "./PostGame";
 import Game                from "./Game";
 import {postSessionStats}  from "../utilities/gameManager";
 
 const GamePage = () => {
   const [showGame, setShowGame] = useState(true);
   const [points, setPoints] = useState(0);
-
-  useEffect(() => {
-    const addSessionStats = async () => {
-      await postSessionStats(points);
-    }
-
-    addSessionStats();
-  },
-    [points]);
 
   if (showGame) {
     return (
