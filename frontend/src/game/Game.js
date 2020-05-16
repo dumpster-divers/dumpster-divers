@@ -19,12 +19,17 @@ const trashApple = {
 	info: "this is why you're wrong blah blah blah blah",
 }
 
-const Game = () => {
+const timesUp = {
+	id: 2,
+	info: "Bruh cmon you ran out of time!!!"
+}
+
+const Game = ({points, setPoints}) => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
 	const [currentTrash, setCurrentTrash] = useState(getTrash())
-	const [points, setPoints] = useState(0);
-	const [isModalOpen, setModalOpen] = useState(false);
+	const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
+	const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
 	const [isStarted, setIsStarted] = useState(false);
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
@@ -35,17 +40,22 @@ const Game = () => {
 		if (x.recyclable === recycable) {
 			setPoints(points => points + 1);
 		} else {
-			setModalOpen(true);
+			setIncorrectModalOpen(true);
 			setIsStarted(false);
 			setIsTimerOn(false);
 		}
 	}
 
-	const handleModalClose = () => {
-		setModalOpen(false);
+	const handleIncorrectModalClose = () => {
+		setIncorrectModalOpen(false);
 	}
 
-	const gameOver = () => {
+	const handleTimeOutModalClose = () => {
+		setTimeOutModalOpen(false);
+	}
+
+	const handleTimeOut = () => {
+		setTimeOutModalOpen(true);
 		setIsTimerOn(false);
 		setIsStarted(false);
 	}
@@ -60,7 +70,7 @@ const Game = () => {
 	return (
 		<GameContainer>
 			<div id="timer">
-				<Timer maxCount={maxTime} onFinish={gameOver} enabled={isTimerOn}/>
+				<Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn}/>
 			</div>
 			<button onClick={() => newGame(10)}>Start a new game</button>
 			<GenericPopover popover={HeaderPopover()}>
@@ -73,7 +83,8 @@ const Game = () => {
 				<RecycleBin onDrop={handleDrop}/>
 				<ScoreCounter score={points} />
 			</DndProvider>
-			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
+			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isIncorrectModalOpen} onClose={handleIncorrectModalClose}/>
+			<IncorrectBinModal trashInfo={timesUp.info} isOpen={isTimeOutModalOpen} onClose={handleTimeOutModalClose}/>
 		</GameContainer>
 	);
 }
