@@ -7,21 +7,12 @@ import Timer from "./Timer";
 import RecycleBin      from "./RecycleBin";
 import TrashBin        from "./TrashBin";
 import Backend         from 'react-dnd-html5-backend'
+import TouchBackend    from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
-import TrashHolder from "./TrashHolder";
-
-//dummy trash object for now
-const trashApple = {
-  id: 1,
-  info: "this is why you're wrong blah blah blah blah"
-};
-
-const timesUp = {
-	id: 2,
-	info: "Bruh cmon you ran out of time!!!"
-}
+import TrashHolder     from "./TrashHolder";
+import ActionButton    from "../shared/ActionButton";
 
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
@@ -35,6 +26,10 @@ const Game = ({points, setPoints, setShowGame}) => {
 
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
+
+	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
+		? TouchBackend
+		: Backend;
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -95,8 +90,14 @@ const Game = ({points, setPoints, setShowGame}) => {
 
   return (
     <GameContainer>
-      <button onClick={() => newGame(10)}>Start a new game</button>
-      <DndProvider backend={Backend}>
+			<div className="play-button">
+				<ActionButton
+					onClick={() => newGame(10)}
+					disabled={isStarted}
+					buttonText={"Let's Dive!"}
+				/>
+			</div>
+      <DndProvider backend={backend}>
         <div className="gameCenterWrapper">
           <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
           <br />
@@ -111,12 +112,12 @@ const Game = ({points, setPoints, setShowGame}) => {
         <Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn} />
       </div>
       <IncorrectBinModal
-        trashInfo={trashApple.info}
+        trashInfo={currentTrash.info}
         isOpen={isIncorrectModalOpen}
         onClose={handleIncorrectModalClose}
       />
 			<IncorrectBinModal
-				trashInfo={timesUp.info}
+				trashInfo={"winnie changing this"}
 				isOpen={isTimeOutModalOpen}
 				onClose={handleTimeOutModalClose}
 			/>

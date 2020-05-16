@@ -20,12 +20,12 @@
   position: absolute;
   left: 13.41%;
   right: 13.41%;
-  top: 300px;
+  margin-top: 300px;
 
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: calc(8px + 1vmin);
+  font-size: calc(6px + 1vmin);
   line-height: calc(10px + 2vmin);
   text-align: center;
 }
@@ -59,5 +59,9 @@
 @media (max-device-width: 500px) {
   #mascot img {
     transform: scale(0.5, 0.5);
+  }
+
+  .about-us {
+    margin-top: 260px;
   }
 }
