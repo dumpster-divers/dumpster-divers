@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import GameContainer  from "../shared/GameContainer";
-import GenericPopover from "../shared/GenericPopover";
-import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
@@ -19,33 +17,45 @@ const trashApple = {
 	info: "this is why you're wrong blah blah blah blah",
 }
 
-const Game = () => {
+const timesUp = {
+	id: 2,
+	info: "Bruh cmon you ran out of time!!!"
+}
+
+const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
 	const [currentTrash, setCurrentTrash] = useState(getTrash())
-	const [points, setPoints] = useState(0);
-	const [isModalOpen, setModalOpen] = useState(false);
+	const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
+	const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
 	const [isStarted, setIsStarted] = useState(false);
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
-	const handleDrop = (x, y, recycable) => {
+	const handleDrop = (x, y, recyclable) => {
 		console.log(x, y);
 		setCurrentTrash(getTrash());
 		trashElement = (<Trash currentTrash={currentTrash}/>);
-		if (x.recyclable === recycable) {
+		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
 		} else {
-			setModalOpen(true);
+			setIncorrectModalOpen(true);
 			setIsStarted(false);
 			setIsTimerOn(false);
 		}
 	}
 
-	const handleModalClose = () => {
-		setModalOpen(false);
+	const handleIncorrectModalClose = () => {
+		setIncorrectModalOpen(false);
+		setShowGame(false);
 	}
 
-	const gameOver = () => {
+	const handleTimeOutModalClose = () => {
+		setTimeOutModalOpen(false);
+		setShowGame(false);
+	}
+
+	const handleTimeOut = () => {
+		setTimeOutModalOpen(true);
 		setIsTimerOn(false);
 		setIsStarted(false);
 	}
@@ -60,12 +70,9 @@ const Game = () => {
 	return (
 		<GameContainer>
 			<div id="timer">
-				<Timer maxCount={maxTime} onFinish={gameOver} enabled={isTimerOn}/>
+				<Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn}/>
 			</div>
 			<button onClick={() => newGame(10)}>Start a new game</button>
-			<GenericPopover popover={HeaderPopover()}>
-				<h1>This will be the <em>GAME</em> page eventually</h1>
-			</GenericPopover>     
 			<DndProvider backend={Backend}>
 				{isStarted && trashElement}
 				<br/>
@@ -73,26 +80,9 @@ const Game = () => {
 				<RecycleBin onDrop={handleDrop}/>
 				<ScoreCounter score={points} />
 			</DndProvider>
-			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
+			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isIncorrectModalOpen} onClose={handleIncorrectModalClose}/>
+			<IncorrectBinModal trashInfo={timesUp.info} isOpen={isTimeOutModalOpen} onClose={handleTimeOutModalClose}/>
 		</GameContainer>
-	);
-}
-
-
-const HeaderPopover = () => {
-	const useStyles = makeStyles((theme) => ({
-		popover: {
-			margin: "20px"
-		}
-	}));
-
-	const classes = useStyles();
-
-	 return (
-		<div className={classes.popover}>
-			<h1>Hey this is the popover</h1>
-			<p>And this is the paragraph below!</p>
-		</div>
 	);
 }
 
