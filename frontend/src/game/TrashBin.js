@@ -1,6 +1,7 @@
 import React              from "react";
 import {useDrop} from 'react-dnd'
 import bin           from "../assets/bin_general_green_1.png";
+import binClosed from "../assets/bin_general_green_closed.png";
 import "./gameStyles.css";
 
 const TrashBin = (props) => {
@@ -12,10 +13,10 @@ const TrashBin = (props) => {
     })
   })
 
-  let color = (isOver) ? "green" : "red";
+  let image = (isOver) ? bin : binClosed;
 
   return (
-    <img style={{backgroundColor: color}} ref={drop} src={bin} alt="Trash Bin"/>
+    <img ref={drop} src={image} alt="Trash Bin"/>
   )
 }
 

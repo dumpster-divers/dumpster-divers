@@ -1,21 +1,22 @@
-import React, {useState} from "react";
-import GameContainer  from "../shared/GameContainer";
+import React, { useState } from "react";
+import GameContainer from "../shared/GameContainer";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
 
-import RecycleBin      from "./RecycleBin";
-import TrashBin        from "./TrashBin";
-import Backend         from 'react-dnd-html5-backend'
-import { DndProvider } from 'react-dnd'
-import Trash           from "./Trash";
-import {getTrash}      from "./GameUtil";
+import RecycleBin from "./RecycleBin";
+import TrashBin from "./TrashBin";
+import Backend from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import Trash from "./Trash";
+import { getTrash } from "./GameUtil";
+import TrashHolder from "./TrashHolder";
 
 //dummy trash object for now
 const trashApple = {
-	id: 1,
-	info: "this is why you're wrong blah blah blah blah",
-}
+  id: 1,
+  info: "this is why you're wrong blah blah blah blah"
+};
 
 const timesUp = {
 	id: 2,
@@ -60,30 +61,38 @@ const Game = ({points, setPoints, setShowGame}) => {
 		setIsStarted(false);
 	}
 
-	const newGame = (gameTime) => {
-		setMaxTime(gameTime);
-		setIsTimerOn(true);
-		setIsStarted(true);
-		setPoints(0);
-	}
+  const newGame = gameTime => {
+    setMaxTime(gameTime);
+    setIsTimerOn(true);
+    setIsStarted(true);
+    setPoints(0);
+  };
 
-	return (
-		<GameContainer>
-			<div id="timer">
-				<Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn}/>
-			</div>
-			<button onClick={() => newGame(10)}>Start a new game</button>
-			<DndProvider backend={Backend}>
-				{isStarted && trashElement}
-				<br/>
-				<TrashBin onDrop={handleDrop}/>
-				<RecycleBin onDrop={handleDrop}/>
-				<ScoreCounter score={points} />
-			</DndProvider>
-			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isIncorrectModalOpen} onClose={handleIncorrectModalClose}/>
+  return (
+    <GameContainer>
+      <button onClick={() => newGame(10)}>Start a new game</button>
+      <DndProvider backend={Backend}>
+        <div className="gameCenterWrapper">
+          <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
+          <br />
+          <div className="bins">
+            <TrashBin className="trash-bin" onDrop={handleDrop} />
+            <RecycleBin className="recycle-bin" onDrop={handleDrop} />
+          </div>
+        </div>
+      </DndProvider>
+      <ScoreCounter score={points} />
+      <div id="timer">
+        <Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn} />
+      </div>
+      <IncorrectBinModal
+        trashInfo={trashApple.info}
+        isOpen={isIncorrectModalOpen}
+        onClose={handleIncorrectModalClose}
+      />
 			<IncorrectBinModal trashInfo={timesUp.info} isOpen={isTimeOutModalOpen} onClose={handleTimeOutModalClose}/>
-		</GameContainer>
-	);
-}
+    </GameContainer>
+  );
+};
 
 export default Game;
