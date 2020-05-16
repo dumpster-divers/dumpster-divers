@@ -10,6 +10,22 @@ const TRASH = [
   {
     name: "straw",
     recyclable: false
+  },
+  {
+    name: "apple",
+    recyclable: false
+  },
+  {
+    name: "milkBottle",
+    recyclable: true
+  },
+  {
+    name: "newspaper",
+    recyclable: true
+  },
+  {
+    name: "waterBottle",
+    recyclable: true
   }
 ]
 
