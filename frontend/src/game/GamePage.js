@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import PostGame                     from "./PostGame";
 import Game                from "./Game";
-import {postSessionStats}  from "../utilities/gameManager";
 
 const GamePage = () => {
   const [showGame, setShowGame] = useState(true);
