@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import GameContainer from "../shared/GameContainer";
-import GameContainer  from "../shared/GameContainer";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
