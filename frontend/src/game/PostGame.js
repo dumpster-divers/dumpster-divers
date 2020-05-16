@@ -15,7 +15,6 @@ const PostGame = ({points}) => {
       <div className='yellow-part'>
 			  <h1 className='heading-postgame'>Woah! What a dive!</h1>
         <p className='postgame-content'>We've just updated your new total on your diver certification card</p>
-        <p className='postgame-content'>Points: {points}</p>
         <DiverCard points = {points}/>
         <div className='play-again-button'>
           <ActionButton onClick={handleClick} to="/game" buttonText={"Dive Again"} />
