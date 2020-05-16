@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   paper: {
-    backgroundColor: 'rgba(220, 148, 81, 0.8)',
+    backgroundColor: 'rgba(220, 148, 81, 1)',
     border: '0px',
     outline: 0,
     borderRadius: '40px',
@@ -39,7 +39,6 @@ const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
-          style: { backgroundColor: 'transparent'}
           }
         }
       >
