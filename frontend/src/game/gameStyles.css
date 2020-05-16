@@ -65,3 +65,23 @@
 .bins {
     margin: auto 0;
 }
+
+.heading-postgame {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: calc(10px + 6vmin);
+    line-height: calc(10px + 6vmin);
+    text-align: center;
+    color: #4D4125;
+}
+
+.postgame-content{
+    color: #4D4125;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: calc(8px + 1vmin);
+    line-height: calc(10px + 2vmin);
+    text-align: center;
+}

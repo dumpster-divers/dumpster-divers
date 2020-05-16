@@ -1,29 +1,37 @@
 import React from "react";
-import GameContainer  from "../shared/GameContainer";
-import diver_cert_card from "../assets/diver_cert_card.png";
+import GameContainer from "../shared/GameContainer";
 import ActionButton from "../shared/ActionButton";
 import ExitGameButton from "./ExitGameButton";
+import DiverCard from "../shared/DiverCard";
 
-
-const PostGame = ({points}) => {
+const PostGame = ({ points }) => {
   const handleClick = () => {
     window.location.reload();
-  }
+  };
 
-	return (
-		<GameContainer>
-      <div className='yellow-part'>
-			  <h1 className='heading-postgame'>Woah! What a dive!</h1>
-        <p className='postgame-content'>we've just updated your new total on your diver certification card</p>
-        <p className='postgame-content'>Points: {points}</p>
-        <img className='diver-cert-card' src={diver_cert_card} alt="diver certification card" />
-        <div className='play-again-button'>
-          <ActionButton onClick={handleClick} to="/game" buttonText={"Dive Again"} />
+  const headingText = points > 5 ? "Woah! What a dive!" : "Nice try!";
+
+  return (
+    <GameContainer>
+      <div className="yellow-part">
+        <h1 className="heading-postgame">{headingText}</h1>
+        <p className="postgame-content">
+          We've just updated your new total on your diver certification card
+        </p>
+        <div style={{ marginTop: "8%" }}>
+          <DiverCard points={points} />
         </div>
-        <ExitGameButton/>
+        <div className="frontpage-button">
+          <ActionButton
+            onClick={handleClick}
+            to="/game"
+            buttonText={"Dive Again"}
+          />
+        </div>
+        <ExitGameButton />
       </div>
-		</GameContainer>
-	);
-}
+    </GameContainer>
+  );
+};
 
 export default PostGame;
