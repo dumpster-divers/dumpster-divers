@@ -27,18 +27,14 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
 	const [currentTrash, setCurrentTrash] = useState(null);
-	// const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
+	const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
 	const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
 	const [isStarted, setIsStarted] = useState(false);
 	const [allTrash, setAllTrash] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
-	const isIncorrectModalOpen = useRef(false);
-	isIncorrectModalOpen.current = false;
-
-	const setIncorrectModalOpen = (isOpen) => {
-		isIncorrectModalOpen.current = isOpen;
-	}
+	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
+	isIncorrectModalOpenRef.current = isIncorrectModalOpen
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -61,7 +57,6 @@ const Game = ({points, setPoints, setShowGame}) => {
 			setPoints(points => points + 1);
 		} else {
 			setIncorrectModalOpen(true);
-			console.log("HMM", isIncorrectModalOpen);
 			setIsStarted(false);
 			setIsTimerOn(false);
 		}
@@ -82,13 +77,9 @@ const Game = ({points, setPoints, setShowGame}) => {
 	}
 
 	const handleTimeOut = () => {
-
-		// I don't know why this works
-		// Always false
-		if (!isIncorrectModalOpen.current) {
+		if (!isIncorrectModalOpenRef.current) {
 			setTimeOutModalOpen(true);
 		}
-
 		setIsTimerOn(false);
 		setIsStarted(false);
 	}
@@ -122,7 +113,7 @@ const Game = ({points, setPoints, setShowGame}) => {
       </div>
       <IncorrectBinModal
         trashInfo={trashApple.info}
-        isOpen={isIncorrectModalOpen.current}
+        isOpen={isIncorrectModalOpen}
         onClose={handleIncorrectModalClose}
       />
 			<IncorrectBinModal
