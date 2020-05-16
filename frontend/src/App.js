@@ -1,22 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import FrontPage from "./frontpage/FrontPage";
-import Game from "./game/Game";
-import Signup from "./signup/Signup";
-import Signin from "./signin/Signin";
+import FrontPage  from "./frontpage/FrontPage";
+import Signup     from "./signup/Signup";
+import Signin     from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
-import PostGame from "./game/PostGame";
+import PostGame   from "./game/PostGame";
 
 import "./sharedStyles.css";
+import GamePage   from "./game/GamePage";
 
 export default function App() {
+  document.title = "Dumpster Divers";
+
   return (
     <div className="App">
         <Router>
           <Switch>
             <Route path="/game">
-              <Game />
+              <GamePage />
             </Route>
             <Route path="/postgame">
               <PostGame />
