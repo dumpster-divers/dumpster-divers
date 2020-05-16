@@ -27,7 +27,7 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
 
-	const GAME_DURATION = 1;
+	const GAME_DURATION = 10;
 
 	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
 		? TouchBackend
