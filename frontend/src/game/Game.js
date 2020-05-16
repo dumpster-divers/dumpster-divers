@@ -73,9 +73,6 @@ const Game = ({points, setPoints, setShowGame}) => {
 				<Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn}/>
 			</div>
 			<button onClick={() => newGame(10)}>Start a new game</button>
-			<GenericPopover popover={HeaderPopover()}>
-				<h1>This will be the <em>GAME</em> page eventually</h1>
-			</GenericPopover>     
 			<DndProvider backend={Backend}>
 				{isStarted && trashElement}
 				<br/>
