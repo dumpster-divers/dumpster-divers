@@ -59,9 +59,6 @@ const Game = () => {
 
   return (
     <GameContainer>
-      <div id="timer">
-        <Timer maxCount={maxTime} onFinish={gameOver} enabled={isTimerOn} />
-      </div>
       <button onClick={() => newGame(10)}>Start a new game</button>
       <DndProvider backend={Backend}>
         <div className="gameCenterWrapper">
@@ -71,9 +68,12 @@ const Game = () => {
             <TrashBin className="trash-bin" onDrop={handleDrop} />
             <RecycleBin className="recycle-bin" onDrop={handleDrop} />
           </div>
-          <ScoreCounter score={points} />
         </div>
       </DndProvider>
+      <ScoreCounter score={points} />
+      <div id="timer">
+        <Timer maxCount={maxTime} onFinish={gameOver} enabled={isTimerOn} />
+      </div>
       <IncorrectBinModal
         trashInfo={trashApple.info}
         isOpen={isModalOpen}
@@ -83,6 +83,7 @@ const Game = () => {
   );
 };
 
+/*
 const HeaderPopover = () => {
   const useStyles = makeStyles(theme => ({
     popover: {
@@ -99,5 +100,5 @@ const HeaderPopover = () => {
     </div>
   );
 };
-
+*/
 export default Game;
