@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import GameContainer from "../shared/GameContainer";
 import LoginModule from "./LoginModule";
 
+import "./frontPageStyles.css";
+
 const FrontPage = () => {
   return (
     <GameContainer>

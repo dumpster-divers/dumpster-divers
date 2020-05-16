@@ -1,0 +1,63 @@
+/* Styles for the front page */
+
+.heading-homepage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6vmin);
+  text-align: center;
+  color: #4D4125;
+}
+
+.about-us {
+  color: #4D4125;
+  position: absolute;
+  left: 13.41%;
+  right: 13.41%;
+  top: 300px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: calc(8px + 1vmin);
+  line-height: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.dive-in {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.frontpage-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 65%;
+  bottom: 0;
+  margin-top: 100px;
+  z-index: 10;
+}
+
+#mascot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin: 100px auto 0px auto;
+}
+
+@media (max-device-width: 500px) {
+  #mascot img {
+    transform: scale(0.5, 0.5);
+  }
+}

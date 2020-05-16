@@ -1,3 +1,11 @@
+/* Global styles. */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
 .App {
   text-align: center;
   background-color: #7EC8DD;
@@ -33,21 +41,6 @@
   color: #76603E;
 }
 
-#GoBackButton {
-  position: absolute;
-  width: 88.81px;
-  height: 86.11px;
-  left: 0;
-  top: 0;
-  filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
-}
-#GoBackButton:active {
-  filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
-}
-
-#GoBackButtonA:hover path { fill: #FFA4A4 }
-#GoBackButtonA:hover rect { fill: #FFE9E9 }
-
 .heading1 {
   position: absolute;
   left: 0;
@@ -62,36 +55,6 @@
   line-height: calc(10px + 6mvin);
   text-align: center;
   color: #4D4125;
-}
-
-.heading-homepage {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 150px;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: calc(10px + 6vmin);
-  line-height: calc(10px + 6vmin);
-  text-align: center;
-  color: #4D4125;
-}
-
-.about-us {
-  color: #4D4125;
-  position: absolute;
-  left: 13.41%;
-  right: 13.41%;
-  top: 300px;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 200;
-  font-size: calc(8px + 1vmin);
-  line-height: calc(10px + 2vmin);
-  text-align: center;
 }
 
 .text1 {
@@ -117,100 +80,4 @@
   top: 44%;
   bottom: 0;
   margin-top: 100px;
-}
-
-.dive-in {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.frontpage-button {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 65%;
-  bottom: 0;
-  margin-top: 100px;
-  z-index: 10;
-}
-
-#mascot {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40%;
-  margin: 100px auto 0px auto;
-}
-
-@media (max-device-width: 500px) {
-  #mascot img {
-    transform: scale(0.5, 0.5);
-  }
-}
-
-.modal-title {
-  padding: 0px 0px 0px 0px;
-  margin-top: 0px;
-  margin-bottom: -20px;
-  height:62px;
-  display: block;
-
-  text-align: center;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 62px;
-  color: #EDEDED;
-}
-
-.modal-content {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 38px;
-
-  width: 400px;
-  display: block;
-  background-color: transparent;
-  text-align: center;
-  color: #EDEDED;
-
-}
-
-.modal-clickout {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  color: #EDEDED;
-  bottom:0%;
-}
-
-.modal-graphic {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:23%;
-}
-
-.modal-sadface {
-  text-align: center;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 62px;
-
-  display: block;
-  color: #EDEDED;
-  margin-left: auto;
-  margin-right: auto;
-  width:23%;
 }

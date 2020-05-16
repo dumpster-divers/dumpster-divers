@@ -7,6 +7,8 @@ import Signup from "./signup/Signup";
 import Signin from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
 
+import "./sharedStyles.css";
+
 export default function App() {
   return (
     <div className="App">
