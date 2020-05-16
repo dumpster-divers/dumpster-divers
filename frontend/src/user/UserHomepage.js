@@ -3,9 +3,8 @@ import GameContainer from "../shared/GameContainer";
 import ActionButton from "../shared/ActionButton";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "../shared/DiverCard";
-import {getName} from "../utilities/userManager";
-import UpdateUserForm from "./UpdateUser";
-
+import {getName, getUsername} from "../utilities/userManager";
+import UpdateUserForm from "./UpdateUserForm";
 
 const UserHomepage = () => {
   return (
