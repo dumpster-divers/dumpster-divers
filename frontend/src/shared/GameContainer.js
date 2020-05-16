@@ -17,7 +17,8 @@ const GameContainer = props => {
         },
         height: "81%",
         maxWidth: "100%",
-        margin: "0 auto"
+        margin: "0 auto",
+        padding: "20px"
       }
     })
   );

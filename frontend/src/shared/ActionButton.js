@@ -12,7 +12,7 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false}) =
       button: {
         color: "white",
         borderRadius: "37.5px",
-        fontSize: "34px",
+        fontSize: "36px",
         minWidth: "200px",
         maxWidth: "400px",
         width: "35%",

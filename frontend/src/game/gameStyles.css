@@ -8,7 +8,7 @@
     background: red;
 }
 
-/* 'Offical' duration workaround: https://github.com/HubSpot/odometer/issues/91 */
+/* 'Official' duration workaround: https://github.com/HubSpot/odometer/issues/91 */
 .odometer.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
     -webkit-transition-duration: 600ms !important;
     -moz-transition-duration: 600ms !important;
@@ -58,12 +58,45 @@
     display:flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 3%
+    margin-top: 3%;
+    justify-content: flex-start;
 }
-
 
 .bins {
     margin: auto 0;
+}
+
+.bin-img {
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+/* Tablet & desktop */
+@media (min-device-width: 500px) {
+    .bins {
+        margin-bottom: 35px;
+    }
+
+    .bin-img {
+        /* Proportionally scale down images */
+        width: 175px;
+        height: auto;
+    }
+}
+
+
+/* Mobile */
+@media (max-device-width: 500px) {
+    .bins {
+        display: inline-block;
+        margin-bottom: 80px;
+    }
+
+    .bin-img {
+        /* Proportionally scale down images */
+        width: 100px;
+        height: auto;
+    }
 }
 
 .heading-postgame {
