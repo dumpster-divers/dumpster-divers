@@ -39,7 +39,7 @@ const DiverCard = ({ points = 0 }) => {
         marginLeft: "45px",
         [theme.breakpoints.up('sm')]: {
           fontSize: "25px",
-          marginTop: "75px",
+          marginTop: "85px",
           marginLeft: "70px"
 
         },

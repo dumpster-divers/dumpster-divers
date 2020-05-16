@@ -98,6 +98,10 @@
         height: auto;
     }
 
+    .trashBlock {
+        margin-top: 20px;
+    }
+
     .heading-postgame {
         margin-top: 100px;
     }
