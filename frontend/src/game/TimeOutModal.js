@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   paper: {
-    backgroundColor: 'rgba(220, 97, 81, 0.8)',
+    backgroundColor: 'rgba(220, 97, 81, 1)',
     border: '0px',
     outline: 0,
     borderRadius: '40px',
@@ -39,7 +39,6 @@ const TimeOutModal = ({isOpen, onClose}) => {
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
-          style: { backgroundColor: 'transparent'}
           }
         }
       >
@@ -60,12 +59,12 @@ const TimeOutModal = ({isOpen, onClose}) => {
 var StopwatchSVG = function(){
   return(
     <svg width="87" height="101" viewBox="0 0 87 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="43.5" cy="57.5" r="43.5" fill="#FF4343"/>
+      <circle cx="43.5" cy="57.5" r="43.5" fill="#DD0000"/>
       <circle cx="43.5" cy="57.5" r="34.5" fill="#FFEDED"/>
-      <rect x="40" y="28" width="7" height="33" rx="3.5" fill="#FF3939"/>
-      <path d="M41.0266 59.7885C39.9074 58.2779 40.2246 56.1459 41.7352 55.0266V55.0266C43.2459 53.9074 45.3778 54.2246 46.4971 55.7352L55.6293 68.0604C56.7486 69.571 56.4313 71.703 54.9207 72.8223V72.8223C53.4101 73.9416 51.2781 73.6243 50.1588 72.1137L41.0266 59.7885Z" fill="#FF3939"/>
-      <rect x="39" y="7" width="9" height="11" fill="#FF4343"/>
-      <rect x="28" width="32" height="9" rx="4.5" fill="#FF4343"/>
+      <rect x="40" y="28" width="7" height="33" rx="3.5" fill="#E00606"/>
+      <path d="M41.0266 59.7885C39.9074 58.2779 40.2246 56.1459 41.7352 55.0266V55.0266C43.2459 53.9074 45.3778 54.2246 46.4971 55.7352L55.6293 68.0604C56.7486 69.571 56.4313 71.703 54.9207 72.8223V72.8223C53.4101 73.9416 51.2781 73.6243 50.1588 72.1137L41.0266 59.7885Z" fill="#E00606"/>
+      <rect x="39" y="7" width="9" height="11" fill="#DD0000"/>
+      <rect x="28" width="32" height="9" rx="4.5" fill="#DD0000"/>
     </svg>
 
 
