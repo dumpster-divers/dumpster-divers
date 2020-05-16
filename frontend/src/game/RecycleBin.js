@@ -1,7 +1,7 @@
 import React              from "react";
 import {useDrop} from 'react-dnd'
 import bin           from "../assets/bin_recycle_orange_1.png";
-import "./bin.css";
+import "./gameStyles.css";
 
 const RecycleBin = (props) => {
   const [{isOver}, drop] = useDrop({

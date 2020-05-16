@@ -8,6 +8,8 @@ import Signin from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
 import PostGame from "./game/PostGame";
 
+import "./sharedStyles.css";
+
 export default function App() {
   return (
     <div className="App">

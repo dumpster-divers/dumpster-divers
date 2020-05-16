@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import SignInForm from "./SignInForm";
@@ -6,6 +6,15 @@ import CantFindUserModal from "./CantFindUserModal";
 import { Link } from "react-router-dom";
 
 const Signin = () => {
+  let [errorVisible, setErrorVisible] = useState(false);
+  const handleError = () => {
+    setErrorVisible(true);
+  };
+  const handleClose = () => {
+    console.log("attempted to close");
+    setErrorVisible(false);
+  };
+
   return (
     <GameContainer>
       <div className="yellow-part">
@@ -14,12 +23,12 @@ const Signin = () => {
           this is the unique username given to you when you signed up
         </p>
         <div className="form-module">
-          <SignInForm />
+          <SignInForm onError={handleError}/>
         </div>
         <Link to="/">
           <GoBackButton />
         </Link>
-        <CantFindUserModal/>
+          <CantFindUserModal visible={errorVisible} onClose={handleClose} /> 
       </div>
     </GameContainer>
   );
