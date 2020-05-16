@@ -14,27 +14,27 @@ const useStyles = makeStyles((theme) => ({
 
   },
   paper: {
-    backgroundColor: 'rgba(220, 148, 81, 1)',
+    backgroundColor: 'rgba(220, 97, 81, 1)',
     border: '0px',
     outline: 0,
     borderRadius: '40px',
     alignItems: 'center',
     textalign: 'centered',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 10, 2, 10),
+    padding: theme.spacing(2, 6, 2, 6),
   },
 }));
 
 
 //render modal
-const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
+const TimeOutModal = ({isOpen, onClose}) => {
   const classes = useStyles();
 
   return (
     <div>
       <Modal
         aria-labelledby="modal-title"
-        aria-describedby="modal-content"
+        aria-describedby="moda{isOpen, onClose}l-content"
         className={classes.modal}
         open={isOpen}
         onClose={onClose}
@@ -47,11 +47,10 @@ const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
       >
         <Fade in={isOpen}>
           <div className={classes.paper}>
-          <div className="modal-cross">
-            <CrossSVG/>
-          </div>
-            <h2 className="modal-title">Oops</h2>
-            <p className="modal-content">{trashInfo}</p>
+            <div className="modal-stopwatch">
+              <StopwatchSVG/>
+            </div>
+            <h2 className="modal-title">Time's Up!</h2>
             <p className="modal-clickout">click anywhere else to continue</p>
           </div>
         </Fade>
@@ -60,18 +59,21 @@ const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
   );
 }
 
-//vector graphic for modal
-var CrossSVG = function(){
+//modal graphics
+var StopwatchSVG = function(){
   return(
-    <svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="86.5688" y="13.7366" width="103" height="19.4265" rx="7" transform="rotate(135 86.5688 13.7366)" fill="#EB3B3B"/>
-      <rect x="86.5688" y="13.7366" width="103" height="19.4265" rx="7" transform="rotate(135 86.5688 13.7366)" fill="#C55252"/>
-      <rect x="13.7368" width="103" height="19.4265" rx="7" transform="rotate(45 13.7368 0)" fill="#EB3B3B"/>
-      <rect x="13.7368" width="103" height="19.4265" rx="7" transform="rotate(45 13.7368 0)" fill="#C55252"/>
+    <svg width="87" height="101" viewBox="0 0 87 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="43.5" cy="57.5" r="43.5" fill="#DD0000"/>
+      <circle cx="43.5" cy="57.5" r="34.5" fill="#FFEDED"/>
+      <rect x="40" y="28" width="7" height="33" rx="3.5" fill="#E00606"/>
+      <path d="M41.0266 59.7885C39.9074 58.2779 40.2246 56.1459 41.7352 55.0266V55.0266C43.2459 53.9074 45.3778 54.2246 46.4971 55.7352L55.6293 68.0604C56.7486 69.571 56.4313 71.703 54.9207 72.8223V72.8223C53.4101 73.9416 51.2781 73.6243 50.1588 72.1137L41.0266 59.7885Z" fill="#E00606"/>
+      <rect x="39" y="7" width="9" height="11" fill="#DD0000"/>
+      <rect x="28" width="32" height="9" rx="4.5" fill="#DD0000"/>
     </svg>
+
 
   );
 }
 
 
-export default IncorrectBinModal;
+export default TimeOutModal;

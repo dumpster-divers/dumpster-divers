@@ -20,9 +20,10 @@
     color: white;
     background-color: #efb84a;
     border-radius: 20px;
-    max-width: 70px;
+    max-width: 100px;
     font-size: 28px;
     margin: 0 auto;
+    min-width: 100px;
 }
 
 .trashBlock {

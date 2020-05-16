@@ -8,6 +8,7 @@ import GameContainer from "../shared/GameContainer";
 import LoginModule from "./LoginModule";
 
 import "./frontPageStyles.css";
+import GlobalTally from "../shared/GlobalTally";
 
 const FrontPage = () => {
   return (
@@ -17,7 +18,7 @@ const FrontPage = () => {
       It may not be as easy as you think! Putting a recyclable item in the incorrect bin or not treating a contaminated 
       item correctly means that recyclable items end up in the landfill. Dumpster Divers is here to teach you all about 
       household rubbish sorting in a fun way. Dive in with us, you might be surprised! </p>
-      <div classname="dive-in">
+      <div className="dive-in">
         <div className="frontpage-button">
           <Link to="/game">
             <ActionButton to="/game" buttonText={"Dive In!"} />
@@ -27,6 +28,8 @@ const FrontPage = () => {
           <img src={logo} alt="logo" />
         </div>
       </div>
+      <LoginModule/>
+      <GlobalTally/>
       <LoginModule/>
     </GameContainer>
   );

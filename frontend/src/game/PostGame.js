@@ -3,6 +3,8 @@ import GameContainer from "../shared/GameContainer";
 import ActionButton from "../shared/ActionButton";
 import ExitGameButton from "./ExitGameButton";
 import DiverCard from "../shared/DiverCard";
+import { isLoggedIn } from "../utilities/userManager";
+import PostGameLoginLogoutFlow from "./PostGameLoginLogoutFlow";
 
 const PostGame = ({ points }) => {
   const handleClick = () => {
@@ -15,7 +17,13 @@ const PostGame = ({ points }) => {
     <GameContainer>
         <h1 className="heading-postgame">{headingText}</h1>
         <p className="postgame-content">
-          We've just updated your new total on your diver certification card
+          {isLoggedIn() ? (
+            <>
+              We've just updated your new total on your diver certification card
+            </>
+          ) : (
+            <PostGameLoginLogoutFlow points={points} />
+          )}
         </p>
         <DiverCard points={points} />
         <div className="frontpage-button">
