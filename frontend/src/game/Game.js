@@ -27,6 +27,7 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
 
+	// Handling touch vs mouse dragging
 	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
 		? TouchBackend
 		: Backend;
