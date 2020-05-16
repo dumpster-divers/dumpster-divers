@@ -7,7 +7,7 @@ const updateUser = async (user) => {
     return;
   }
 
-  const endpoint = 'localhost:5000/api/users/update';
+  const endpoint = 'https://dumpster-divers-test.herokuapp.com/api/users/update';
 
   // return fetch query to update an user
   return await fetch(endpoint, {
