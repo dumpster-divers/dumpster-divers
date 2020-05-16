@@ -51,7 +51,9 @@ const Game = ({points, setPoints, setShowGame}) => {
 		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
 		} else {
+			// So the currentTrash.info in Incorrect Modal is about the right one
 			setCurrentTrash(oldTrash);
+			
 			setIncorrectModalOpen(true);
 			setIsStarted(false);
 			setIsTimerOn(false);
