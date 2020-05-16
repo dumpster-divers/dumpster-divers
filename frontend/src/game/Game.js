@@ -3,6 +3,7 @@ import GameContainer  from "../shared/GameContainer";
 import GenericPopover from "../shared/GenericPopover";
 import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
+import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
 
 import RecycleBin      from "./RecycleBin";
@@ -70,6 +71,7 @@ const Game = () => {
 				<br/>
 				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
+				<ScoreCounter score={points} />
 				<p>Points: {points}</p>
 			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
