@@ -51,7 +51,6 @@ const postGameStoreScore = score => {
 
 const attemptLogin = async username => {
   let url = "/api/users/login?username=" + username;
-  console.log(url);
   let response = await fetch(url);
 
   return new Promise((resolve, reject) => {
