@@ -9,10 +9,12 @@ const PostGame = ({ points }) => {
     window.location.reload();
   };
 
+  const headingText = points > 5 ? "Woah! What a dive!" : "Nice try!";
+
   return (
     <GameContainer>
       <div className="yellow-part">
-        <h1 className="heading-postgame">Woah! What a dive!</h1>
+        <h1 className="heading-postgame">{headingText}</h1>
         <p className="postgame-content">
           We've just updated your new total on your diver certification card
         </p>
