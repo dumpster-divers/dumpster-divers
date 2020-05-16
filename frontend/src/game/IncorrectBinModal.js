@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
+//define modal style
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//render modal
 const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
   const classes = useStyles();
 
@@ -57,6 +60,7 @@ const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
   );
 }
 
+//vector graphic for modal
 var CrossSVG = function(){
   return(
     <svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">

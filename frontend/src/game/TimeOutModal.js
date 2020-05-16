@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
+//define modal style
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//render modal
 const TimeOutModal = ({isOpen, onClose}) => {
   const classes = useStyles();
 
@@ -56,6 +59,7 @@ const TimeOutModal = ({isOpen, onClose}) => {
   );
 }
 
+//modal graphics
 var StopwatchSVG = function(){
   return(
     <svg width="87" height="101" viewBox="0 0 87 101" fill="none" xmlns="http://www.w3.org/2000/svg">
