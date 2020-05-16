@@ -1,4 +1,6 @@
-const fetchTrash = async () => {
+import {getUsername, isLoggedIn} from "./userManager";
+
+const getTrash = async () => {
   return await fetch("api/game/data")
     .then(response => response.json())
     .then(response => {
@@ -10,6 +12,25 @@ const fetchTrash = async () => {
     });
 }
 
+const postSessionStats = async (points) => {
+  let body = {
+    "count": points
+  }
+
+  if (isLoggedIn()) {
+    body["username"] = getUsername();
+  }
+
+  return await fetch("api/game/add-session-stats", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  }
+}
+
 export {
-  fetchTrash
+  getTrash,
+  postSessionStats
 }

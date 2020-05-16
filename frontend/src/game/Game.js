@@ -10,7 +10,7 @@ import Backend         from 'react-dnd-html5-backend'
 import TouchBackend    from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
-import {fetchTrash}    from "../utilities/gameManager";
+import {getTrash}    from "../utilities/gameManager";
 import TrashHolder     from "./TrashHolder";
 import ActionButton    from "../shared/ActionButton";
 
@@ -33,7 +33,7 @@ const Game = ({points, setPoints, setShowGame}) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const fetchedTrash = await fetchTrash();
+			const fetchedTrash = await getTrash();
 			setAllTrash(fetchedTrash);
 			setCurrentTrash(fetchedTrash[0]);
 			setIsLoading(false);
