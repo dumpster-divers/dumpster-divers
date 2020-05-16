@@ -45,11 +45,13 @@ const Game = ({points, setPoints, setShowGame}) => {
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
 	const handleDrop = (x, y, recyclable) => {
+		let oldTrash = currentTrash;
 		setCurrentTrash(sampleTrash());
 		trashElement = (<Trash currentTrash={currentTrash}/>);
 		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
 		} else {
+			setCurrentTrash(oldTrash);
 			setIncorrectModalOpen(true);
 			setIsStarted(false);
 			setIsTimerOn(false);
