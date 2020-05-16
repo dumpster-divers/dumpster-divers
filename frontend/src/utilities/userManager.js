@@ -43,22 +43,26 @@ const isLoggedIn = () => {
   return Cookies.get("username") !== undefined;
 };
 
-const attemptLogin = async (username) => {
+// Used to store score temporarily during post game onboarding flow.
+// DO NOT USE TO STORE SCORE IN DATABASE
+const postGameStoreScore = score => {
+  Cookies.set("temporaryScore", score);
+};
+
+const attemptLogin = async username => {
   let url = "/api/users/login?username=" + username;
-  console.log(url)
+  console.log(url);
   let response = await fetch(url);
 
   return new Promise((resolve, reject) => {
-    response.json().then(
-      (res, err) => {
-        if (res.username === undefined) {
-          reject()
-        } else {
-          resolve(res);
-        }
+    response.json().then((res, err) => {
+      if (res.username === undefined) {
+        reject();
+      } else {
+        resolve(res);
       }
-    )
-  })
+    });
+  });
 };
 
 export {
@@ -68,5 +72,6 @@ export {
   getUsername,
   logoutUser,
   isLoggedIn,
-  attemptLogin
+  attemptLogin,
+  postGameStoreScore
 };
