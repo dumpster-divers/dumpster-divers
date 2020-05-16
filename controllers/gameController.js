@@ -29,11 +29,16 @@ const addSessionStats = async (req, res) => {
 };
 
 //get random trash for a level
-const getData = (req, res) => {
+const getData = async (req, res) => {
   // Get 1 by default
-  const amount = req.query.amount !== undefined ? req.query.amount: 1;
-  const randomTrash = generateNRandomTrash(amount);
-  res.send(randomTrash);
+  const allTrash = await Trash.find();
+  try {
+    res.send(allTrash);
+  } catch (err) {
+    res.status(400);
+    console.log(err)
+    return res.send("Database query failed");
+  }
 };
 
 // trash/global-count: get current trash count
