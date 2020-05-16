@@ -9,9 +9,9 @@ import TrashBin        from "./TrashBin";
 import Backend         from 'react-dnd-html5-backend'
 import TouchBackend    from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
-import Trash           from "./Trash";
-import {fetchTrash}    from "../utilities/gameManager";
-import TrashHolder     from "./TrashHolder";
+import Trash                        from "./Trash";
+import {getTrash, postSessionStats} from "../utilities/gameManager";
+import TrashHolder                  from "./TrashHolder";
 import ActionButton    from "../shared/ActionButton";
 import TimeOutModal from "./TimeOutModal";
 
@@ -28,13 +28,14 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
 
+	// Handling touch vs mouse dragging
 	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
 		? TouchBackend
 		: Backend;
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const fetchedTrash = await fetchTrash();
+			const fetchedTrash = await getTrash();
 			setAllTrash(fetchedTrash);
 			setCurrentTrash(fetchedTrash[0]);
 			setIsLoading(false);
@@ -61,14 +62,16 @@ const Game = ({points, setPoints, setShowGame}) => {
 		return allTrash[Math.floor(Math.random() * allTrash.length)]
 	}
 
-	const handleIncorrectModalClose = () => {
+	const handleIncorrectModalClose = async () => {
 		setIncorrectModalOpen(false);
 		setShowGame(false);
+		await postSessionStats(points);
 	}
 
-	const handleTimeOutModalClose = () => {
+	const handleTimeOutModalClose = async () => {
 		setTimeOutModalOpen(false);
 		setShowGame(false);
+		await postSessionStats(points);
 	}
 
 	const handleTimeOut = () => {
