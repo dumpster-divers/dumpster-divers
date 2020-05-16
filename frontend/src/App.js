@@ -11,6 +11,8 @@ import PostGame from "./game/PostGame";
 import "./sharedStyles.css";
 
 export default function App() {
+  document.title = "Dumpster Divers";
+
   return (
     <div className="App">
         <Router>
