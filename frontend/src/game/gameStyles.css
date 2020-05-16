@@ -25,3 +25,32 @@
     font-size: 28px;
     margin: 0 auto;
 }
+
+.trashBlock {
+    width: 250px;
+    height:250px;
+    background-color: #76603E;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trashBlockText{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+}
+
+.trashInnerBlock {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width:200px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

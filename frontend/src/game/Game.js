@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import GameContainer  from "../shared/GameContainer";
-import GenericPopover from "../shared/GenericPopover";
 import {makeStyles}   from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
@@ -12,6 +11,7 @@ import Backend         from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {getTrash}      from "./GameUtil";
+import TrashHolder from "./TrashHolder";
 
 //dummy trash object for now
 const trashApple = {
@@ -63,14 +63,13 @@ const Game = () => {
 				<Timer maxCount={maxTime} onFinish={gameOver} enabled={isTimerOn}/>
 			</div>
 			<button onClick={() => newGame(10)}>Start a new game</button>
-			<GenericPopover popover={HeaderPopover()}>
-				<h1>This will be the <em>GAME</em> page eventually</h1>
-			</GenericPopover>     
 			<DndProvider backend={Backend}>
-				{isStarted && trashElement}
+        <TrashHolder visible={isStarted}>
+					{trashElement}
+				</TrashHolder>
 				<br/>
-				<TrashBin onDrop={handleDrop}/>
-				<RecycleBin onDrop={handleDrop}/>
+				<TrashBin className="trash-bin" onDrop={handleDrop}/>
+				<RecycleBin className="recycle-bin" onDrop={handleDrop}/>
 				<ScoreCounter score={points} />
 				<p>Points: {points}</p>
 			</DndProvider>
