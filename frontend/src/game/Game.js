@@ -7,11 +7,12 @@ import Timer from "./Timer";
 import RecycleBin      from "./RecycleBin";
 import TrashBin        from "./TrashBin";
 import Backend         from 'react-dnd-html5-backend'
-import TouchBackend 	 from 'react-dnd-touch-backend';
+import TouchBackend    from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
-import TrashHolder from "./TrashHolder";
+import TrashHolder     from "./TrashHolder";
+import ActionButton    from "../shared/ActionButton";
 
 //dummy trash object for now
 const trashApple = {
@@ -100,7 +101,13 @@ const Game = ({points, setPoints, setShowGame}) => {
 
   return (
     <GameContainer>
-      <button onClick={() => newGame(10)}>Start a new game</button>
+			<div className="play-button">
+				<ActionButton
+					onClick={() => newGame(10)}
+					disabled={isStarted}
+					buttonText={"Let's Dive!"}
+				/>
+			</div>
       <DndProvider backend={backend}>
         <div className="gameCenterWrapper">
           <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
