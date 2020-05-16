@@ -97,6 +97,10 @@
         width: 100px;
         height: auto;
     }
+
+    .heading-postgame {
+        margin-top: 100px;
+    }
 }
 
 .heading-postgame {

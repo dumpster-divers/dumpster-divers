@@ -17,9 +17,7 @@ const PostGame = ({ points }) => {
         <p className="postgame-content">
           We've just updated your new total on your diver certification card
         </p>
-        <div style={{ marginTop: "0%" }}>
-          <DiverCard points={points} />
-        </div>
+        <DiverCard points={points} />
         <div className="frontpage-button">
           <ActionButton
             onClick={handleClick}
