@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import GameContainer from "../shared/GameContainer";
+import React, {useEffect, useRef, useState} from "react";
+import GameContainer                        from "../shared/GameContainer";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
 
-import RecycleBin from "./RecycleBin";
-import TrashBin from "./TrashBin";
-import Backend from "react-dnd-html5-backend";
-import { DndProvider } from "react-dnd";
-import Trash from "./Trash";
-import { getTrash } from "./GameUtil";
+import RecycleBin      from "./RecycleBin";
+import TrashBin        from "./TrashBin";
+import Backend         from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
+import Trash           from "./Trash";
+import {fetchTrash}    from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 
 //dummy trash object for now
@@ -26,23 +26,49 @@ const timesUp = {
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
-	const [currentTrash, setCurrentTrash] = useState(getTrash())
-	const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
+	const [currentTrash, setCurrentTrash] = useState(null);
+	// const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
 	const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
 	const [isStarted, setIsStarted] = useState(false);
+	const [allTrash, setAllTrash] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+
+	const isIncorrectModalOpen = useRef(false);
+	isIncorrectModalOpen.current = false;
+
+	const setIncorrectModalOpen = (isOpen) => {
+		isIncorrectModalOpen.current = isOpen;
+	}
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const fetchedTrash = await fetchTrash();
+			setAllTrash(fetchedTrash);
+			setCurrentTrash(fetchedTrash[0]);
+			setIsLoading(false);
+		}
+
+		fetchData();
+	},
+		[]);
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
 	const handleDrop = (x, y, recyclable) => {
-		console.log(x, y);
-		setCurrentTrash(getTrash());
+		setCurrentTrash(sampleTrash());
+		console.log(currentTrash);
 		trashElement = (<Trash currentTrash={currentTrash}/>);
 		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
 		} else {
 			setIncorrectModalOpen(true);
+			console.log("HMM", isIncorrectModalOpen);
 			setIsStarted(false);
 			setIsTimerOn(false);
 		}
+	}
+
+	const sampleTrash = () => {
+		return allTrash[Math.floor(Math.random() * allTrash.length)]
 	}
 
 	const handleIncorrectModalClose = () => {
@@ -56,17 +82,26 @@ const Game = ({points, setPoints, setShowGame}) => {
 	}
 
 	const handleTimeOut = () => {
-		setTimeOutModalOpen(true);
+
+		// I don't know why this works
+		// Always false
+		if (!isIncorrectModalOpen.current) {
+			setTimeOutModalOpen(true);
+		}
+
 		setIsTimerOn(false);
 		setIsStarted(false);
 	}
 
-  const newGame = gameTime => {
-    setMaxTime(gameTime);
-    setIsTimerOn(true);
-    setIsStarted(true);
-    setPoints(0);
-  };
+	const newGame = async (gameTime) => {
+		setMaxTime(gameTime);
+		setIsTimerOn(true);
+		setIsStarted(true);
+	}
+
+	if (isLoading) {
+		return <p>Loading!</p>
+	}
 
   return (
     <GameContainer>
@@ -87,10 +122,14 @@ const Game = ({points, setPoints, setShowGame}) => {
       </div>
       <IncorrectBinModal
         trashInfo={trashApple.info}
-        isOpen={isIncorrectModalOpen}
+        isOpen={isIncorrectModalOpen.current}
         onClose={handleIncorrectModalClose}
       />
-			<IncorrectBinModal trashInfo={timesUp.info} isOpen={isTimeOutModalOpen} onClose={handleTimeOutModalClose}/>
+			<IncorrectBinModal
+				trashInfo={timesUp.info}
+				isOpen={isTimeOutModalOpen}
+				onClose={handleTimeOutModalClose}
+			/>
     </GameContainer>
   );
 };

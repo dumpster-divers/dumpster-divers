@@ -31,12 +31,9 @@ const addSessionStats = async (req, res) => {
 //get random trash for a level
 const getData = async (req, res) => {
   // Get 1 by default
-  const amount = req.query.amount !== undefined ? req.query.amount: 1;
+  const allTrash = await Trash.find();
   try {
-    let randomTrash = await Trash.aggregate(
-      [{$sample: {size: 6}}]
-    );
-    res.send(randomTrash);
+    res.send(allTrash);
   } catch (err) {
     res.status(400);
     console.log(err)

@@ -1,5 +1,5 @@
 const fetchTrash = async () => {
-  return await fetch("api/game/data?amount=50")
+  return await fetch("api/game/data")
     .then(response => response.json())
     .then(response => {
       console.log(response);

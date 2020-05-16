@@ -179,6 +179,9 @@ This functionality contains the core gameplay elements. It outputs random trash 
 
 **GET https://dumpster-divers.herokuapp.com/api/game/data?amount=2**
 - Grab the requested amount of trash items to sort in a game round.
+
+`?amount= current not implemented default behaviour return all trash`
+
 Example Response Body: 
 ``` json 
 [
