@@ -2,7 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import GameContainer                        from "../shared/GameContainer";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
-import Timer from "./Timer";
+import Timer          from "./Timer";
+import {Images} from "./Images";
 
 import RecycleBin      from "./RecycleBin";
 import TrashBin        from "./TrashBin";
@@ -13,6 +14,7 @@ import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
 import TrashHolder     from "./TrashHolder";
 import ActionButton    from "../shared/ActionButton";
+import Preload         from "react-preload";
 
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
@@ -39,6 +41,10 @@ const Game = ({points, setPoints, setShowGame}) => {
 			setIsLoading(false);
 		}
 
+		Images.forEach((image) => {
+			new Image(image);
+		});
+
 		fetchData();
 	},
 		[]);
@@ -53,7 +59,7 @@ const Game = ({points, setPoints, setShowGame}) => {
 		} else {
 			// So the currentTrash.info in Incorrect Modal is about the right one
 			setCurrentTrash(oldTrash);
-			
+
 			setIncorrectModalOpen(true);
 			setIsStarted(false);
 			setIsTimerOn(false);
@@ -93,39 +99,44 @@ const Game = ({points, setPoints, setShowGame}) => {
 	}
 
   return (
-    <GameContainer>
-			<div className="play-button">
-				<ActionButton
-					onClick={() => newGame(10)}
-					disabled={isStarted}
-					buttonText={"Let's Dive!"}
+  	<Preload
+			loadingIndicator={<p>Loading!</p>}
+			images={Images}
+		>
+			<GameContainer>
+				<div className="play-button">
+					<ActionButton
+						onClick={() => newGame(10)}
+						disabled={isStarted}
+						buttonText={"Let's Dive!"}
+					/>
+				</div>
+				<DndProvider backend={backend}>
+					<div className="gameCenterWrapper">
+						<TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
+						<br />
+						<div className="bins">
+							<TrashBin className="trash-bin" onDrop={handleDrop} />
+							<RecycleBin className="recycle-bin" onDrop={handleDrop} />
+						</div>
+					</div>
+				</DndProvider>
+				<ScoreCounter score={points} />
+				<div id="timer">
+					<Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn} />
+				</div>
+				<IncorrectBinModal
+					trashInfo={currentTrash.info}
+					isOpen={isIncorrectModalOpen}
+					onClose={handleIncorrectModalClose}
 				/>
-			</div>
-      <DndProvider backend={backend}>
-        <div className="gameCenterWrapper">
-          <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
-          <br />
-          <div className="bins">
-            <TrashBin className="trash-bin" onDrop={handleDrop} />
-            <RecycleBin className="recycle-bin" onDrop={handleDrop} />
-          </div>
-        </div>
-      </DndProvider>
-      <ScoreCounter score={points} />
-      <div id="timer">
-        <Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn} />
-      </div>
-      <IncorrectBinModal
-        trashInfo={currentTrash.info}
-        isOpen={isIncorrectModalOpen}
-        onClose={handleIncorrectModalClose}
-      />
-			<IncorrectBinModal
-				trashInfo={"winnie changing this"}
-				isOpen={isTimeOutModalOpen}
-				onClose={handleTimeOutModalClose}
-			/>
-    </GameContainer>
+				<IncorrectBinModal
+					trashInfo={"winnie changing this"}
+					isOpen={isTimeOutModalOpen}
+					onClose={handleTimeOutModalClose}
+				/>
+			</GameContainer>
+		</Preload>
   );
 };
 
