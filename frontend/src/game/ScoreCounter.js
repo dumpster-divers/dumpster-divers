@@ -1,7 +1,7 @@
 import React from "react";
 import ReactOdometer from "react-odometerjs";
 import 'odometer/themes/odometer-theme-minimal.css';
-import "./bin.css"
+import "./gameStyles.css"
 
 const ScoreCounter = ({score}) => {
 
