@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import GameContainer  from "../shared/GameContainer";
-import GenericPopover from "../shared/GenericPopover";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
@@ -32,11 +31,11 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const [isStarted, setIsStarted] = useState(false);
 
 	let trashElement = <Trash currentTrash={currentTrash} />;
-	const handleDrop = (x, y, recycable) => {
+	const handleDrop = (x, y, recyclable) => {
 		console.log(x, y);
 		setCurrentTrash(getTrash());
 		trashElement = (<Trash currentTrash={currentTrash}/>);
-		if (x.recyclable === recycable) {
+		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
 		} else {
 			setIncorrectModalOpen(true);
