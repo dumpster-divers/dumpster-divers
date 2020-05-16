@@ -105,7 +105,7 @@ const Game = ({points, setPoints, setShowGame}) => {
         onClose={handleIncorrectModalClose}
       />
 			<IncorrectBinModal
-				trashInfo={"You ran out of time!"}
+				trashInfo={"winnie changing this"}
 				isOpen={isTimeOutModalOpen}
 				onClose={handleTimeOutModalClose}
 			/>
