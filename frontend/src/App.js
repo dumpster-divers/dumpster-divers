@@ -16,7 +16,7 @@ export default function App() {
         <Router>
           <Switch>
             <Route path="/game">
-              <Game />
+              <GamePage />
             </Route>
             <Route path="/postgame">
               <PostGame />
