@@ -27,13 +27,15 @@
 }
 
 .trashBlock {
-    width: 250px;
-    height:250px;
+    width: 200px;
+    height:200px;
     background-color: #76603E;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .trashBlockText{
@@ -46,11 +48,21 @@
 .trashInnerBlock {
     background-color: #ffffff;
     border-radius: 15px;
-    width:200px;
-    height:200px;
+    width:180px;
+    height:180px;
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
+.gameCenterWrapper {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%
+}
 
+
+.bins {
+    margin: auto 0;
+}
