@@ -45,7 +45,7 @@ const IncorrectBinModal = ({trashInfo, isOpen, onClose}) => {
       >
         <Fade in={isOpen}>
           <div className={classes.paper}>
-          <div className="modal-graphic">
+          <div className="modal-cross">
             <CrossSVG/>
           </div>
             <h2 className="modal-title">Oops</h2>

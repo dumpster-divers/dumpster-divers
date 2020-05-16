@@ -11,17 +11,13 @@ import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
+import TimeOutModal from "./TimeOutModal";
 
 //dummy trash object for now
 const trashApple = {
   id: 1,
   info: "this is why you're wrong blah blah blah blah"
 };
-
-const timesUp = {
-	id: 2,
-	info: "Bruh cmon you ran out of time!!!"
-}
 
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
@@ -115,8 +111,7 @@ const Game = ({points, setPoints, setShowGame}) => {
         isOpen={isIncorrectModalOpen}
         onClose={handleIncorrectModalClose}
       />
-			<IncorrectBinModal
-				trashInfo={timesUp.info}
+			<TimeOutModal
 				isOpen={isTimeOutModalOpen}
 				onClose={handleTimeOutModalClose}
 			/>

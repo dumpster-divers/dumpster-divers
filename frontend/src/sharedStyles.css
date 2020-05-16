@@ -6,7 +6,7 @@
     margin-bottom: -20px;
     height:62px;
     display: block;
-  
+
     text-align: center;
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -15,39 +15,45 @@
     line-height: 62px;
     color: #EDEDED;
   }
-  
+
   .modal-content {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
     line-height: 38px;
-  
     width: 400px;
     display: block;
     background-color: transparent;
     text-align: center;
     color: #EDEDED;
   }
-  
+
   .modal-clickout {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
-    line-height: 25px;
+    line-height: 20px;
     text-align: center;
+    padding-top: 6%;
     color: #EDEDED;
-    bottom:0%;
   }
-  
-  .modal-graphic {
+
+  .modal-cross {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width:23%;
   }
-  
+
+  .modal-stopwatch {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:28%;
+  }
+
   .modal-sadface {
     text-align: center;
     font-family: Roboto, sans-serif;
@@ -55,7 +61,7 @@
     font-weight: bold;
     font-size: 60px;
     line-height: 62px;
-  
+
     display: block;
     color: #EDEDED;
     margin-left: auto;
