@@ -13,17 +13,6 @@ import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 
-//dummy trash object for now
-const trashApple = {
-  id: 1,
-  info: "this is why you're wrong blah blah blah blah"
-};
-
-const timesUp = {
-	id: 2,
-	info: "Bruh cmon you ran out of time!!!"
-}
-
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
 	const [isTimerOn, setIsTimerOn] = useState(false);
@@ -116,12 +105,12 @@ const Game = ({points, setPoints, setShowGame}) => {
         <Timer maxCount={maxTime} onFinish={handleTimeOut} enabled={isTimerOn} />
       </div>
       <IncorrectBinModal
-        trashInfo={trashApple.info}
+        trashInfo={currentTrash.info}
         isOpen={isIncorrectModalOpen}
         onClose={handleIncorrectModalClose}
       />
 			<IncorrectBinModal
-				trashInfo={timesUp.info}
+				trashInfo={"winnie changing this"}
 				isOpen={isTimeOutModalOpen}
 				onClose={handleTimeOutModalClose}
 			/>
