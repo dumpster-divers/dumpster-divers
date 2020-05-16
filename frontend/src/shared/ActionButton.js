@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false}) => {
+const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, disabled=false}) => {
   const colorToHex = {
     yellow: "#FFC045"
   };
@@ -48,6 +48,7 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false}) =
         size="large"
         className={classes.button}
         onClick={onClick}
+        disabled={disabled}
       >
         {loading ? (<CircularProgress/>) : (buttonText)}
       </Button>

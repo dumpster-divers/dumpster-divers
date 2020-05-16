@@ -85,3 +85,7 @@
     line-height: calc(10px + 2vmin);
     text-align: center;
 }
+
+.play-button {
+    padding-top: 1vmin;
+}
