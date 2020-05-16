@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "./Button";
 import {getName, getUsername} from "../utilities/userManager";
 import updateUser from "./UpdateUserApi";
 
