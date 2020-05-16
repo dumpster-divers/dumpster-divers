@@ -5,9 +5,10 @@ import ActionButton from "../shared/ActionButton";
 import { attemptLogin, createUserCookie } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
-const SignInForm = ({onError}) => {
+const SignInForm = ({ onError }) => {
   let [value, setValue] = useState("");
   let [redirect, setRedirect] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   const onChange = event => {
     setValue(event.target.value);
@@ -15,12 +16,19 @@ const SignInForm = ({onError}) => {
 
   const handleClick = () => {
     if (value.length > 0) {
+      setLoading(true);
       attemptLogin(value)
         .then(createUserCookie)
         .then(redirectHome)
-        .catch(onError)
+        .catch(handleError);
     }
   };
+
+  const handleError = () => {
+    setLoading(false);
+    onError();
+  };
+
   const redirectHome = () => setRedirect(true);
   const useStyles = makeStyles(() =>
     createStyles({
@@ -46,7 +54,11 @@ const SignInForm = ({onError}) => {
         onSubmit={handleSubmit}
       />
       <div className={classes.wow}>
-        <ActionButton buttonText={"Sign In"} onClick={handleClick} />
+        <ActionButton
+          buttonText={"Sign In"}
+          onClick={handleClick}
+          loading={loading}
+        />
       </div>
       {redirect && <Redirect to="/" />}
     </>
