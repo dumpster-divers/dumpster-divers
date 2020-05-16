@@ -6,7 +6,7 @@ import updateUser from "./UpdateUserApi";
 export default function UpdateUserForm() {
 
   const [name_input, setName] = useState(getName());
-  const [username_input, setUsername] = useState(getUsername());
+  const username_input = getUsername();
 
   function onSubmit() {
     // call upate user function
