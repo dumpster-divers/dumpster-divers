@@ -13,12 +13,11 @@ const PostGame = ({ points }) => {
 
   return (
     <GameContainer>
-      <div className="yellow-part">
         <h1 className="heading-postgame">{headingText}</h1>
         <p className="postgame-content">
           We've just updated your new total on your diver certification card
         </p>
-        <div style={{ marginTop: "8%" }}>
+        <div style={{ marginTop: "0%" }}>
           <DiverCard points={points} />
         </div>
         <div className="frontpage-button">
@@ -29,7 +28,6 @@ const PostGame = ({ points }) => {
           />
         </div>
         <ExitGameButton />
-      </div>
     </GameContainer>
   );
 };

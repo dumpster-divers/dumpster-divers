@@ -27,6 +27,8 @@ const Game = ({points, setPoints, setShowGame}) => {
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
 
+	const GAME_DURATION = 10;
+
 	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
 		? TouchBackend
 		: Backend;
@@ -92,7 +94,7 @@ const Game = ({points, setPoints, setShowGame}) => {
     <GameContainer>
 			<div className="play-button">
 				<ActionButton
-					onClick={() => newGame(10)}
+					onClick={() => newGame(GAME_DURATION)}
 					disabled={isStarted}
 					buttonText={"Let's Dive!"}
 				/>

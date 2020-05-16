@@ -26,8 +26,8 @@
 }
 
 .trashBlock {
-    width: 200px;
-    height:200px;
+    width: 170px;
+    height:170px;
     background-color: #76603E;
     border-radius: 20px;
     display: flex;
@@ -47,8 +47,8 @@
 .trashInnerBlock {
     background-color: #ffebb0;
     border-radius: 15px;
-    width:180px;
-    height:180px;
+    width:150px;
+    height:150px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -74,12 +74,12 @@
 /* Tablet & desktop */
 @media (min-device-width: 500px) {
     .bins {
-        margin-bottom: 35px;
+        margin-bottom: 15px;
     }
 
     .bin-img {
         /* Proportionally scale down images */
-        width: 175px;
+        width: 160px;
         height: auto;
     }
 }
@@ -89,7 +89,7 @@
 @media (max-device-width: 500px) {
     .bins {
         display: inline-block;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
 
     .bin-img {

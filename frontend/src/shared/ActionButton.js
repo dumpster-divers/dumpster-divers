@@ -7,12 +7,18 @@ const ActionButton = ({ color = "yellow", buttonText, onClick, loading=false, di
   const colorToHex = {
     yellow: "#FFC045"
   };
-  const useStyles = makeStyles(() =>
+  const useStyles = makeStyles((theme) =>
     createStyles({
       button: {
         color: "white",
         borderRadius: "37.5px",
         fontSize: "36px",
+        [theme.breakpoints.up('md')]: {
+          fontSize: "36px"
+        },
+        [theme.breakpoints.down('md')]: {
+          fontSize: "28px"
+        },
         minWidth: "200px",
         maxWidth: "400px",
         width: "35%",
