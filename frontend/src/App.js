@@ -11,6 +11,8 @@ import "./sharedStyles.css";
 import GamePage   from "./game/GamePage";
 
 export default function App() {
+  document.title = "Dumpster Divers";
+
   return (
     <div className="App">
         <Router>
