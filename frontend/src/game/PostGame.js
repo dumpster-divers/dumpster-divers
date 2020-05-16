@@ -1,8 +1,8 @@
 import React from "react";
 import GameContainer  from "../shared/GameContainer";
-import diver_cert_card from "../assets/diver_cert_card.png";
 import ActionButton from "../shared/ActionButton";
 import ExitGameButton from "./ExitGameButton";
+import DiverCard from "../shared/DiverCard";
 
 
 const PostGame = ({points}) => {
@@ -14,9 +14,9 @@ const PostGame = ({points}) => {
 		<GameContainer>
       <div className='yellow-part'>
 			  <h1 className='heading-postgame'>Woah! What a dive!</h1>
-        <p className='postgame-content'>we've just updated your new total on your diver certification card</p>
+        <p className='postgame-content'>We've just updated your new total on your diver certification card</p>
         <p className='postgame-content'>Points: {points}</p>
-        <img className='diver-cert-card' src={diver_cert_card} alt="diver certification card" />
+        <DiverCard points = {points}/>
         <div className='play-again-button'>
           <ActionButton onClick={handleClick} to="/game" buttonText={"Dive Again"} />
         </div>
