@@ -15,7 +15,6 @@ const PostGame = ({ points }) => {
 
   return (
     <GameContainer>
-      <div className="yellow-part">
         <h1 className="heading-postgame">{headingText}</h1>
         <p className="postgame-content">
           {isLoggedIn() ? (
@@ -26,9 +25,7 @@ const PostGame = ({ points }) => {
             <PostGameLoginLogoutFlow points={points} />
           )}
         </p>
-        <div style={{ marginTop: "8%" }}>
-          <DiverCard points={points} />
-        </div>
+        <DiverCard points={points} />
         <div className="frontpage-button">
           <ActionButton
             onClick={handleClick}
@@ -37,7 +34,6 @@ const PostGame = ({ points }) => {
           />
         </div>
         <ExitGameButton />
-      </div>
     </GameContainer>
   );
 };

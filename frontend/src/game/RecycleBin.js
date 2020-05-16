@@ -16,7 +16,7 @@ const RecycleBin = (props) => {
   let image = (isOver) ? binOpened : binClosed;
 
   return (
-    <img ref={drop} src={image} alt="Recycle Bin"/>
+    <img ref={drop} src={image} alt="Recycle Bin" className="bin-img" />
   )
 }
 
