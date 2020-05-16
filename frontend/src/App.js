@@ -6,6 +6,7 @@ import Signup     from "./signup/Signup";
 import Signin     from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
 import PostGame   from "./game/PostGame";
+import UserHomepage from "./user/UserHomepage";
 
 import "./sharedStyles.css";
 import GamePage   from "./game/GamePage";
@@ -31,6 +32,9 @@ export default function App() {
             </Route>
             <Route path="/postsignup">
               <PostSignUp/>
+            </Route>
+            <Route path="/userhomepage">
+              <UserHomepage/>
             </Route>
             <Route path="/">
               <FrontPage />
