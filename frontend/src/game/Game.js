@@ -51,7 +51,6 @@ const Game = ({points, setPoints, setShowGame}) => {
 	let trashElement = <Trash currentTrash={currentTrash} />;
 	const handleDrop = (x, y, recyclable) => {
 		setCurrentTrash(sampleTrash());
-		console.log(currentTrash);
 		trashElement = (<Trash currentTrash={currentTrash}/>);
 		if (x.recyclable === recyclable) {
 			setPoints(points => points + 1);
