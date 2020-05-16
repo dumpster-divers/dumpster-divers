@@ -72,7 +72,6 @@ const Game = () => {
 				<TrashBin onDrop={handleDrop}/>
 				<RecycleBin onDrop={handleDrop}/>
 				<ScoreCounter score={points} />
-				<p>Points: {points}</p>
 			</DndProvider>
 			<IncorrectBinModal trashInfo={trashApple.info} isOpen={isModalOpen} onClose={handleModalClose}/>
 		</GameContainer>
