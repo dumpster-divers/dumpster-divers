@@ -12,7 +12,7 @@
   font-size: calc(10px + 6vmin);
   line-height: calc(10px + 6vmin);
   text-align: center;
-  color: #4D4125;
+  color: #4d4125;
 }
 
 .about-us {
@@ -53,7 +53,7 @@
   left: 0;
   right: 0;
   top: 40%;
-  margin: 100px auto 0px auto;
+  margin: 100px auto 0 auto;
 }
 
 @media (max-device-width: 500px) {
