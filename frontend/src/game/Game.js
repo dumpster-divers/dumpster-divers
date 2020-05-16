@@ -4,7 +4,6 @@ import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
 import { Images } from "./Images";
-
 import RecycleBin from "./RecycleBin";
 import TrashBin from "./TrashBin";
 import Backend from "react-dnd-html5-backend";
