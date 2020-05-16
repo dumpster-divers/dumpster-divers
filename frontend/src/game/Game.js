@@ -7,6 +7,7 @@ import Timer from "./Timer";
 import RecycleBin      from "./RecycleBin";
 import TrashBin        from "./TrashBin";
 import Backend         from 'react-dnd-html5-backend'
+import TouchBackend 	 from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
 import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
@@ -35,6 +36,10 @@ const Game = ({points, setPoints, setShowGame}) => {
 
 	const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen)
 	isIncorrectModalOpenRef.current = isIncorrectModalOpen
+
+	const backend =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
+		? TouchBackend
+		: Backend;
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -96,7 +101,7 @@ const Game = ({points, setPoints, setShowGame}) => {
   return (
     <GameContainer>
       <button onClick={() => newGame(10)}>Start a new game</button>
-      <DndProvider backend={Backend}>
+      <DndProvider backend={backend}>
         <div className="gameCenterWrapper">
           <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
           <br />
