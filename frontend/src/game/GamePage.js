@@ -7,7 +7,7 @@ const GamePage = () => {
   const [points, setPoints] = useState(0);
 
   if (showGame) {
-    return <Game points={points} setPoints={setPoints}/>;
+    return <Game points={points} setPoints={setPoints} setShowGame={setShowGame}/>;
   } else {
     return <PostGame/>
   }
