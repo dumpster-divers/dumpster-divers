@@ -44,10 +44,6 @@ const Game = ({ points, setPoints, setShowGame }) => {
       setIsLoading(false);
     };
 
-    Images.forEach((image) => {
-      new Image(image);
-    });
-
     fetchData();
   }, []);
 
