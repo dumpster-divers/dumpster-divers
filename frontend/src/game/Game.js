@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import GameContainer from "../shared/GameContainer";
-import { makeStyles } from "@material-ui/core/styles";
 import IncorrectBinModal from "./IncorrectBinModal";
 import ScoreCounter from "./ScoreCounter";
 import Timer from "./Timer";
