@@ -15,6 +15,7 @@ import TrashHolder from "./TrashHolder";
 import ActionButton from "../shared/ActionButton";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
+import { isMobile } from "../utilities/display";
 
 const Game = ({ points, setPoints, setShowGame }) => {
   const [maxTime, setMaxTime] = useState(5);
@@ -30,11 +31,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
 
   // Handling touch vs mouse dragging
-  const backend = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-    navigator.userAgent
-  )
-    ? TouchBackend
-    : Backend;
+  const backend = isMobile() ? TouchBackend : Backend;
 
   useEffect(() => {
     const fetchData = async () => {
