@@ -1,10 +1,10 @@
 import React from "react";
 import diver_cert_card from "../assets/diver_cert_card.png";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
-import {getName} from "../utilities/userManager";
+import { getName } from "../utilities/userManager";
 
 const DiverCard = ({ points = 0 }) => {
-  const nameText = getName() ? "Name: \n" + getName() : ""
+  const nameText = getName() ? "Name: \n" + getName() : "";
   const pointsText = "Points: " + points;
 
   const useStyles = makeStyles(() =>
@@ -14,15 +14,16 @@ const DiverCard = ({ points = 0 }) => {
         position: "relative"
       },
       points: {
+        width: "300px",
         position: "absolute",
         fontFamily: "Roboto",
         zIndex: "9",
-        color: "black",
+        color: "#333436",
         marginTop: "75px",
         fontSize: "25px",
-        textAlign:"left",
+        textAlign: "left",
         fontWeight: "bold",
-        marginLeft: "-50px"
+        marginLeft: "130px"
       }
     })
   );
