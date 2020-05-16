@@ -6,10 +6,10 @@ import newspaperSource from "../assets/newspaper.png";
 import waterBottleSource from "../assets/water_bottle.png";
 
 export const ItemTypes = {
-  "can": canSource,
-  "straw": strawSource,
-  "apple": appleSource,
-  "milkBottle": milkBottleSource,
-  "newspaper": newspaperSource,
-  "waterBottle": waterBottleSource
-}
+  can: canSource,
+  straw: strawSource,
+  apple: appleSource,
+  milkBottle: milkBottleSource,
+  newspaper: newspaperSource,
+  waterBottle: waterBottleSource,
+};

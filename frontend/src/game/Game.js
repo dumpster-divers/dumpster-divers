@@ -30,6 +30,8 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen);
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
 
+  const GAME_DURATION = 10;
+
   // Handling touch vs mouse dragging
   const backend = isMobile() ? TouchBackend : Backend;
 
@@ -101,7 +103,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       <GameContainer>
         <div className="play-button">
           <ActionButton
-            onClick={() => newGame(10)}
+            onClick={() => newGame(GAME_DURATION)}
             disabled={isStarted}
             buttonText={"Let's Dive!"}
           />

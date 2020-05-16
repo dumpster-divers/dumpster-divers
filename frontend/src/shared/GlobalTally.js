@@ -14,7 +14,7 @@ const GlobalTally = () => {
     fetchData().then(null);
   }, []);
 
-  const useStyle = makeStyles(() =>
+  const useStyle = makeStyles((theme) =>
     createStyles({
       wrapper: {
         display: "flex",
@@ -22,17 +22,29 @@ const GlobalTally = () => {
         width: "auto",
         maxWidth: "500px",
         background: "#ffebb0",
-        padding: "10px 0",
+        padding: "5px 5px",
         borderRadius: "20px",
         marginLeft: "auto",
-        marginRight: "auto"
+        marginRight: "auto",
+        marginTop: "-25px",
+        fontSize: "15px",
+        [theme.breakpoints.up("sm")]: {
+          fontSize: "30px",
+          padding: "10px 0",
+        },
       },
       text: {
         color: "#4d4125",
         fontFamily: "Roboto, sans-serif",
-        fontSize: "30px",
-        marginLeft: "30px"
-      }
+        fontSize: "15px",
+        marginLeft: "30px",
+        verticalAlign: "middle",
+        paddingTop: "8px",
+        [theme.breakpoints.up("sm")]: {
+          fontSize: "30px",
+          paddingTop: "0px",
+        },
+      },
     })
   );
 

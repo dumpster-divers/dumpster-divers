@@ -7,19 +7,17 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <GameContainer>
-      <div className="yellow-part">
-        <h1 className="heading1"> Sign Up </h1>
-        <p className="text1">
-          it's quick and easy, just enter your name (this will be shown publicly
-          in highscores)
-        </p>
-        <div className="form-module">
-          <SignUpForm />
-        </div>
-        <Link to="/">
-          <GoBackButton />
-        </Link>
+      <h1 className="heading1"> Sign Up </h1>
+      <p className="text1">
+        it's quick and easy, just enter your name (this will be shown publicly
+        in highscores)
+      </p>
+      <div className="form-module">
+        <SignUpForm />
       </div>
+      <Link to="/">
+        <GoBackButton />
+      </Link>
     </GameContainer>
   );
 };

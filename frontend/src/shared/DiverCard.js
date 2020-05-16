@@ -7,24 +7,32 @@ const DiverCard = ({ points = 0 }) => {
   const nameText = getName() ? "Name: \n" + getName() : "";
   const pointsText = "Points: " + points;
 
-  const useStyles = makeStyles(() =>
+  const useStyles = makeStyles((theme) =>
     createStyles({
-      wrapper: { display: "flex", justifyContent: "center" },
+      wrapper: {
+        display: "flex",
+        justifyContent: "center",
+        position: "relative",
+      },
       card: {
-        position: "relative"
+        position: "relative",
       },
       points: {
-        width: "300px",
         position: "absolute",
         fontFamily: "Roboto",
         zIndex: "9",
         color: "#333436",
-        marginTop: "75px",
-        fontSize: "25px",
+        fontSize: "15px",
+        marginTop: "50px",
+        marginLeft: "45px",
+        [theme.breakpoints.up("sm")]: {
+          fontSize: "25px",
+          marginTop: "85px",
+          marginLeft: "70px",
+        },
         textAlign: "left",
         fontWeight: "bold",
-        marginLeft: "130px"
-      }
+      },
     })
   );
 

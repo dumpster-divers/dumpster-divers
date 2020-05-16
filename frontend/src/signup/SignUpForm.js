@@ -10,7 +10,7 @@ const SignUpForm = () => {
   let [redirect, setRedirect] = useState(false);
   let [loading, setLoading] = useState(false);
 
-  const onChange = event => {
+  const onChange = (event) => {
     setValue(event.target.value);
   };
 
@@ -23,7 +23,7 @@ const SignUpForm = () => {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     //Prevent page refresh
     e.preventDefault();
     //Do the same thing as submit button
@@ -33,8 +33,8 @@ const SignUpForm = () => {
   const useStyles = makeStyles(() =>
     createStyles({
       wow: {
-        marginTop: "15px"
-      }
+        marginTop: "15px",
+      },
     })
   );
 
@@ -49,7 +49,11 @@ const SignUpForm = () => {
         placeholderText={"Your Name"}
       />
       <div className={classes.wow}>
-        <ActionButton buttonText={"Sign Up!"} onClick={handleClick} loading={loading} />
+        <ActionButton
+          buttonText={"Sign Up!"}
+          onClick={handleClick}
+          loading={loading}
+        />
       </div>
       {redirect && <Redirect to="/postsignup" />}
     </>
