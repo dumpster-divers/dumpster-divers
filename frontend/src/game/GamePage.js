@@ -7,6 +7,15 @@ const GamePage = () => {
   const [showGame, setShowGame] = useState(true);
   const [points, setPoints] = useState(0);
 
+  useEffect(() => {
+      const addSessionStats = async () => {
+        await postSessionStats(points);
+      }
+
+      addSessionStats();
+    },
+    [points]);
+
   if (showGame) {
     return (
       <Game points={points} setPoints={setPoints} setShowGame={setShowGame} />
