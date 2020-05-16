@@ -13,6 +13,7 @@ import Trash           from "./Trash";
 import {fetchTrash}    from "../utilities/gameManager";
 import TrashHolder     from "./TrashHolder";
 import ActionButton    from "../shared/ActionButton";
+import TimeOutModal from "./TimeOutModal";
 
 const Game = ({points, setPoints, setShowGame}) => {
 	const [maxTime, setMaxTime] = useState(5);
