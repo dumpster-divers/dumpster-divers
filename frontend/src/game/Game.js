@@ -12,7 +12,6 @@ import { DndProvider } from "react-dnd";
 import Trash from "./Trash";
 import { getTrash, postSessionStats } from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
-import ActionButton from "../shared/ActionButton";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
 import HowToPlayModal from "./HowToPlayModal";

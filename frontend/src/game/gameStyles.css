@@ -127,3 +127,18 @@
   line-height: calc(10px + 2vmin);
   text-align: center;
 }
+
+.how-to-play-modal {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+.how-to-play-gif {
+  max-width: 80%;
+  width: 700px;
+  height: auto;
+  margin-left: auto;
+}
