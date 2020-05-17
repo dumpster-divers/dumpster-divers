@@ -12,6 +12,7 @@ import straw from "../assets/straw.png";
 import trash_1 from "../assets/trash_1.png";
 import trash_2 from "../assets/trash_2.png";
 import water_bottle from "../assets/water_bottle.png";
+import HowToPlayGif from "../assets/howtoplay.gif";
 
 export const Images = [
   apple,
@@ -28,4 +29,5 @@ export const Images = [
   trash_1,
   trash_2,
   water_bottle,
+  HowToPlayGif,
 ];
