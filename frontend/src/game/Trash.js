@@ -3,8 +3,6 @@ import { useDrag } from "react-dnd";
 import { ItemTypes } from "./Constants";
 
 const Trash = ({ currentTrash }) => {
-  console.log(currentTrash["name"]);
-
   const [{ opacity }, dragRef] = useDrag({
     item: { type: "droppable", recyclable: currentTrash.recyclable },
     collect: (monitor) => ({
