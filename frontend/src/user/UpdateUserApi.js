@@ -1,4 +1,6 @@
-const updateUser = async (user) => {
+import Cookies from "js-cookie";
+
+const updateUser = (user) => {
   const { username, name } = user;
 
   if (!name) {
@@ -6,13 +8,13 @@ const updateUser = async (user) => {
     return;
   }
 
-  return await fetch('/api/users/update', {
+  return fetch('/api/users/update', {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(user)
-  });
+  })
 };
 
 
