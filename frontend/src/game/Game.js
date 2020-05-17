@@ -30,7 +30,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen);
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
 
-  const GAME_DURATION = 1000;
+  const GAME_DURATION = 10;
 
   // Handling touch vs mouse dragging
   const backend = isMobile() ? TouchBackend : Backend;
