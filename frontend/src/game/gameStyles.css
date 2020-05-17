@@ -138,6 +138,8 @@
   text-align: center;
   width: auto;
   height: auto;
+  border: "0px";
+  outline: 0;
 }
 
 .how-to-play-gif {
