@@ -14,6 +14,17 @@ https://dumpster-divers.herokuapp.com/
 ### Feature One: Users
 This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database. To delete a user, pass in the unique username of the user, and the user profile will be deleted on the database.
 
+#### Front End Features
+
+#### Sign Up
+Access this using the link https://dumpster-divers.herokuapp.com/signup or click on the sign up link at the top right of the homepage. Enter any nickname that you would like to use and the system will give you an unique username that could be used to identify you when you log in. Please copy your given username to test the next functionality. 
+
+#### Sign In
+Access this using the link https://dumpster-divers.herokuapp.com/signin or click on the sign in link at the top right of the homepage. Enter your given username to log in. If you logged in successfully you will be redirected back to the homepage. If the system couldn’t find the username that you entered on the database, it will return a modal that tells you to try again. 
+
+#### Update
+Access this using the link https://dumpster-divers.herokuapp.com/userhomepage, this page would eventually be where users see their own stats 
+
 
 ***POST https://dumpster-divers.herokuapp.com/api/users/add***:
 
@@ -176,6 +187,19 @@ Example Response Body:
 
 ### Feature Three: Game
 This functionality contains the core gameplay elements. It outputs random trash for the user to sort in a session, then processes a user’s score from the session, updating the global and user counts. The progress against the global count remaining trash can be seen by other users.
+
+#### Front End
+
+#### Game
+Access this using the link https://dumpster-divers.herokuapp.com/game or click on the Dive In! button on the homepage. When you press Let’s Dive, the timer begins to count down and you’re given a random trash to sort. You may choose to put it into either of the bins. If you put it in the correct bin, your tally counter increments by one. If you put it into the wrong bin, you will be greeted with a modal that tells you where you went wrong and the game ends immediately. The game also ends when your timer runs out. 
+
+#### User Session
+The amount of trash you recycled this session will be displayed on the post game screen on your diver certification card immediately after your round. This amount is both added to your records (if you’re logged in) and decremented from the global count. Players who are not signed in are prompted to do so in order to save their progress.
+
+
+#### Global Count 
+The global count is a real time tally displayed on the homepage. After finishing a round your score is subtracted from the global count and you will be able to see the changes on the homepage. 
+
 
 **GET https://dumpster-divers.herokuapp.com/api/game/data?amount=2**
 - Grab the requested amount of trash items to sort in a game round.
