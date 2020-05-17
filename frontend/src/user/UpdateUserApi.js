@@ -6,7 +6,7 @@ const updateUser = async (user) => {
     return;
   }
 
-  return await fetch('https://dumpster-divers-test.herokuapp.com/api/users/update', {
+  return await fetch('/api/users/update', {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
