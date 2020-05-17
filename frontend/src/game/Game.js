@@ -114,13 +114,6 @@ const Game = ({ points, setPoints, setShowGame }) => {
           isOpen={!isStarted}
           onClose={handleIncorrectModalClose}
         />
-        <div className="play-button">
-          <ActionButton
-            onClick={() => handleNewGame(GAME_DURATION)}
-            disabled={isStarted}
-            buttonText={"Let's Dive!"}
-          />
-        </div>
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
