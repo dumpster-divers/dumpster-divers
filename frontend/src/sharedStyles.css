@@ -1,5 +1,9 @@
 /* Styles for shared components. */
 
+a {
+  text-decoration: none;
+}
+
 .modal-title {
     padding: 0px 0px 0px 0px;
     margin-top: 0px;
