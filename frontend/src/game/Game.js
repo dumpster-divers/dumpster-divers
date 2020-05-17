@@ -92,8 +92,8 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const handleNewGame = async (gameTime) => {
-    setMaxTime(gameTime);
+  const handleNewGame = async () => {
+    setMaxTime(GAME_DURATION);
     setIsTimerOn(true);
     setIsStarted(true);
   };
@@ -107,7 +107,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       <GameContainer>
         <div className="play-button">
           <ActionButton
-            onClick={() => handleNewGame(GAME_DURATION)}
+            onClick={handleNewGame}
             disabled={isStarted}
             buttonText={"Let's Dive!"}
           />
