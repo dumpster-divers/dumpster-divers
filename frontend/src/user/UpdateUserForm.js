@@ -1,11 +1,17 @@
 import React, { useState }    from "react";
-import {getName, getUsername} from "../utilities/userManager";
+import {getName, getUsername, isLoggedIn} from "../utilities/userManager";
 import updateUser             from "./UpdateUserApi";
 import Button                 from "@material-ui/core/Button";
 import Cookies                from "js-cookie";
 import TextEntry              from "../shared/TextEntry";
+import { Redirect }           from "react-router-dom";
+
 
 export default function UpdateUserForm() {
+
+  if (!isLoggedIn()) {
+    <Redirect to="/" />
+  }
 
   const [inputName, setInputName] = useState(getName());
   const [username, setUsername] = useState(getUsername());
