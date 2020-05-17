@@ -12,9 +12,9 @@ import { DndProvider } from "react-dnd";
 import Trash from "./Trash";
 import { getTrash, postSessionStats } from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
-import ActionButton from "../shared/ActionButton";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
+import HowToPlayModal from "./HowToPlayModal";
 import { isMobile } from "../utilities/display";
 
 const Game = ({ points, setPoints, setShowGame }) => {
@@ -23,6 +23,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const [currentTrash, setCurrentTrash] = useState(null);
   const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
   const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
+  const [isHowToPlayModalOpen, setHowToPlayModalOpen] = useState(true);
   const [isStarted, setIsStarted] = useState(false);
   const [allTrash, setAllTrash] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +40,9 @@ const Game = ({ points, setPoints, setShowGame }) => {
     const fetchData = async () => {
       const fetchedTrash = await getTrash();
       setAllTrash(fetchedTrash);
-      setCurrentTrash(fetchedTrash[0]);
+      setCurrentTrash(
+        fetchedTrash[Math.floor(Math.random() * fetchedTrash.length)]
+      );
       setIsLoading(false);
     };
 
@@ -80,6 +83,13 @@ const Game = ({ points, setPoints, setShowGame }) => {
     await postSessionStats(points);
   };
 
+  const handleHowToPlayModalClose = () => {
+    setMaxTime(GAME_DURATION);
+    setIsTimerOn(true);
+    setIsStarted(true);
+    setHowToPlayModalOpen(false);
+  };
+
   const handleTimeOut = () => {
     // Don't show both modals at the same time
     if (!isIncorrectModalOpenRef.current) {
@@ -89,12 +99,6 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const handleNewGame = async () => {
-    setMaxTime(GAME_DURATION);
-    setIsTimerOn(true);
-    setIsStarted(true);
-  };
-
   if (isLoading) {
     return <p>Loading!</p>;
   }
@@ -102,13 +106,10 @@ const Game = ({ points, setPoints, setShowGame }) => {
   return (
     <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
-        <div className="play-button">
-          <ActionButton
-            onClick={handleNewGame}
-            disabled={isStarted}
-            buttonText={"Let's Dive!"}
-          />
-        </div>
+        <HowToPlayModal
+          isOpen={isHowToPlayModalOpen}
+          onClose={handleHowToPlayModalClose}
+        />
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
