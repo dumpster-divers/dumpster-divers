@@ -12,7 +12,7 @@ https://dumpster-divers.herokuapp.com/
 ## Features + Example JSON requests
 
 ### Feature One: Users
-This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database. To delete a user, pass in the unique username of the user, and the user profile will be deleted on the database.
+This functionality deals with user management so that players can save their progress. It takes in a users’ name as the input, generates a unique username for the user, and then creates a user profile that will be stored on the database. To update a user, the user’s username and what needs to be updated is passed in as input, and the user profile will be updated on the database.
 
 #### Front End Features
 
