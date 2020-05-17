@@ -1,4 +1,3 @@
-
 const updateUser = (user) => {
   const { username, name } = user;
 
