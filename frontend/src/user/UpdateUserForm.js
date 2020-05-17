@@ -19,7 +19,9 @@ export default function UpdateUserForm() {
       .then((res) => {
       Cookies.set("name", res.name);
       setUsername(res.name);
-    });
+    })
+      .then(res => window.location.reload());
+
   }
 
   return (
