@@ -8,7 +8,7 @@ import TextEntry              from "../shared/TextEntry";
 export default function UpdateUserForm() {
 
   const [inputName, setInputName] = useState(getName());
-  const username = useState(getUsername());
+  const [username, setUsername] = useState(getUsername());
 
   function onSubmit() {
     // call update user function
@@ -29,7 +29,7 @@ export default function UpdateUserForm() {
         <TextEntry
           value={inputName}
           onChange={event => {
-            setName(event.target.value);
+            setInputName(event.target.value);
           }}
           placeholderText={username}
         />
