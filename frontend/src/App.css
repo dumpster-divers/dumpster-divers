@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  font-family: Roboto, sans-serif; 
+  font-family: Roboto, sans-serif;
 }
 
 .App {
@@ -81,4 +81,8 @@ body {
   top: 44%;
   bottom: 0;
   margin-top: 100px;
+}
+
+.update-name {
+  color: #4D4125;
 }

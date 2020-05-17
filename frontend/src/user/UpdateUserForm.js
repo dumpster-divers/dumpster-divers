@@ -3,6 +3,7 @@ import {getName, getUsername} from "../utilities/userManager";
 import updateUser             from "./UpdateUserApi";
 import Button                 from "@material-ui/core/Button";
 import Cookies                from "js-cookie";
+import TextEntry              from "../shared/TextEntry";
 
 
 export default function UpdateUserForm() {
@@ -27,9 +28,14 @@ export default function UpdateUserForm() {
   return (
     <div>
       <form>
-        <input type="text" name="name" value={name_input} onChange={event => {
-          setName(event.target.value);
-        }}/>
+        <p className='update-name'>Enter your new nickname</p>
+        <TextEntry
+          value={name_input}
+          onChange={event => {
+            setName(event.target.value);
+          }}
+          placeholderText={username}
+        />
         <Button onClick={onSubmit}>
           Update
         </Button>
