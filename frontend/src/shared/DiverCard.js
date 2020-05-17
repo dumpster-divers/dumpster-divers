@@ -23,10 +23,10 @@ const DiverCard = ({ points = 0 }) => {
         zIndex: "9",
         color: "#333436",
         fontSize: "15px",
-        marginTop: "25px",
+        marginTop: "40px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "25px",
-          marginTop: "55px",
+          marginTop: "60px",
         },
         textAlign: "left",
         fontWeight: "bold",
