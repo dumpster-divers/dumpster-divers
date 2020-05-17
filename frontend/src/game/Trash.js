@@ -15,7 +15,7 @@ const Trash = ({ currentTrash }) => {
       ref={dragRef}
       style={{ opacity }}
       src={ItemTypes[currentTrash.name]}
-      alt="This be trash"
+      alt={"Trash type: " + currentTrash.name}
     />
   );
 };
