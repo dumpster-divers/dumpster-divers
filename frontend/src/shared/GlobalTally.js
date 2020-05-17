@@ -12,6 +12,9 @@ const GlobalTally = () => {
       setTally(json[0].globalRemaining);
     };
     fetchData().then(null);
+
+    console.log();
+    setInterval(() => fetchData(), 2000);
   }, []);
 
   const useStyle = makeStyles((theme) =>
