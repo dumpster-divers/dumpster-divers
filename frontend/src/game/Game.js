@@ -23,6 +23,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const [currentTrash, setCurrentTrash] = useState(null);
   const [isIncorrectModalOpen, setIncorrectModalOpen] = useState(false);
   const [isTimeOutModalOpen, setTimeOutModalOpen] = useState(false);
+  const [isHowToPlayModalOpen, setHowToPlayModalOpen] = useState(true);
   const [isStarted, setIsStarted] = useState(false);
   const [allTrash, setAllTrash] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -86,6 +87,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setMaxTime(GAME_DURATION);
     setIsTimerOn(true);
     setIsStarted(true);
+    setHowToPlayModalOpen(false);
   };
 
   const handleTimeOut = () => {
@@ -105,7 +107,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
     <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
         <HowToPlayModal
-          isOpen={!isStarted}
+          isOpen={isHowToPlayModalOpen}
           onClose={handleHowToPlayModalClose}
         />
         <DndProvider backend={backend}>
