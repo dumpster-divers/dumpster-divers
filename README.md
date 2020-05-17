@@ -23,7 +23,7 @@ Access this using the link https://dumpster-divers.herokuapp.com/signup or click
 Access this using the link https://dumpster-divers.herokuapp.com/signin or click on the sign in link at the top right of the homepage. Enter your given username to log in. If you logged in successfully you will be redirected back to the homepage. If the system couldn’t find the username that you entered on the database, it will return a modal that tells you to try again. 
 
 #### Update
-Access this using the link https://dumpster-divers.herokuapp.com/userhomepage, this page would eventually be where users see their own stats 
+Access this using the link https://dumpster-divers.herokuapp.com/userhomepage, this page would eventually be where users see their own stats under /api/stats so it’s not yet fully implemented nor connected to the main wireframe. The only functionality available on this page currently is to update your nickname. You must be logged in or it will redirect you back to the home page.
 
 
 ***POST https://dumpster-divers.herokuapp.com/api/users/add***:
