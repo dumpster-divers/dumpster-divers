@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 
 const updateUser = (user) => {
   const { username, name } = user;
