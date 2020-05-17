@@ -43,7 +43,9 @@ const Game = ({ points, setPoints, setShowGame }) => {
     const fetchData = async () => {
       const fetchedTrash = await getTrash();
       setAllTrash(fetchedTrash);
-      setCurrentTrash(fetchedTrash[0]);
+      setCurrentTrash(
+        fetchedTrash[Math.floor(Math.random() * fetchedTrash.length)]
+      );
       setIsLoading(false);
     };
 
@@ -85,7 +87,9 @@ const Game = ({ points, setPoints, setShowGame }) => {
   };
 
   const handleHowToPlayModalClose = () => {
-    handleNewGame(GAME_DURATION);
+    setMaxTime(GAME_DURATION);
+    setIsTimerOn(true);
+    setIsStarted(true);
   };
 
   const handleTimeOut = () => {
@@ -97,12 +101,6 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const handleNewGame = async (gameTime) => {
-    setMaxTime(gameTime);
-    setIsTimerOn(true);
-    setIsStarted(true);
-  };
-
   if (isLoading) {
     return <p>Loading!</p>;
   }
@@ -112,7 +110,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       <GameContainer>
         <HowToPlayModal
           isOpen={!isStarted}
-          onClose={handleIncorrectModalClose}
+          onClose={handleHowToPlayModalClose}
         />
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
