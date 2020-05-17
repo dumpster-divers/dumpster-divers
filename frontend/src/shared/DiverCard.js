@@ -26,7 +26,7 @@ const DiverCard = ({ points = 0 }) => {
         marginTop: "25px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "25px",
-          marginTop: "40px",
+          marginTop: "55px",
         },
         textAlign: "left",
         fontWeight: "bold",
