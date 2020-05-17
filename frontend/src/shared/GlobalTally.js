@@ -13,7 +13,6 @@ const GlobalTally = () => {
     };
     fetchData().then(null);
 
-    console.log();
     setInterval(() => fetchData(), 2000);
   }, []);
 
