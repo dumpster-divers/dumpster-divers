@@ -1,14 +1,14 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "./Constants";
+import { isMobile } from "../utilities/display";
 
 const Trash = ({ currentTrash }) => {
-  console.log(currentTrash["name"]);
-
+  const pickedUpOpacity = isMobile() ? 0.5 : 0;
   const [{ opacity }, dragRef] = useDrag({
     item: { type: "droppable", recyclable: currentTrash.recyclable },
     collect: (monitor) => ({
-      opacity: monitor.isDragging() ? 0 : 1,
+      opacity: monitor.isDragging() ? pickedUpOpacity : 1,
     }),
   });
 
