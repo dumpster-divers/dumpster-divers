@@ -15,6 +15,7 @@ import TrashHolder from "./TrashHolder";
 import ActionButton from "../shared/ActionButton";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
+import HowToPlayModal from "./HowToPlayModal";
 
 const Game = ({ points, setPoints, setShowGame }) => {
   const [maxTime, setMaxTime] = useState(5);
@@ -83,6 +84,10 @@ const Game = ({ points, setPoints, setShowGame }) => {
     await postSessionStats(points);
   };
 
+  const handleHowToPlayModalClose = () => {
+    handleNewGame(GAME_DURATION);
+  };
+
   const handleTimeOut = () => {
     // Don't show both modals at the same time
     if (!isIncorrectModalOpenRef.current) {
@@ -105,6 +110,10 @@ const Game = ({ points, setPoints, setShowGame }) => {
   return (
     <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
+        <HowToPlayModal
+          isOpen={!isStarted}
+          onClose={handleIncorrectModalClose}
+        />
         <div className="play-button">
           <ActionButton
             onClick={() => handleNewGame(GAME_DURATION)}
