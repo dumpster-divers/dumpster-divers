@@ -5,6 +5,7 @@ import { isMobile } from "../utilities/display";
 
 const Trash = ({ currentTrash }) => {
   const pickedUpOpacity = isMobile() ? 0.5 : 0;
+
   const [{ opacity }, dragRef] = useDrag({
     item: { type: "droppable", recyclable: currentTrash.recyclable },
     collect: (monitor) => ({
@@ -17,7 +18,7 @@ const Trash = ({ currentTrash }) => {
       ref={dragRef}
       style={{ opacity, cursor: "pointer" }}
       src={ItemTypes[currentTrash.name]}
-      alt="This be trash"
+      alt={"Trash type: " + currentTrash.name}
     />
   );
 };

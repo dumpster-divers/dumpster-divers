@@ -47,11 +47,11 @@ const Game = ({ points, setPoints, setShowGame }) => {
   }, []);
 
   let trashElement = <Trash currentTrash={currentTrash} />;
-  const handleDrop = (x, y, recyclable) => {
+  const handleDrop = (trash, bin, recyclable) => {
     let oldTrash = currentTrash;
     setCurrentTrash(sampleTrash());
     trashElement = <Trash currentTrash={currentTrash} />;
-    if (x.recyclable === recyclable) {
+    if (trash.recyclable === recyclable) {
       setPoints((points) => points + 1);
     } else {
       // So the currentTrash.info in Incorrect Modal is about the right one
@@ -63,6 +63,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
     }
   };
 
+  // Selects a random trash from allTrash
   const sampleTrash = () => {
     return allTrash[Math.floor(Math.random() * allTrash.length)];
   };
@@ -88,8 +89,8 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const newGame = async (gameTime) => {
-    setMaxTime(gameTime);
+  const handleNewGame = async () => {
+    setMaxTime(GAME_DURATION);
     setIsTimerOn(true);
     setIsStarted(true);
   };
@@ -103,7 +104,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       <GameContainer>
         <div className="play-button">
           <ActionButton
-            onClick={() => newGame(GAME_DURATION)}
+            onClick={handleNewGame}
             disabled={isStarted}
             buttonText={"Let's Dive!"}
           />
