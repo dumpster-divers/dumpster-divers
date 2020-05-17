@@ -15,7 +15,7 @@ const Trash = ({ currentTrash }) => {
   return (
     <img
       ref={dragRef}
-      style={{ opacity }}
+      style={{ opacity, cursor: "pointer" }}
       src={ItemTypes[currentTrash.name]}
       alt="This be trash"
     />
