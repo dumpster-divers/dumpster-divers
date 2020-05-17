@@ -15,7 +15,7 @@ const GameContainer = (props) => {
         [theme.breakpoints.down("md")]: {
           width: "90%",
         },
-        height: "81%",
+        minHeight: "81%",
         maxWidth: "100%",
         margin: "0 auto",
         padding: "20px",
