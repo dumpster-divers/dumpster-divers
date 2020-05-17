@@ -6,12 +6,12 @@ import updateUser from "./UpdateUserApi";
 export default function UpdateUserForm() {
 
   const [name_input, setName] = useState(getName());
-  const username_input = getUsername();
+  const username = getUsername();
 
   function onSubmit() {
     // call upate user function
     updateUser({
-      username: username_input,
+      username: username,
       name: name_input
     });
   }
@@ -22,7 +22,7 @@ export default function UpdateUserForm() {
         <input type="text" name="name" value={name_input} onChange={event => {
           setName(event.target.value);
         }}/>
-        <button type='btn' onClick={onSubmit()}>
+        <button type='btn' onClick={onSubmit}>
           Update
         </button>
       </form>
