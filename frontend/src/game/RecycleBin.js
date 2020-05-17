@@ -7,7 +7,7 @@ import "./gameStyles.css";
 const RecycleBin = (props) => {
   const [{ isOver }, drop] = useDrop({
     accept: "droppable",
-    drop: (x, y) => props.onDrop(x, y, true),
+    drop: (trash, recycleBin) => props.onDrop(trash, recycleBin, true),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
