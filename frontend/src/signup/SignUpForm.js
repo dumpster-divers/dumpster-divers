@@ -10,6 +10,8 @@ const SignUpForm = () => {
   const [redirect, setRedirect] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const MAX_NAME_LENGTH = 20;
+
   const onChange = (event) => {
     setValue(event.target.value);
   };
@@ -47,6 +49,7 @@ const SignUpForm = () => {
         onChange={onChange}
         onSubmit={handleSubmit}
         placeholderText={"Your First Name"}
+        maxLength={MAX_NAME_LENGTH}
       />
       <div className={classes.wow}>
         <ActionButton

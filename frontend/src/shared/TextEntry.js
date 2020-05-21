@@ -7,6 +7,7 @@ const TextEntry = ({
   placeholderText,
   isDisabled,
   onSubmit,
+  maxLength,
 }) => {
   const useStyles = makeStyles(() =>
     createStyles({
@@ -39,6 +40,7 @@ const TextEntry = ({
         placeholder={placeholderText}
         className={classes.textEntry}
         disabled={isDisabled}
+        maxLength={maxLength}
       />
     </form>
   );
