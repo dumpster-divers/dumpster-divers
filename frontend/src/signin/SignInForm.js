@@ -11,10 +11,7 @@ const SignInForm = ({ onError }) => {
   const [loading, setLoading] = useState(false);
 
   const onChange = (event) => {
-    const name = event.target.value;
-    if (name.length < 40) {
-      setValue(event.target.value);
-    }
+    setValue(event.target.value);
   };
 
   const handleClick = () => {
