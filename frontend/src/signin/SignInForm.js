@@ -6,12 +6,15 @@ import { attemptLogin, createUserCookie } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
 const SignInForm = ({ onError }) => {
-  let [value, setValue] = useState("");
-  let [redirect, setRedirect] = useState(false);
-  let [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+  const [redirect, setRedirect] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onChange = event => {
-    setValue(event.target.value);
+  const onChange = (event) => {
+    const name = event.target.value;
+    if (name.length < 40) {
+      setValue(event.target.value);
+    }
   };
 
   const handleClick = () => {
@@ -33,12 +36,12 @@ const SignInForm = ({ onError }) => {
   const useStyles = makeStyles(() =>
     createStyles({
       wow: {
-        marginTop: "15px"
-      }
+        marginTop: "15px",
+      },
     })
   );
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     handleClick();
   };

@@ -6,9 +6,9 @@ import { createUserCookie, registerUser } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
 const SignUpForm = () => {
-  let [value, setValue] = useState("");
-  let [redirect, setRedirect] = useState(false);
-  let [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+  const [redirect, setRedirect] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onChange = (event) => {
     setValue(event.target.value);
