@@ -46,7 +46,7 @@ const SignUpForm = () => {
         value={value}
         onChange={onChange}
         onSubmit={handleSubmit}
-        placeholderText={"Your Name"}
+        placeholderText={"Your First Name"}
       />
       <div className={classes.wow}>
         <ActionButton
