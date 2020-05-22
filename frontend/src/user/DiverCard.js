@@ -2,24 +2,31 @@ import React from "react";
 import diver_cert_card from "../assets/diver_cert_card.png";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { getName, getUsername } from "../utilities/userManager";
-import getUserStats from "./GetUserStatsApi";
 import { useState, useEffect } from "react";
 
 const DiverCard = () => {
 
-  const [userStats, setUserStats] = useState([]);
+  const username = getUsername();
+
+  const loadingUserStats = {"processedTotal":"0", "processedRecord":"0", "dateJoined":"0000-00-00"}
+
+  const [userStats, setUserStats] = useState(loadingUserStats);
+  const [userRank, setUserRank] = useState(null);
 
   useEffect( async () => {
-    await getUserStats(getUsername())
-      .then(userStats => {
-        setUserStats(userStats);
-      });
+    const response = await fetch(`/api/stats/user-highscore?username=${username}`);
+    const data = await response.json();
+    const userStats = data.user;
+    setUserStats(userStats);
+    const userRank = data.userRank;
+    setUserRank(userRank);
   }, []);
 
   const nameText = getName() ? "Name: \n" + getName() : "";
   const currentTotal = "Total: " + userStats.processedTotal;
   const currentRecord = "Record: " + userStats.processedRecord;
-  const dateJoined = "Issue Date: " + userStats.dateJoined;
+  const currentRank = "Global Rank: " + userRank;
+  const dateJoined = "Issue Date: " + userStats.dateJoined.slice(0,10);
 
 
   const useStyles = makeStyles(() =>
@@ -52,6 +59,8 @@ const DiverCard = () => {
         {currentTotal}
         <br />
         {currentRecord}
+        <br />
+        {currentRank}
         <br />
         {dateJoined}
       </div>

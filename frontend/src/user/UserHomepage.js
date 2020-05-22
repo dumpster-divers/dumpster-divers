@@ -3,7 +3,6 @@ import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
 import UpdateUserForm from "./UpdateUserForm";
-import UserStats from "./UserStats";
 
 const UserHomepage = () => {
   return (
