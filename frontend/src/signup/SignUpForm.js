@@ -6,9 +6,11 @@ import { createUserCookie, registerUser } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
 const SignUpForm = () => {
-  let [value, setValue] = useState("");
-  let [redirect, setRedirect] = useState(false);
-  let [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+  const [redirect, setRedirect] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const MAX_NAME_LENGTH = 20;
 
   const onChange = (event) => {
     setValue(event.target.value);
@@ -46,7 +48,8 @@ const SignUpForm = () => {
         value={value}
         onChange={onChange}
         onSubmit={handleSubmit}
-        placeholderText={"Your Name"}
+        placeholderText={"Your First Name"}
+        maxLength={MAX_NAME_LENGTH}
       />
       <div className={classes.wow}>
         <ActionButton
