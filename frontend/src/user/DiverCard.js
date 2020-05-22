@@ -13,13 +13,16 @@ const DiverCard = () => {
   const [userStats, setUserStats] = useState(loadingUserStats);
   const [userRank, setUserRank] = useState(null);
 
-  useEffect( async () => {
-    const response = await fetch(`/api/stats/user-highscore?username=${username}`);
-    const data = await response.json();
-    const userStats = data.user;
-    setUserStats(userStats);
-    const userRank = data.userRank;
-    setUserRank(userRank);
+  useEffect(() => {
+    async function fetchUser() {
+      const response = await fetch(`/api/stats/user-highscore?username=${username}`);
+      const data = await response.json();
+      const userStats = data.user;
+      setUserStats(userStats);
+      const userRank = data.userRank;
+      setUserRank(userRank);
+    }
+    fetchUser();
   }, []);
 
   const nameText = getName() ? "Name: \n" + getName() : "";
