@@ -5,16 +5,16 @@ import { getName, getUsername } from "../utilities/userManager";
 import { useState, useEffect } from "react";
 
 const DiverCard = () => {
-
-  const username = getUsername();
-
-  const loadingUserStats = {"processedTotal":"0", "processedRecord":"0", "dateJoined":"0000-00-00"}
+  //display this while waiting for fetch call
+  const loadingUserStats = {"processedTotal":"loading...", "processedRecord":"loading...", "dateJoined":"loading..."}
 
   const [userStats, setUserStats] = useState(loadingUserStats);
-  const [userRank, setUserRank] = useState(null);
+  const [userRank, setUserRank] = useState("loading...");
 
+  //fetch data from api and update userRank and userStats state
   useEffect(() => {
     async function fetchUser() {
+      const username = getUsername();
       const response = await fetch(`/api/stats/user-highscore?username=${username}`);
       const data = await response.json();
       const userStats = data.user;
@@ -25,6 +25,7 @@ const DiverCard = () => {
     fetchUser();
   }, []);
 
+  //construct strings that will be displayed on diver card
   const nameText = getName() ? "Name: \n" + getName() : "";
   const currentTotal = "Total: " + userStats.processedTotal;
   const currentRecord = "Record: " + userStats.processedRecord;
@@ -54,6 +55,8 @@ const DiverCard = () => {
   );
 
   const classes = useStyles();
+
+  //render the diver card
   return (
     <div className={classes.wrapper}>
       <div className={classes.points}>
