@@ -11,20 +11,4 @@ const getUserStats = async (username) => {
   });
 };
 
-export function useUserStats() {
-  const [userStats, setUserStats] = useState([]);
-
-  useEffect(() => {
-    getUserStats(getUsername())
-      .then(userStats => {
-        setUserStats(userStats);
-      });
-  }, []);
-
-
-  return {
-    userStats,
-  };
-}
-
-export default {getUserStats,useUserStats};
+export default getUserStats;
