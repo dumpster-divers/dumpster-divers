@@ -41,11 +41,11 @@ const DiverCard = () => {
         fontFamily: "Roboto",
         zIndex: "9",
         color: "#333436",
-        marginTop: "75px",
-        fontSize: "25px",
+        marginTop: "65px",
+        fontSize: "20px",
         textAlign: "left",
         fontWeight: "bold",
-        marginLeft: "130px"
+        marginLeft: "80px"
       }
     })
   );
