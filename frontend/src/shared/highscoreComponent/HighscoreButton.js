@@ -32,9 +32,11 @@ const HighscoreButton = ({ onClick }) => {
   );
   const classes = useStyle();
   return (
-    <Button onClick={onClick} size={"large"} className={classes.button}>
-      Leaderboard
-    </Button>
+    <div className={classes.button}>
+      <Button onClick={onClick} size={"large"} className={classes.button}>
+        Leaderboard
+      </Button>
+    </div>
   );
 };
 export default HighscoreButton;
