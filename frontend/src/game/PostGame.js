@@ -5,6 +5,7 @@ import ExitGameButton from "./ExitGameButton";
 import DiverCard from "../shared/DiverCard";
 import { isLoggedIn } from "../utilities/userManager";
 import PostGameLoginLogoutFlow from "./PostGameLoginLogoutFlow";
+import HighscoreButton from "../shared/highscoreComponent/HighscoreButton";
 
 const PostGame = ({ points }) => {
   const handleClick = () => {
@@ -15,6 +16,7 @@ const PostGame = ({ points }) => {
 
   return (
     <GameContainer>
+      <HighscoreButton />
       <h1 className="heading-postgame">{headingText}</h1>
       <p className="postgame-content">
         {isLoggedIn() ? (
