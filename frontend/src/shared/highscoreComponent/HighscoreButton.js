@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const HighscoreButton = () => {
+const HighscoreButton = ({ onClick }) => {
   const useStyle = makeStyles(() =>
     createStyles({
       button: {
@@ -12,7 +12,7 @@ const HighscoreButton = () => {
         marginLeft: "auto",
         marginRight: "auto",
         position: "relative",
-        top: "-20px",
+        top: "0",
         height: "50px",
         width: "203px",
         textTransform: "none",
@@ -32,7 +32,7 @@ const HighscoreButton = () => {
   );
   const classes = useStyle();
   return (
-    <Button size={"large"} className={classes.button}>
+    <Button onClick={onClick} size={"large"} className={classes.button}>
       Leaderboard
     </Button>
   );
