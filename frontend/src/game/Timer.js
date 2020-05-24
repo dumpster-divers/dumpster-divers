@@ -9,10 +9,16 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
   const [isEnabled, setIsEnabled] = useState(false);
 
   // Styles
+  const colorProprotion = (proprotion) => {
+    return (1 / 10000) * Math.pow(proprotion - 100, 2);
+  };
+
   const useStylesBorder = makeStyles(() => {
-    const red = parseInt(131 + ((100 - proportion) * 124) / 100);
-    const green = parseInt(254 - ((100 - proportion) / 100) * 254);
-    const backGroundColor = "rgb(" + red.toString(10) + ", " + green + ", 20)";
+    const red = parseInt(33 + colorProprotion(proportion) * 222);
+    const green = parseInt(150 - colorProprotion(proportion) * 150);
+    const blue = parseInt(83 - colorProprotion(proportion) * 63);
+    const backGroundColor =
+      "rgb(" + red.toString(10) + ", " + green + "," + blue + ")";
     console.log(backGroundColor);
     return createStyles({
       // Background
