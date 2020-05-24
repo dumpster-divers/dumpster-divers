@@ -17,9 +17,8 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
     const red = parseInt(33 + colorProprotion(proportion) * 222);
     const green = parseInt(150 - colorProprotion(proportion) * 150);
     const blue = parseInt(83 - colorProprotion(proportion) * 63);
-    const backGroundColor =
-      "rgb(" + red.toString(10) + ", " + green + "," + blue + ")";
-    console.log(backGroundColor);
+    const backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+
     return createStyles({
       // Background
       root: {
@@ -34,7 +33,7 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
       // Progress bar
       bar: {
         borderRadius: 20,
-        backgroundColor: backGroundColor,
+        backgroundColor: backgroundColor,
       },
     });
   });
