@@ -9,7 +9,7 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
   const [isEnabled, setIsEnabled] = useState(false);
 
   // Styles
-  const colorProprotion = (proprotion) => {
+  const colorProportion = (proprotion) => {
     const offset = 20;
     if (proportion <= offset) {
       return 1;
@@ -19,9 +19,9 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
   };
 
   const useStylesBorder = makeStyles(() => {
-    const red = parseInt(33 + colorProprotion(proportion) * 222);
-    const green = parseInt(150 - colorProprotion(proportion) * 150);
-    const blue = parseInt(83 - colorProprotion(proportion) * 63);
+    const red = parseInt(33 + colorProportion(proportion) * 222);
+    const green = parseInt(150 - colorProportion(proportion) * 150);
+    const blue = parseInt(83 - colorProportion(proportion) * 63);
     const backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 
     return createStyles({
