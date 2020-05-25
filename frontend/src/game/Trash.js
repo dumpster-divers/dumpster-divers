@@ -1,6 +1,6 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "./Constants";
+import ItemTypes from "./Constants";
 import { isMobile } from "../utilities/display";
 
 const Trash = ({ currentTrash }) => {
@@ -16,7 +16,7 @@ const Trash = ({ currentTrash }) => {
   return (
     <img
       ref={dragRef}
-      style={{ opacity, cursor: "pointer" }}
+      style={{ opacity, cursor: "pointer", width: "50%" }}
       src={ItemTypes[currentTrash.name]}
       alt={"Trash type: " + currentTrash.name}
     />

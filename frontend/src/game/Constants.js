@@ -16,7 +16,7 @@ import plasticBagSource from "../assets/plastic_bag.png";
 import popsicleStickSource from "../assets/popsicle_stick.png";
 import toiletRollSource from "../assets/toilet_roll.png";
 
-export const ItemTypes = {
+const ItemTypes = {
   can: canSource,
   straw: strawSource,
   apple: appleSource,
@@ -35,3 +35,5 @@ export const ItemTypes = {
   popsicleStick: popsicleStickSource,
   toiletRoll: toiletRollSource,
 };
+
+export default ItemTypes;
