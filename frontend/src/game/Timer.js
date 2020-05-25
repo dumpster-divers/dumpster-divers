@@ -10,7 +10,7 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
 
   // Styles
   const colorProprotion = (proprotion) => {
-    return (1 / 10000) * Math.pow(proprotion - 100, 2);
+    return Math.pow((proprotion - 100) / 100, 4);
   };
 
   const useStylesBorder = makeStyles(() => {
