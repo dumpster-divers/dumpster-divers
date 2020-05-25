@@ -10,7 +10,12 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
 
   // Styles
   const colorProprotion = (proprotion) => {
-    return Math.pow((proprotion - 100) / 100, 4);
+    const offset = 20;
+    if (proportion <= offset) {
+      return 1;
+    } else {
+      return Math.pow((proprotion - 100 - offset) / 100, 10);
+    }
   };
 
   const useStylesBorder = makeStyles(() => {
