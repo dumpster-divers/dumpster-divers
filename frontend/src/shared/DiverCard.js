@@ -28,8 +28,8 @@ const DiverCard = ({ points = 0 }) => {
   //construct strings that will be displayed on diver card
   const nameText = getName() ? "Name: \n" + getName() : "";
   const pointsText = "Points: " + points;
-  const currentTotal = "Total: " + userStats.processedTotal;
-  const currentRecord = "Record: " + userStats.processedRecord;
+  const currentTotal = "New Total: " + userStats.processedTotal;
+  const currentRecord = "Highest Record: " + userStats.processedRecord;
   const currentRank = "Global Rank: " + userRank;
 
   const useStyles = makeStyles((theme) =>
