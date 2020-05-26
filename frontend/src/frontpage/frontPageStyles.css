@@ -65,3 +65,9 @@
     margin-top: 260px;
   }
 }
+
+.user-button {
+  position:absolute;
+  left:1%;
+  top:1.5%;
+}
