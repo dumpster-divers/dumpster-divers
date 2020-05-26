@@ -22,6 +22,4 @@ const OtherImages = [
 
 const Images = TrashImages.concat(OtherImages);
 
-console.log(Images.length);
-
 export default Images;
