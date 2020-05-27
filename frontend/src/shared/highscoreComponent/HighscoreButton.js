@@ -18,12 +18,12 @@ const HighscoreButton = ({ onClick }) => {
         textTransform: "none",
         textDecoration: "bold",
         fontSize: "20px",
-        filter: "drop-shadow( 3px 3px 1px rgba(0, 0, 0, .3))",
         "&:hover": {
           backgroundColor: "#e66a6a",
+          transition: "height 0.3s",
+          height: "55px",
         },
         "&:active": {
-          boxShadow: "inset 10px 10px 20px #CC9D3F",
           backgroundColor: "#ff7676",
           filter: "none",
         },
