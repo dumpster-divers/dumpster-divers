@@ -6,10 +6,10 @@ a {
 
 .modal-title {
     padding: 0px 0px 0px 0px;
-    margin-top: 0px;
+    margin-top: 4%;
+    margin-bottom: 0%;
     height:62px;
     display: block;
-
     text-align: center;
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -40,7 +40,7 @@ a {
     font-size: 20px;
     line-height: 20px;
     text-align: center;
-    padding-top: 6%;
+    padding-top: 2%;
     color: #EDEDED;
   }
 
