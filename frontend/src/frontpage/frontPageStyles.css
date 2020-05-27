@@ -66,8 +66,16 @@
   }
 }
 
-.user-button {
+#user-button {
   position:absolute;
   left:1%;
   top:1.5%;
+  filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .1));
 }
+
+#user-button:active {
+  filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
+}
+
+#user-buttonA:hover path { fill: #FFF9F9 }
+#user-buttonA:hover rect { fill: #FEC860 }

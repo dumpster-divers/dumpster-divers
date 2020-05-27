@@ -15,7 +15,7 @@ const LoginModule = () => {
           </a>
         </div>
       </div>
-      <div className="user-button">
+      <div id="user-button">
         <UserButton />
       </div>
     </div>
