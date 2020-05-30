@@ -26,7 +26,7 @@ const HighscoreTable = ({ scores }) => {
           <HighScoreEntry
             key={score._id}
             name={score.name}
-            score={score.processedRecord}
+            score={score.processedTotal}
           />
         ))
       )}
