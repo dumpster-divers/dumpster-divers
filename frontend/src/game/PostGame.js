@@ -5,8 +5,6 @@ import ExitGameButton from "./ExitGameButton";
 import DiverCard from "../shared/DiverCard";
 import { isLoggedIn } from "../utilities/userManager";
 import PostGameLoginLogoutFlow from "./PostGameLoginLogoutFlow";
-import Box from "@material-ui/core/Box";
-import { Link } from "react-router-dom";
 
 const PostGame = ({ points }) => {
   const handleClick = () => {
