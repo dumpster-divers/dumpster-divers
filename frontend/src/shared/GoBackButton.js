@@ -1,11 +1,13 @@
 import React from "react";
+import { isMobile } from "../utilities/display";
 
 const GoBackButton = function () {
+  let [width, height] = isMobile() ? [60, 60] : [89, 87];
   return (
     <svg
       id="GoBackButton"
-      width="89"
-      height="87"
+      width={width}
+      height={height}
       viewBox="0 0 89 87"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
