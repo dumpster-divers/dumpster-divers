@@ -19,6 +19,7 @@ const GlobalTally = () => {
   const useStyle = makeStyles((theme) =>
     createStyles({
       wrapper: {
+        position: "relative",
         display: "flex",
         flexDirection: "row",
         width: "auto",
@@ -28,7 +29,7 @@ const GlobalTally = () => {
         borderRadius: "20px",
         marginLeft: "auto",
         marginRight: "auto",
-        marginTop: "-25px",
+        marginTop: "30px",
         fontSize: "15px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
