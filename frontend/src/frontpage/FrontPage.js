@@ -20,9 +20,11 @@ const FrontPage = () => {
 
   return (
     <GameContainer>
-      <div id="user-button">
-        <UserButton />
-      </div>
+      {isLoggedIn() && (
+        <div id="user-button">
+          <UserButton />
+        </div>
+      )}
       <div className="dive-in">
         <GlobalTally />
         <h1 className="heading-homepage">{welcomeMessage}</h1>
