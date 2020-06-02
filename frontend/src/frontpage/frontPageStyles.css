@@ -8,6 +8,7 @@
   line-height: calc(10px + 6vmin);
   text-align: center;
   color: #4d4125;
+  hyphens: auto;
 }
 
 .about-us {
@@ -27,7 +28,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .frontpage-button {
@@ -35,7 +36,6 @@
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
   bottom: 10%;
 }
 
