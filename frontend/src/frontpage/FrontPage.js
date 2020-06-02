@@ -10,10 +10,14 @@ import LoginModule from "./LoginModule";
 import "./frontPageStyles.css";
 import GlobalTally from "../shared/GlobalTally";
 import { isMobile } from "../utilities/display";
+import UserButton from "./UserButton";
 
 const FrontPage = () => {
   return (
     <GameContainer>
+      <div id="user-button">
+        <UserButton />
+      </div>
       <div className="dive-in">
         <GlobalTally />
         <h1 className="heading-homepage">Welcome to Dumpster Divers!</h1>

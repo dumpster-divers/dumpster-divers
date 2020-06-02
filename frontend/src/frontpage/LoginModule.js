@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getName, isLoggedIn, logoutUser } from "../utilities/userManager";
-import UserButton from "./UserButton";
 import "./frontPageStyles.css";
 
 const LoginModule = () => {
@@ -14,9 +13,6 @@ const LoginModule = () => {
             Logout
           </a>
         </div>
-      </div>
-      <div id="user-button">
-        <UserButton />
       </div>
     </div>
   );
