@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
 
 const DiverCard = ({ points = 0 }) => {
   //display this while waiting for fetch call
-  const loadingUserStats = {"processedTotal":"loading...", "processedRecord":"loading..."}
+  const loadingUserStats = {
+    processedTotal: "loading...",
+    processedRecord: "loading...",
+  };
 
   const [userStats, setUserStats] = useState(loadingUserStats);
   const [userRank, setUserRank] = useState("loading...");
@@ -15,7 +18,9 @@ const DiverCard = ({ points = 0 }) => {
   useEffect(() => {
     async function fetchUser() {
       const username = getUsername();
-      const response = await fetch(`/api/stats/user-highscore?username=${username}`);
+      const response = await fetch(
+        `/api/stats/user-highscore?username=${username}`
+      );
       const data = await response.json();
       const userStats = data.user;
       setUserStats(userStats);
@@ -49,6 +54,7 @@ const DiverCard = ({ points = 0 }) => {
         color: "#333436",
         fontSize: "20px",
         marginTop: "40px",
+        paddingLeft: "70px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "20px",
           marginTop: "65px",
