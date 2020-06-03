@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { getName, getUsername, isLoggedIn } from "../utilities/userManager";
 import updateUser from "./UpdateUserApi";
-import Button from "@material-ui/core/Button";
+import SmallButton from "../shared/SmallButton";
 import Cookies from "js-cookie";
-import TextEntry from "../shared/TextEntry";
+import SmallTextEntry from "../shared/SmallTextEntry";
 import { Redirect } from "react-router";
+import "./userHomepageStyles.css";
 
-export default function UpdateUserForm() {
+export default function UpdateUserForm(showUpdate) {
   const [inputName, setInputName] = useState(getName());
   const [username, setUsername] = useState(getUsername());
 
@@ -29,18 +30,22 @@ export default function UpdateUserForm() {
   }
 
   return (
-    <div>
+    <div className={`expand-update ${showUpdate.showUpdate ? "show" : "hide"}`}>
+    <div className="update-form">
       <form>
         <p className="update-name">Enter your new nickname</p>
-        <TextEntry
+        <div style={{ marginBottom:"3%", marginTop:"3%" }}>
+        <SmallTextEntry
           value={inputName}
           onChange={(event) => {
             setInputName(event.target.value);
           }}
           placeholderText={username}
         />
-        <Button onClick={onSubmit}>Update</Button>
+        </div>
+        <SmallButton buttonText="update" onClick={onSubmit}></SmallButton>
       </form>
+      </div>
     </div>
   );
 }

@@ -3,16 +3,20 @@ import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
 import UpdateUserForm from "./UpdateUserForm";
+import ShowUpdateOption from "./UpdateUser";
+import "./userHomepageStyles.css";
 
 const UserHomepage = () => {
   return (
     <GameContainer>
       <div className="yellow-part">
-        <div style={{ marginTop: "8%" }}>
+        <div style={{ marginTop: "8%", marginBottom:"2%" }}>
           <DiverCard />
         </div>
         <ExitGameButton />
-        <UpdateUserForm />
+        <div className="edit-button">
+          <ShowUpdateOption />
+        </div>
       </div>
     </GameContainer>
   );
