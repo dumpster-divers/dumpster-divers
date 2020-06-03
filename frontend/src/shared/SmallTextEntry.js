@@ -4,7 +4,6 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 const SmallTextEntry = ({
   value,
   onChange,
-  placeholderText,
   isDisabled,
   onSubmit,
   maxLength,
@@ -37,7 +36,6 @@ const SmallTextEntry = ({
         type="text"
         value={value}
         onChange={onChange}
-        placeholder={placeholderText}
         className={classes.textEntry}
         disabled={isDisabled}
         maxLength={maxLength}
