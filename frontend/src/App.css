@@ -1,0 +1,88 @@
+/* Global styles. */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.App {
+  text-align: center;
+  background-color: #7EC8DD;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Small-link-div {
+  position: absolute;
+  right:15px;
+  top:5px;
+}
+
+.Small-link {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+
+  margin: 0 5px;
+  color: #76603E;
+}
+
+.heading1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  bottom: 0;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6mvin);
+  text-align: center;
+  color: #4D4125;
+}
+
+.text1 {
+  color: #4D4125;
+  position: absolute;
+  left: 13.41%;
+  right: 13.41%;
+  top: 40%;
+  bottom: 59.45%;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.form-module {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 44%;
+  bottom: 0;
+  margin-top: 100px;
+}
+
+.update-name {
+  color: #4D4125;
+}

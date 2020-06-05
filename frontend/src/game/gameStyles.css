@@ -1,0 +1,151 @@
+/* Styles for the game page. */
+
+.correct {
+  background: green;
+}
+
+.incorrect {
+  background: red;
+}
+
+/* 'Official' duration workaround: https://github.com/HubSpot/odometer/issues/91 */
+.odometer.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+  -webkit-transition-duration: 600ms !important;
+  -moz-transition-duration: 600ms !important;
+  -o-transition-duration: 600ms !important;
+  transition-duration: 600ms !important;
+}
+
+.scoreCounter {
+  color: white;
+  background-color: #efb84a;
+  border-radius: 20px;
+  max-width: 100px;
+  font-size: 28px;
+  margin: 0 auto;
+  min-width: 100px;
+}
+
+.trashBlock {
+  width: 170px;
+  height: 170px;
+  background-color: #76603e;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trashBlockText {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+.trashInnerBlock {
+  background-color: #ffebb0;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameCenterWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3%;
+  justify-content: flex-start;
+}
+
+.bins {
+  margin: auto 0;
+}
+
+.bin-img {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+/* Tablet & desktop */
+@media (min-device-width: 500px) {
+  .bins {
+    margin-bottom: 15px;
+  }
+
+  .bin-img {
+    /* Proportionally scale down images */
+    width: 160px;
+    height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-device-width: 500px) {
+  .bins {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  .bin-img {
+    /* Proportionally scale down images */
+    width: 100px;
+    height: auto;
+  }
+
+  .trashBlock {
+    margin-top: 20px;
+  }
+
+  .heading-postgame {
+    margin-top: 100px;
+  }
+}
+
+.heading-postgame {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(10px + 6vmin);
+  line-height: calc(10px + 6vmin);
+  text-align: center;
+  color: #4d4125;
+}
+
+.postgame-content {
+  color: #4d4125;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: calc(8px + 1vmin);
+  line-height: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.play-button {
+  padding-top: 1vmin;
+}
+
+.how-to-play-modal {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+  height: auto;
+  border: "0px";
+  outline: 0;
+}
+
+.how-to-play-gif {
+  max-width: 80%;
+  width: 700px;
+  height: auto;
+  margin-left: auto;
+  border-radius: 100px;
+}

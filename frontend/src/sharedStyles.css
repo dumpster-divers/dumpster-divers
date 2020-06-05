@@ -1,0 +1,91 @@
+/* Styles for shared components. */
+
+a {
+  text-decoration: none;
+}
+
+.modal-title {
+  padding: 0px 0px 0px 0px;
+  margin-top: 4%;
+  margin-bottom: 0%;
+  height: 62px;
+  display: block;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 62px;
+  color: #ededed;
+}
+
+.modal-content {
+  font-family: Roboto, sans-serif;
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 38px;
+  width: 400px;
+  display: block;
+  background-color: transparent;
+  text-align: center;
+  color: #ededed;
+}
+
+.modal-clickout {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 2%;
+  color: #ededed;
+}
+
+.modal-cross {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 23%;
+}
+
+.modal-stopwatch {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 28%;
+}
+
+.modal-sadface {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 62px;
+
+  display: block;
+  color: #ededed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 23%;
+}
+
+#GoBackButton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.7));
+}
+#GoBackButton:active {
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.7));
+}
+
+#GoBackButtonA:hover path {
+  fill: #ffa4a4;
+}
+#GoBackButtonA:hover rect {
+  fill: #ffe9e9;
+}
