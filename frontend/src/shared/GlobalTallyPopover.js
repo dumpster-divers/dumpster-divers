@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Popover from "@material-ui/core/Popover";
 
 const GlobalTallyPopover = ({ children }) => {
