@@ -39,10 +39,4 @@ const postSessionStats = async (points) => {
   });
 };
 
-export {
-  getTrash,
-  postSessionStats,
-  createHasPlayedCookie,
-  hasPlayed,
-  removeHasPlayed,
-};
+export { getTrash, postSessionStats, createHasPlayedCookie, hasPlayed };
