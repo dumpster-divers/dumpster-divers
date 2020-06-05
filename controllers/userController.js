@@ -14,11 +14,11 @@ const addUser = async (req, res) => {
 
   newUser.name = req.body.name
 
-  // 20200605 新增对用户名长度的校验
+  
   if (newUser.name.length < 3) {
     res.send({
       code: -1,
-      message: '用户名长度不能少于 2 位',
+      message: 'The username length must not be less than 2 digits',
     })
 
     return
