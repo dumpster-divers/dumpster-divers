@@ -2,15 +2,15 @@ import Cookies from "js-cookie";
 import { getUsername, isLoggedIn } from "./userManager";
 
 const createHasPlayedCookie = () => {
-  if (!err) {
-    Cookies.set("played", true);
-  } else {
-    console.log("error");
-  }
+  Cookies.set("played", true);
 };
 
 const hasPlayed = () => {
   return Cookies.get("played");
+};
+
+const removeHasPlayed = () => {
+  Cookies.set("played", false);
 };
 
 const getTrash = async () => {
@@ -43,4 +43,10 @@ const postSessionStats = async (points) => {
   });
 };
 
-export { getTrash, postSessionStats, createHasPlayedCookie, hasPlayed };
+export {
+  getTrash,
+  postSessionStats,
+  createHasPlayedCookie,
+  hasPlayed,
+  removeHasPlayed,
+};
