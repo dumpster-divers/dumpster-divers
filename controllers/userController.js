@@ -14,7 +14,7 @@ const addUser = async (req, res) => {
 
   newUser.name = req.body.name
 
-  // 20200605 新增对用户名长度的校验
+
   if (newUser.name.length < 3) {
     res.send({
       code: -1,

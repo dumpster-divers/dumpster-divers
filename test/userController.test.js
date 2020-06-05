@@ -29,13 +29,13 @@ describe('Tests for user registration and login', () => {
       url: '/api/users/add',
       data: {
         name: lessName,
-      },
+      }
     })
 
     expect(userInfo.code).toBe(-1)
   })
 
-  // 通过 给定的 username 可以查出对应的 name 信息
+
   test(`The ${username}'s name is ${name}`, async () => {
     const userInfo = await request({
       method: 'GET',
