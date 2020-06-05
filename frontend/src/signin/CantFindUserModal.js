@@ -5,12 +5,12 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(97, 74, 52, 0)",
+    backgroundColor: "rgba(97, 74, 52, 0)"
   },
   paper: {
     backgroundColor: "rgba(207, 40, 40, 0.9)",
@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textalign: "centered",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 15, 2, 15),
+    padding: theme.spacing(2, 15, 2, 15)
   },
   button: {
-    color: "#EDEDED",
-    fontSize: "20px",
-    marginTop: "0%",
-    fontWeight: "light",
-    marginLeft: "15%",
-  },
+    color: '#EDEDED',
+    fontSize: '20px',
+    marginTop: '0%',
+    fontWeight: 'light',
+    marginLeft: '15%',
+  }
 }));
 
 const CantFindUserModal = ({ visible, onClose }) => {
@@ -46,7 +46,7 @@ const CantFindUserModal = ({ visible, onClose }) => {
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
-          style: { backgroundColor: "transparent" },
+          style: { backgroundColor: "transparent" }
         }}
       >
         <Fade in={visible}>
@@ -57,9 +57,7 @@ const CantFindUserModal = ({ visible, onClose }) => {
               we couldn't find a user with that username
             </p>
             <p className="modal-content">please try again</p>
-            <Button className={classes.button} onClick={onClose}>
-              click here to try again
-            </Button>
+            <Button className={classes.button} onClick={onClose}>click here to try again</Button>
           </div>
         </Fade>
       </Modal>

@@ -4,30 +4,9 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 const Timer = ({ maxCount, onFinish, enabled }) => {
-  // Timer logic
-  const [proportion, setProportion] = useState(100);
-  const [isEnabled, setIsEnabled] = useState(false);
-
   // Styles
-  const colorProportion = (proprotion) => {
-    // At what proportion do we want to hit the final color?
-    const offset = 20;
-
-    if (proportion <= offset) {
-      return 1;
-    } else {
-      return Math.pow((proprotion - 100 - offset) / 100, 10);
-    }
-  };
-
-  const useStylesBorder = makeStyles(() => {
-    // Numbers on the left, initial color, numbers on the right, final color
-    const red = parseInt(33 + colorProportion(proportion) * 222);
-    const green = parseInt(150 - colorProportion(proportion) * 150);
-    const blue = parseInt(83 - colorProportion(proportion) * 63);
-    const backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-
-    return createStyles({
+  const useStylesBorder = makeStyles(() =>
+    createStyles({
       // Background
       root: {
         height: 15,
@@ -41,12 +20,16 @@ const Timer = ({ maxCount, onFinish, enabled }) => {
       // Progress bar
       bar: {
         borderRadius: 20,
-        backgroundColor: backgroundColor,
+        backgroundColor: "rgb(131, 254, 129)",
       },
-    });
-  });
+    })
+  );
 
   const classes = useStylesBorder();
+
+  // Timer logic
+  const [proportion, setProportion] = useState(100);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   // Make the start time accessible to the interval
   // https://github.com/facebook/react/issues/14010
