@@ -5,6 +5,7 @@ import ExitGameButton from "./ExitGameButton";
 import DiverCard from "../shared/DiverCard";
 import { isLoggedIn } from "../utilities/userManager";
 import PostGameLoginLogoutFlow from "./PostGameLoginLogoutFlow";
+import HighscoreModule from "../shared/highscoreComponent/HighscoreModule";
 
 const PostGame = ({ points }) => {
   const handleClick = () => {
@@ -14,29 +15,32 @@ const PostGame = ({ points }) => {
   const headingText = points > 5 ? "Woah! What a dive!" : "Nice try!";
 
   return (
-    <GameContainer>
-      <ExitGameButton />
-      <h1 className="heading-postgame">{headingText}</h1>
-      <p className="postgame-content">
-        {isLoggedIn() ? (
-          <>
-            We've just updated your new total on your diver certification card
-          </>
-        ) : (
-          <PostGameLoginLogoutFlow points={points} />
-        )}
-      </p>
-      <DiverCard points={points} />
-      <div className="dive-in">
-        <div className="frontpage-button">
-          <ActionButton
-            onClick={handleClick}
-            to="/game"
-            buttonText={"Dive Again"}
-          />
+    <>
+      <HighscoreModule />
+      <GameContainer>
+        <ExitGameButton />
+        <h1 className="heading-postgame">{headingText}</h1>
+        <p className="postgame-content">
+          {isLoggedIn() ? (
+            <>
+              We've just updated your new total on your diver certification card
+            </>
+          ) : (
+            <PostGameLoginLogoutFlow points={points} />
+          )}
+        </p>
+        <DiverCard points={points} />
+        <div className="dive-in">
+          <div className="frontpage-button">
+            <ActionButton
+              onClick={handleClick}
+              to="/game"
+              buttonText={"Dive Again"}
+            />
+          </div>
         </div>
-      </div>
-    </GameContainer>
+      </GameContainer>
+    </>
   );
 };
 

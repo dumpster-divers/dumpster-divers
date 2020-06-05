@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: "rgba(97, 74, 52, 0)",
     width: "auto",
-    height: "auto"
-  }
+    height: "auto",
+  },
 }));
 
 const HowToPlayModal = ({ isOpen, onClose }) => {
-  const classes=useStyles();
+  const classes = useStyles();
 
   return (
     <div>
@@ -40,8 +40,12 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
         <Fade in={isOpen}>
           <div className="how-to-play-modal">
             <h2 className="modal-title">How To Play</h2>
-            <img src={HowToPlayGif} alt="tutorial gif" className="how-to-play-gif" />
-            <ActionButton onClick={onClose} buttonText={"I'm Ready!"}/>
+            <img
+              src={HowToPlayGif}
+              alt="tutorial gif"
+              className="how-to-play-gif"
+            />
+            <ActionButton onClick={onClose} buttonText={"I'm Ready!"} />
           </div>
         </Fade>
       </Modal>
