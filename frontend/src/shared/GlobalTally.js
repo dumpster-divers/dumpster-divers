@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ScoreCounter from "../game/ScoreCounter";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import InfoIcon from "@material-ui/icons/Info";
-import GenericPopover from "./GenericPopover";
 import GlobalTallyPopover from "./GlobalTallyPopover";
 
 const GlobalTally = () => {
@@ -67,9 +66,9 @@ const GlobalTally = () => {
 
   return (
     <div className={classes.wrapper}>
-      <GenericPopover popover={GlobalTallyPopover()}>
+      <GlobalTallyPopover>
         <InfoIcon className={classes.info} />
-      </GenericPopover>
+      </GlobalTallyPopover>
       <span className={classes.text}>Global Rubbish Remaining</span>
       <div className={classes.tally}>
         <ScoreCounter score={tally} />
