@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   name: String,
   dateJoined: Date,
   processedTotal: Number, // All time total trash processed
-  processedRecord: Number // Record for most trash processed in one session
+  processedRecord: Number, // Record for most trash processed in one session
+  email: String
 });
 
 module.exports = mongoose.model("Users", userSchema, "Users");
