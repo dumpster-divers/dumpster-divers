@@ -44,11 +44,11 @@ const GlobalTally = () => {
         fontFamily: "Roboto, sans-serif",
         fontSize: "15px",
         marginLeft: "2px",
+        marginRight: "3px",
         verticalAlign: "middle",
-        paddingTop: "8px",
+        paddingTop: "2px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
-          paddingTop: "2px",
         },
       },
       info: {
