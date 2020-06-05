@@ -9,10 +9,6 @@ const hasPlayed = () => {
   return Cookies.get("played");
 };
 
-const removeHasPlayed = () => {
-  Cookies.set("played", false);
-};
-
 const getTrash = async () => {
   return await fetch("api/game/data")
     .then((response) => response.json())
