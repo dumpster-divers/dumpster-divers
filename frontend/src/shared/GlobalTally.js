@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ScoreCounter from "../game/ScoreCounter";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import InfoIcon from "@material-ui/icons/Info";
+import GlobalTallyPopover from "./GlobalTallyPopover";
 
 const GlobalTally = () => {
   const [tally, setTally] = useState(0);
@@ -9,8 +11,7 @@ const GlobalTally = () => {
     const fetchData = async () => {
       const res = await fetch("/api/game/global-count");
       const json = await res.json();
-      const data = json[0] || {}
-      setTally(data.globalRemaining);
+      setTally(json[0].globalRemaining);
     };
     fetchData().then(null);
 
@@ -24,7 +25,7 @@ const GlobalTally = () => {
         display: "flex",
         flexDirection: "row",
         width: "auto",
-        maxWidth: "500px",
+        maxWidth: "540px",
         background: "#ffebb0",
         padding: "5px 5px",
         borderRadius: "20px",
@@ -41,13 +42,22 @@ const GlobalTally = () => {
         color: "#4d4125",
         fontFamily: "Roboto, sans-serif",
         fontSize: "15px",
-        marginLeft: "30px",
+        marginLeft: "2px",
+        marginRight: "3px",
         verticalAlign: "middle",
-        paddingTop: "8px",
+        paddingTop: "2px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
-          paddingTop: "0px",
         },
+      },
+      info: {
+        width: 40,
+        height: 40,
+        color: "#efb84a",
+        verticalAlign: "middle",
+      },
+      tally: {
+        paddingRight: "5px",
       },
     })
   );
@@ -56,9 +66,15 @@ const GlobalTally = () => {
 
   return (
     <div className={classes.wrapper}>
+      <GlobalTallyPopover>
+        <InfoIcon className={classes.info} />
+      </GlobalTallyPopover>
       <span className={classes.text}>Global Rubbish Remaining</span>
-      <ScoreCounter score={tally} />
+      <div className={classes.tally}>
+        <ScoreCounter score={tally} />
+      </div>
     </div>
   );
 };
+
 export default GlobalTally;

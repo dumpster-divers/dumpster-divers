@@ -1,29 +1,25 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 // Connect to MongoDB
-const DB_LOCATION = process.env.DB_LOCATION || 'local'
-
-let MONGO_URL = ''
-let CONNECTION_STRING = ''
-
-if (DB_LOCATION == 'prod') {
+const DB_LOCATION = process.env.DB_LOCATION;
+if (DB_LOCATION == "prod") {
   CONNECTION_STRING =
-    'mongodb+srv://dumpsterteam:<password>@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority'
+    "mongodb+srv://dumpsterteam:<password>@dumpster-byflt.mongodb.net/test?retryWrites=true&w=majority";
   MONGO_URL = CONNECTION_STRING.replace(
-    '<password>',
+    "<password>",
     process.env.MONGO_PASSWORD
-  )
-  console.log('Running on production db')
+  );
+  console.log("Running on production db");
 } else {
-  MONGO_URL = 'mongodb://localhost/dumpsterdiverlocal'
-  if (DB_LOCATION != 'local') {
+  MONGO_URL = "mongodb://localhost/dumpsterdiverlocal";
+  if (DB_LOCATION != "local") {
     console.warn(
       'WARNING: DB_LOCATION Environment variable not set. Defaulting to local db. Set DB_LOCATION to either "prod" or "local"'
-    )
+    );
   } else {
-    console.log('Running on local db')
+    console.log("Running on local db");
   }
 }
 
@@ -32,18 +28,18 @@ mongoose.connect(MONGO_URL, {
   useCreateIndex: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  dbName: 'dumpsterdiversdb',
-})
+  dbName: "dumpsterdiversdb",
+});
 
-const db = mongoose.connection
-db.on('error', (err) => {
-  console.error(err)
-  process.exit(1)
-})
+const db = mongoose.connection;
+db.on("error", (err) => {
+  console.error(err);
+  process.exit(1);
+});
 
-db.once('open', async () => {
-  console.log('Mongo connection started on ' + db.host + ':' + db.port)
-})
+db.once("open", async () => {
+  console.log("Mongo connection started on " + db.host + ":" + db.port);
+});
 
-require('./Stats')
-require('./Users')
+require("./Stats");
+require("./Users");
