@@ -23,6 +23,16 @@ const GlobalTallyPopover = ({ children }) => {
 
   const open = Boolean(anchorEl);
 
+  const popover = (
+    <div style={{ padding: "10px", maxWidth: "300px" }}>
+      <p>
+        The Global Rubbish Remaining is a count of the total amount of rubbish
+        in the dumpster divers world!
+      </p>
+      <p>Dive and with your help we can drive this number to 0!</p>
+    </div>
+  );
+
   return (
     <div>
       <div
@@ -48,9 +58,7 @@ const GlobalTallyPopover = ({ children }) => {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography className={classes.typography}>
-          This be the content yeet!
-        </Typography>
+        {popover}
       </Popover>
     </div>
   );
