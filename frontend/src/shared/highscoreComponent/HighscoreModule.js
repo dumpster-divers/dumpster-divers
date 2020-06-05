@@ -20,7 +20,7 @@ const HighscoreModule = () => {
     setScores(json);
   };
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const useStyles = makeStyles(() =>
     createStyles({
       module: {
