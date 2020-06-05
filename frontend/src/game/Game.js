@@ -48,6 +48,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       setCurrentTrash(
         fetchedTrash[Math.floor(Math.random() * fetchedTrash.length)]
       );
+
       setIsLoading(false);
     };
 
@@ -88,10 +89,14 @@ const Game = ({ points, setPoints, setShowGame }) => {
     await postSessionStats(points);
   };
 
-  const handleHowToPlayModalClose = () => {
+  const startGame = () => {
     setMaxTime(GAME_DURATION);
     setIsTimerOn(true);
     setIsStarted(true);
+  };
+
+  const handleHowToPlayModalClose = () => {
+    startGame();
     setHowToPlayModalOpen(false);
     createHasPlayedCookie();
   };
@@ -105,12 +110,22 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
+  const onPreload = () => {
+    if (hasPlayed()) {
+      startGame();
+    }
+  };
+
   if (isLoading) {
     return <p>Loading!</p>;
   }
 
   return (
-    <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
+    <Preload
+      loadingIndicator={<p>Loading!</p>}
+      images={Images}
+      onSuccess={onPreload}
+    >
       <GameContainer>
         {!hasPlayed() && (
           <HowToPlayModal
