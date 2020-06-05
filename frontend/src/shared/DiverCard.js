@@ -3,6 +3,8 @@ import diver_cert_card from "../assets/diver_cert_card.png";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { getName, getUsername } from "../utilities/userManager";
 import { useState, useEffect } from "react";
+import { isLoggedIn } from "../utilities/userManager";
+import { Link } from "react-router-dom";
 
 const DiverCard = ({ points = 0 }) => {
   //display this while waiting for fetch call
@@ -31,11 +33,6 @@ const DiverCard = ({ points = 0 }) => {
   }, []);
 
   //construct strings that will be displayed on diver card
-  const nameText = getName() ? "Name: \n" + getName() : "";
-  const pointsText = "Points: " + points;
-  const currentTotal = "New Total: " + userStats.processedTotal;
-  const currentRecord = "Highest Record: " + userStats.processedRecord;
-  const currentRank = "Global Rank: " + userRank;
 
   const useStyles = makeStyles((theme) =>
     createStyles({
@@ -54,32 +51,59 @@ const DiverCard = ({ points = 0 }) => {
         color: "#333436",
         fontSize: "20px",
         marginTop: "40px",
-        paddingLeft: "70px",
+        paddingLeft: "130px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "20px",
           marginTop: "65px",
         },
         textAlign: "left",
         fontWeight: "bold",
+        width: "315px",
       },
     })
   );
+  const classes = useStyles();
+  //Mapping of text to values
+  let textDict = {
+    "Name: ": getName(),
+    "Points: ": points,
+    "New Total: ": userStats.processedTotal,
+    "Highest Record: ": userStats.processedRecord,
+    "Global Rank: ": userRank,
+  };
+
+  let signedInText = (
+    <div className={classes.points}>
+      {Object.keys(textDict).map((key) => (
+        <>
+          <span>{key}</span>
+          <span style={{ fontWeight: "normal" }}>{textDict[key]}</span>
+          <br />
+        </>
+      ))}
+    </div>
+  );
+
+  let guestText = (
+    <div className={classes.points}>
+      Name:{" "}
+      <span style={{ fontWeight: "normal", fontStyle: "italic" }}>Guest</span>
+      <br />
+      Score:{" "}
+      <span style={{ fontWeight: "normal", fontStyle: "italic" }}>
+        {points}
+      </span>
+      <br />
+      <span style={{ fontWeight: "normal", fontStyle: "italic" }}>
+        To save your score, <Link to={"/signup"}>make an account</Link>
+      </span>
+    </div>
+  );
 
   //render the diver card
-  const classes = useStyles();
   return (
     <div className={classes.wrapper}>
-      <div className={classes.points}>
-        {nameText}
-        <br />
-        {pointsText}
-        <br />
-        {currentTotal}
-        <br />
-        {currentRecord}
-        <br />
-        {currentRank}
-      </div>
+      {isLoggedIn() ? signedInText : guestText}
       <img
         className={classes.card}
         src={diver_cert_card}
