@@ -2,7 +2,6 @@ import React from "react";
 import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
-import ShowUpdateOption from "./UpdateUser";
 import "./userHomepageStyles.css";
 
 const UserHomepage = () => {
@@ -13,9 +12,6 @@ const UserHomepage = () => {
           <DiverCard />
         </div>
         <ExitGameButton />
-        <div className="edit-button">
-          <ShowUpdateOption />
-        </div>
       </div>
     </GameContainer>
   );
