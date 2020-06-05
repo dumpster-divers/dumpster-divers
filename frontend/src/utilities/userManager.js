@@ -1,16 +1,16 @@
 import Cookies from "js-cookie";
-const registerUser = async name => {
+const registerUser = async (name) => {
   let body = {
     name: name,
-    processedTotal: 0 // TODO: Add this
+    processedTotal: 0, // TODO: Add this
   };
 
   const response = await fetch("api/users/add", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   });
 
   return response.json();
@@ -36,6 +36,7 @@ const getName = () => {
 const logoutUser = () => {
   Cookies.remove("name");
   Cookies.remove("username");
+  Cookies.remove("played");
 };
 
 //Return whether someone is logged in
@@ -45,11 +46,11 @@ const isLoggedIn = () => {
 
 // Used to store score temporarily during post game onboarding flow.
 // DO NOT USE TO STORE SCORE IN DATABASE
-const postGameStoreScore = score => {
+const postGameStoreScore = (score) => {
   Cookies.set("temporaryScore", score);
 };
 
-const attemptLogin = async username => {
+const attemptLogin = async (username) => {
   let url = "/api/users/login?username=" + username;
   let response = await fetch(url);
 
@@ -72,5 +73,5 @@ export {
   logoutUser,
   isLoggedIn,
   attemptLogin,
-  postGameStoreScore
+  postGameStoreScore,
 };
