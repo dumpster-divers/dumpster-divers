@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ScoreCounter from "../game/ScoreCounter";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import InfoIcon from "@material-ui/icons/Info";
+import GenericPopover from "./GenericPopover";
+import GlobalTallyPopover from "./GlobalTallyPopover";
 
 const GlobalTally = () => {
   const [tally, setTally] = useState(0);
@@ -23,7 +26,7 @@ const GlobalTally = () => {
         display: "flex",
         flexDirection: "row",
         width: "auto",
-        maxWidth: "500px",
+        maxWidth: "540px",
         background: "#ffebb0",
         padding: "5px 5px",
         borderRadius: "20px",
@@ -40,13 +43,19 @@ const GlobalTally = () => {
         color: "#4d4125",
         fontFamily: "Roboto, sans-serif",
         fontSize: "15px",
-        marginLeft: "30px",
+        marginLeft: "2px",
         verticalAlign: "middle",
         paddingTop: "8px",
         [theme.breakpoints.up("sm")]: {
           fontSize: "30px",
-          paddingTop: "0px",
+          paddingTop: "2px",
         },
+      },
+      info: {
+        width: 40,
+        height: 40,
+        color: "#efb84a",
+        verticalAlign: "middle",
       },
     })
   );
@@ -55,6 +64,9 @@ const GlobalTally = () => {
 
   return (
     <div className={classes.wrapper}>
+      <GenericPopover popover={GlobalTallyPopover()}>
+        <InfoIcon className={classes.info} />
+      </GenericPopover>
       <span className={classes.text}>Global Rubbish Remaining</span>
       <ScoreCounter score={tally} />
     </div>
