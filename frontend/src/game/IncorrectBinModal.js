@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import Button from "@material-ui/core/Button";
 
 //define modal style
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
     textalign: "centered",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 10, 2, 10),
+  },
+  button: {
+    color: "#EDEDED",
+    fontSize: "20px",
+    marginTop: "0%",
+    fontWeight: "light",
+    marginLeft: "15%",
   },
 }));
 
@@ -49,7 +57,9 @@ const IncorrectBinModal = ({ trashInfo, isOpen, onClose }) => {
             </div>
             <h2 className="modal-title">Oops</h2>
             <p className="modal-content">{trashInfo}</p>
-            <p className="modal-clickout">click anywhere else to continue</p>
+            <Button className={classes.button} onClick={onClose}>
+              click here to continue
+            </Button>
           </div>
         </Fade>
       </Modal>

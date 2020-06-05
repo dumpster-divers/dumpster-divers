@@ -4,7 +4,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-
+import ActionButton from "../shared/ActionButton";
 import HowToPlayGif from "../assets/howtoplay.gif";
 
 // Style
@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: "rgba(97, 74, 52, 0)",
     width: "auto",
-    height: "auto"
-  }
+    height: "auto",
+  },
 }));
 
 const HowToPlayModal = ({ isOpen, onClose }) => {
-  const classes=useStyles();
+  const classes = useStyles();
 
   return (
     <div>
@@ -31,6 +31,7 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
         open={isOpen}
         onClose={onClose}
         closeAfterTransition
+        disableBackdropClick="true"
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
@@ -39,8 +40,12 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
         <Fade in={isOpen}>
           <div className="how-to-play-modal">
             <h2 className="modal-title">How To Play</h2>
-            <img src={HowToPlayGif} alt="tutorial gif" className="how-to-play-gif" />
-            <p className="modal-clickout">click anywhere else to continue</p>
+            <img
+              src={HowToPlayGif}
+              alt="tutorial gif"
+              className="how-to-play-gif"
+            />
+            <ActionButton onClick={onClose} buttonText={"I'm Ready!"} />
           </div>
         </Fade>
       </Modal>

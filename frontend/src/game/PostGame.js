@@ -18,6 +18,7 @@ const PostGame = ({ points }) => {
     <>
       <HighscoreModule />
       <GameContainer>
+        <ExitGameButton />
         <h1 className="heading-postgame">{headingText}</h1>
         <p className="postgame-content">
           {isLoggedIn() ? (
@@ -29,14 +30,15 @@ const PostGame = ({ points }) => {
           )}
         </p>
         <DiverCard points={points} />
-        <div className="frontpage-button">
-          <ActionButton
-            onClick={handleClick}
-            to="/game"
-            buttonText={"Dive Again"}
-          />
+        <div className="dive-in">
+          <div className="frontpage-button">
+            <ActionButton
+              onClick={handleClick}
+              to="/game"
+              buttonText={"Dive Again"}
+            />
+          </div>
         </div>
-        <ExitGameButton />
       </GameContainer>
     </>
   );

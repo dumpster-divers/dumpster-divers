@@ -1,11 +1,6 @@
 /* Styles for the front page */
 
 .heading-homepage {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 150px;
-
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -13,14 +8,11 @@
   line-height: calc(10px + 6vmin);
   text-align: center;
   color: #4d4125;
+  hyphens: auto;
 }
 
 .about-us {
   color: #4d4125;
-  position: absolute;
-  left: 13.41%;
-  right: 13.41%;
-  margin-top: 280px;
 
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -28,6 +20,7 @@
   font-size: calc(6px + 1vmin);
   line-height: calc(10px + 2vmin);
   text-align: center;
+  width: 60%;
 }
 
 .dive-in {
@@ -35,33 +28,46 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .frontpage-button {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 65%;
-  bottom: 0;
-  margin-top: 100px;
-  z-index: 10;
+  width: 1000px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10%;
 }
 
 #mascot {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40%;
-  margin: 100px auto 0 auto;
+  bottom: calc(10% + 5vmax);
 }
 
 @media (max-device-width: 500px) {
   #mascot img {
-    transform: scale(0.5, 0.5);
+    transform: scale(0.75, 0.75);
   }
-
   .about-us {
-    margin-top: 260px;
   }
+  .frontpage-button {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+#user-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.1));
+}
+
+#user-button:active {
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.7));
+}
+#user-buttonA:hover #path1 {
+  fill: #ffa4a4;
+}
+#user-buttonA:hover circle {
+  fill: #ffe9e9;
 }
