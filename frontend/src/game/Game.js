@@ -10,7 +10,12 @@ import Backend from "react-dnd-html5-backend";
 import TouchBackend from "react-dnd-touch-backend";
 import { DndProvider } from "react-dnd";
 import Trash from "./Trash";
-import { getTrash, postSessionStats } from "../utilities/gameManager";
+import {
+  getTrash,
+  postSessionStats,
+  createHasPlayedCookie,
+  hasPlayed,
+} from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
@@ -88,6 +93,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsTimerOn(true);
     setIsStarted(true);
     setHowToPlayModalOpen(false);
+    createHasPlayedCookie();
   };
 
   const handleTimeOut = () => {
@@ -106,10 +112,12 @@ const Game = ({ points, setPoints, setShowGame }) => {
   return (
     <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
-        <HowToPlayModal
-          isOpen={isHowToPlayModalOpen}
-          onClose={handleHowToPlayModalClose}
-        />
+        {!hasPlayed() && (
+          <HowToPlayModal
+            isOpen={isHowToPlayModalOpen}
+            onClose={handleHowToPlayModalClose}
+          />
+        )}
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
