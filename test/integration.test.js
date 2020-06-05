@@ -1,6 +1,5 @@
 const request = require("../api/request");
 
-// 查询 Users表 指定用户信息，自测时 name = demo, username = Gruesome-Grateful-Crane，根据实际数据做调整
 describe("Log in to the integration tests of the process", () => {
   const signUpName = 'admin'
   let signUpUsername = ''
