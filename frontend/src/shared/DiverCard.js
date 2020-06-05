@@ -3,6 +3,7 @@ import diver_cert_card from "../assets/diver_cert_card.png";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { getName, getUsername } from "../utilities/userManager";
 import { useState, useEffect } from "react";
+import { isLoggedIn } from "../utilities/userManager";
 
 const DiverCard = ({ points = 0 }) => {
   //display this while waiting for fetch call
@@ -74,11 +75,11 @@ const DiverCard = ({ points = 0 }) => {
         <br />
         {pointsText}
         <br />
-        {currentTotal}
+        {isLoggedIn() ? currentTotal : ""}
         <br />
-        {currentRecord}
+        {isLoggedIn() ? currentRecord : ""}
         <br />
-        {currentRank}
+        {isLoggedIn() ? currentRank : ""}
       </div>
       <img
         className={classes.card}
