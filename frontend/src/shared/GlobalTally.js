@@ -57,6 +57,9 @@ const GlobalTally = () => {
         color: "#efb84a",
         verticalAlign: "middle",
       },
+      tally: {
+        paddingRight: "5px",
+      },
     })
   );
 
@@ -68,7 +71,9 @@ const GlobalTally = () => {
         <InfoIcon className={classes.info} />
       </GenericPopover>
       <span className={classes.text}>Global Rubbish Remaining</span>
-      <ScoreCounter score={tally} />
+      <div className={classes.tally}>
+        <ScoreCounter score={tally} />
+      </div>
     </div>
   );
 };
