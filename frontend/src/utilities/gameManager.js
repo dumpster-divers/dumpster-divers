@@ -1,4 +1,17 @@
+import Cookies from "js-cookie";
 import { getUsername, isLoggedIn } from "./userManager";
+
+const createHasPlayedCookie = () => {
+  if (!err) {
+    Cookies.set("played", true);
+  } else {
+    console.log("error");
+  }
+};
+
+const hasPlayed = () => {
+  return Cookies.get("played");
+};
 
 const getTrash = async () => {
   return await fetch("api/game/data")
@@ -30,4 +43,4 @@ const postSessionStats = async (points) => {
   });
 };
 
-export { getTrash, postSessionStats };
+export { getTrash, postSessionStats, createHasPlayedCookie, hasPlayed };
