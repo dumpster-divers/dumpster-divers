@@ -6,11 +6,7 @@ import { useState, useEffect } from "react";
 
 const DiverCard = () => {
   //display this while waiting for fetch call
-  const loadingUserStats = {
-    processedTotal: "loading...",
-    processedRecord: "loading...",
-    dateJoined: "loading...",
-  };
+  const loadingUserStats = {"processedTotal":"loading...", "processedRecord":"loading...", "dateJoined":"loading..."}
 
   const [userStats, setUserStats] = useState(loadingUserStats);
   const [userRank, setUserRank] = useState("loading...");
@@ -19,9 +15,7 @@ const DiverCard = () => {
   useEffect(() => {
     async function fetchUser() {
       const username = getUsername();
-      const response = await fetch(
-        `/api/stats/user-highscore?username=${username}`
-      );
+      const response = await fetch(`/api/stats/user-highscore?username=${username}`);
       const data = await response.json();
       const userStats = data.user;
       setUserStats(userStats);
@@ -36,13 +30,14 @@ const DiverCard = () => {
   const currentTotal = "Total: " + userStats.processedTotal;
   const currentRecord = "Record: " + userStats.processedRecord;
   const currentRank = "Global Rank: " + userRank;
-  const dateJoined = "Issue Date: " + userStats.dateJoined.slice(0, 10);
+  const dateJoined = "Issue Date: " + userStats.dateJoined.slice(0,10);
+
 
   const useStyles = makeStyles(() =>
     createStyles({
       wrapper: { display: "flex", justifyContent: "center" },
       card: {
-        position: "relative",
+        position: "relative"
       },
       points: {
         width: "300px",
@@ -54,8 +49,8 @@ const DiverCard = () => {
         fontSize: "20px",
         textAlign: "left",
         fontWeight: "bold",
-        marginLeft: "80px",
-      },
+        marginLeft: "80px"
+      }
     })
   );
 
