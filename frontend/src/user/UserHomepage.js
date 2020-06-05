@@ -21,6 +21,4 @@ const UserHomepage = () => {
   );
 };
 
-
-
 export default UserHomepage;

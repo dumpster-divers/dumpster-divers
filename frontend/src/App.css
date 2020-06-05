@@ -89,3 +89,11 @@ body {
   left: 0;
   right: 0;
 }
+
+.forgot-username {
+  position: absolute;
+  font-size: 20px;
+  bottom: 1%;
+  right: 0;
+  left: 0;
+}

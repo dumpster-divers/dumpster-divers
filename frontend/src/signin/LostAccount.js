@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
-import SignInForm from "./SignInForm";
-import CantFindUserModal from "./CantFindUserModal";
+import LostAccountForm from "./LostAccountForm";
+import CantFindEmailModal from "./CantFindEmailModal";
 import { Link } from "react-router-dom";
 
-const Signin = () => {
+const LostAccount = () => {
   let [errorVisible, setErrorVisible] = useState(false);
   const handleError = () => {
     setErrorVisible(true);
@@ -17,20 +17,19 @@ const Signin = () => {
 
   return (
     <GameContainer>
-      <h1 className="heading1"> Enter Your Unique Username </h1>
+      <h1 className="heading1"> Enter Your linked email address </h1>
       <p className="text1">
-        this is the unique username given to you when you signed up
+        your unique username will be sent to your email
       </p>
       <div className="form-module">
-        <SignInForm onError={handleError} />
+        <LostAccountForm onError={handleError} />
       </div>
-      <Link to="/">
+      <Link to="/signin">
         <GoBackButton />
       </Link>
-      <CantFindUserModal visible={errorVisible} onClose={handleClose} />
-      <Link to="/LostAccount" className="forgot-username">forgot your username?</Link>
+      <CantFindEmailModal visible={errorVisible} onClose={handleClose} />
     </GameContainer>
   );
 };
 
-export default Signin;
+export default LostAccount;

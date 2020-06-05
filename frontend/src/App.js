@@ -7,6 +7,7 @@ import Signin from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
 import PostGame   from "./game/PostGame";
 import UserHomepage from "./user/UserHomepage";
+import LostAccount from "./signin/LostAccount";
 
 
 import "./sharedStyles.css";
@@ -36,6 +37,9 @@ export default function App() {
             </Route>
             <Route path="/userhomepage">
               <UserHomepage/>
+            </Route>
+            <Route path="/lostaccount">
+              <LostAccount />
             </Route>
             <Route path="/">
               <FrontPage />
