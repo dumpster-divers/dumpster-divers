@@ -77,4 +77,5 @@ const GlobalTally = () => {
     </div>
   );
 };
+
 export default GlobalTally;

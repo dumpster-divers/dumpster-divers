@@ -14,7 +14,6 @@
     "react-dnd-html5-backend": "^10.0.2",
     "react-dnd-touch-backend": "^10.0.2",
     "react-dom": "^16.13.1",
-    "react-hover": "^1.4.0",
     "react-modal": "^3.11.2",
     "react-odometerjs": "^2.1.1",
     "react-preload": "^0.6.0",
