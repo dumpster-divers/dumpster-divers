@@ -6,7 +6,6 @@ const GlobalTallyPopover = ({ children }) => {
   const useStyles = makeStyles((theme) => ({
     popover: {
       pointerEvents: "none",
-      color: "blue",
     },
   }));
 
