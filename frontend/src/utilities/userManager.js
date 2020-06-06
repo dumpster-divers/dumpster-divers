@@ -64,6 +64,24 @@ const attemptLogin = async username => {
   });
 };
 
+const attemptRecovery = async (email) => {
+  let url = "/api/users/get-all";
+  let response = await fetch(url);
+
+  var index;
+
+  return new Promise((resolve, reject) => {
+    response.json().then((res, err) => {
+      for (index=0; index < res.length; ++index) {
+        if (res[index].email === email) {
+          resolve(res);
+        }
+      }
+      reject();
+    });
+  });
+};
+
 export {
   registerUser,
   createUserCookie,
@@ -72,5 +90,6 @@ export {
   logoutUser,
   isLoggedIn,
   attemptLogin,
+  attemptRecovery,
   postGameStoreScore
 };

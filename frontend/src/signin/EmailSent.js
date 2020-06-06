@@ -5,7 +5,7 @@ import LostAccountForm from "./LostAccountForm";
 import CantFindEmailModal from "./CantFindEmailModal";
 import { Link } from "react-router-dom";
 
-const LostAccount = () => {
+const EmailSent = () => {
   let [errorVisible, setErrorVisible] = useState(false);
   const handleError = () => {
     setErrorVisible(true);
@@ -17,20 +17,15 @@ const LostAccount = () => {
 
   return (
     <GameContainer>
-      <h1 className="heading1"> Enter Your linked email address </h1>
+      <h1 className="heading1"> An email has been sent! </h1>
       <p className="text1">
-        Your unique username will be sent to your email.
-        Unfortunately we cannot recover accounts that are not linked to an email address.
+        please check your inbox for your unique username
       </p>
-      <div className="form-module">
-        <LostAccountForm onError={handleError} />
-      </div>
       <Link to="/signin">
         <GoBackButton />
       </Link>
-      <CantFindEmailModal visible={errorVisible} onClose={handleClose} />
     </GameContainer>
   );
 };
 
-export default LostAccount;
+export default EmailSent;

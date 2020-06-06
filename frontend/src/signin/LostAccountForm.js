@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import TextEntry from "../shared/TextEntry";
 import ActionButton from "../shared/ActionButton";
-import { attemptLogin, createUserCookie } from "../utilities/userManager";
+import { attemptRecovery } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
 const LostAccountForm = ({ onError }) => {
@@ -17,9 +17,8 @@ const LostAccountForm = ({ onError }) => {
   const handleClick = () => {
     if (value.length > 0) {
       setLoading(true);
-      attemptLogin(value)
-        .then(createUserCookie)
-        .then(redirectHome)
+      attemptRecovery(value)
+        .then(redirectSent)
         .catch(handleError);
     }
   };
@@ -29,7 +28,7 @@ const LostAccountForm = ({ onError }) => {
     onError();
   };
 
-  const redirectHome = () => setRedirect(true);
+  const redirectSent = () => setRedirect(true);
   const useStyles = makeStyles(() =>
     createStyles({
       wow: {
@@ -60,7 +59,7 @@ const LostAccountForm = ({ onError }) => {
           loading={loading}
         />
       </div>
-      {redirect && <Redirect to="/" />}
+      {redirect && <Redirect to="/emailsent" />}
     </>
   );
 };

@@ -16,10 +16,6 @@ export default function EmailUsernameForm(showUpdate) {
       email: inputEmail,
     })
       .then((res) => res.json())
-      .then((res) => {
-        Cookies.set("name", res.name);
-        setUsername(res.name);
-      })
       .then((res) => window.location.reload());
   }
 
