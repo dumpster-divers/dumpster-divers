@@ -45,7 +45,7 @@ const HowToPlayModal = ({ isOpen, onClose, onChecked }) => {
       >
         <Fade in={isOpen}>
           <div className="how-to-play-modal">
-            {hasPlayed() && [
+            {!hasPlayed() && [
               <h2 className="modal-title">How To Play</h2>,
               <img
                 src={HowToPlayGif}
@@ -56,7 +56,7 @@ const HowToPlayModal = ({ isOpen, onClose, onChecked }) => {
 
             <ActionButton onClick={onClose} buttonText={"I'm Ready!"} />
             <br />
-            {hasPlayed() && (
+            {!hasPlayed() && (
               <FormControlLabel
                 name="doNotShowAgain"
                 control={
@@ -67,9 +67,6 @@ const HowToPlayModal = ({ isOpen, onClose, onChecked }) => {
                   />
                 }
                 label="Do not show again"
-                onChange={(e) => {
-                  console.log(e);
-                }}
               />
             )}
           </div>

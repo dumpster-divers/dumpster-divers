@@ -99,7 +99,9 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const handleHowToPlayModalClose = () => {
     startGame();
     setHowToPlayModalOpen(false);
-    createHasPlayedCookie();
+    if (checked) {
+      createHasPlayedCookie();
+    }
   };
 
   const handleTimeOut = () => {
@@ -111,12 +113,6 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const handlePreload = () => {
-    if (hasPlayed()) {
-      startGame();
-    }
-  };
-
   const handleCheckboxChange = (event) => {
     setChecked(event.target.checked);
   };
@@ -126,19 +122,13 @@ const Game = ({ points, setPoints, setShowGame }) => {
   }
 
   return (
-    <Preload
-      loadingIndicator={<p>Loading!</p>}
-      images={Images}
-      onSuccess={handlePreload}
-    >
+    <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
-        {!hasPlayed() && (
-          <HowToPlayModal
-            isOpen={isHowToPlayModalOpen}
-            onClose={handleHowToPlayModalClose}
-            onChecked={handleCheckboxChange}
-          />
-        )}
+        <HowToPlayModal
+          isOpen={isHowToPlayModalOpen}
+          onClose={handleHowToPlayModalClose}
+          onChecked={handleCheckboxChange}
+        />
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
