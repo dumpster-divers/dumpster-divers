@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getName, getUsername, isLoggedIn } from "../utilities/userManager";
+import { getName, getUsername } from "../utilities/userManager";
 import updateUser from "./UpdateUserApi";
 import SmallButton from "../shared/SmallButton";
 import Cookies from "js-cookie";
@@ -10,10 +10,6 @@ import "./userHomepageStyles.css";
 export default function UpdateUserForm(showUpdate) {
   const [inputName, setInputName] = useState(getName());
   const [username, setUsername] = useState(getUsername());
-
-  if (!isLoggedIn()) {
-    return <Redirect to="/" />;
-  }
 
   function onSubmit() {
     // call update user function

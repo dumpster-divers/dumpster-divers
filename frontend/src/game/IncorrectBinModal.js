@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 10, 2, 10),
   },
   button: {
-    color: '#EDEDED',
-    fontSize: '20px',
-    marginTop: '0%',
-    fontWeight: 'light',
-    marginLeft: '15%',
-  }
+    color: "#EDEDED",
+    fontSize: "20px",
+    marginTop: "0%",
+    fontWeight: "light",
+    marginLeft: "15%",
+  },
 }));
 
 //render modal
@@ -57,7 +57,9 @@ const IncorrectBinModal = ({ trashInfo, isOpen, onClose }) => {
             </div>
             <h2 className="modal-title">Oops</h2>
             <p className="modal-content">{trashInfo}</p>
-            <Button className={classes.button} onClick={onClose}>click here to continue</Button>
+            <Button className={classes.button} onClick={onClose}>
+              click here to continue
+            </Button>
           </div>
         </Fade>
       </Modal>
