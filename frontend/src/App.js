@@ -5,11 +5,10 @@ import FrontPage from "./frontpage/FrontPage";
 import Signup from "./signup/Signup";
 import Signin from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
-import PostGame   from "./game/PostGame";
+import PostGame from "./game/PostGame";
 import UserHomepage from "./user/UserHomepage";
 import LostAccount from "./signin/LostAccount";
 import EmailSent from "./signin/EmailSent";
-
 
 import "./sharedStyles.css";
 import GamePage from "./game/GamePage";
