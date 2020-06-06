@@ -60,7 +60,7 @@ const DiverCard = ({ points = 0, hasEdit = false }) => {
         },
         textAlign: "left",
         fontWeight: "bold",
-        width: "315px",
+        width: isMobile() ? "250px" : "315px",
       },
       mobileCard: {
         position: "relative",
