@@ -8,9 +8,6 @@ const GlobalTallyPopover = ({ children }) => {
       pointerEvents: "none",
       color: "blue",
     },
-    paper: {
-      /*       borderRadius: "15px" */
-    },
   }));
 
   const classes = useStyles();
