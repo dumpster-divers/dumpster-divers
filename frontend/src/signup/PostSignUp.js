@@ -3,6 +3,7 @@ import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import PostSignUpForm from "./PostSignUpForm";
 import EmailUsernameModal from "./EmailUsernameModal";
+import { isMobile } from "../utilities/display";
 
 const PostSignUp = () => {
   return (
@@ -13,8 +14,12 @@ const PostSignUp = () => {
         <span style={{ color: "#E10000", fontWeight: "bold" }}>
           You will only see this once
         </span>{" "}
-        so make sure to keep it safe and don't share it with anyone! You'll need
-        this to log in.
+        {!isMobile() && (
+          <span>
+            so make sure to keep it safe and don't share it with anyone! You'll
+            need this to log in.
+          </span>
+        )}
       </p>
       <div className="form-module">
         <PostSignUpForm />
