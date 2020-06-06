@@ -3,7 +3,6 @@ import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
 import "./userHomepageStyles.css";
-import UpdateUserForm from "./UpdateUserForm";
 import { isLoggedIn } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
