@@ -10,7 +10,12 @@ import Backend from "react-dnd-html5-backend";
 import TouchBackend from "react-dnd-touch-backend";
 import { DndProvider } from "react-dnd";
 import Trash from "./Trash";
-import { getTrash, postSessionStats } from "../utilities/gameManager";
+import {
+  getTrash,
+  postSessionStats,
+  createHasPlayedCookie,
+  hasPlayed,
+} from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 import Preload from "react-preload";
 import TimeOutModal from "./TimeOutModal";
@@ -31,7 +36,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen);
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
 
-  const GAME_DURATION = 10;
+  const GAME_DURATION = 20;
 
   // Handling touch vs mouse dragging
   const backend = isMobile() ? TouchBackend : Backend;
@@ -43,6 +48,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
       setCurrentTrash(
         fetchedTrash[Math.floor(Math.random() * fetchedTrash.length)]
       );
+
       setIsLoading(false);
     };
 
@@ -83,11 +89,16 @@ const Game = ({ points, setPoints, setShowGame }) => {
     await postSessionStats(points);
   };
 
-  const handleHowToPlayModalClose = () => {
+  const startGame = () => {
     setMaxTime(GAME_DURATION);
     setIsTimerOn(true);
     setIsStarted(true);
+  };
+
+  const handleHowToPlayModalClose = () => {
+    startGame();
     setHowToPlayModalOpen(false);
+    createHasPlayedCookie();
   };
 
   const handleTimeOut = () => {
@@ -99,17 +110,29 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
+  const onPreload = () => {
+    if (hasPlayed()) {
+      startGame();
+    }
+  };
+
   if (isLoading) {
     return <p>Loading!</p>;
   }
 
   return (
-    <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
+    <Preload
+      loadingIndicator={<p>Loading!</p>}
+      images={Images}
+      onSuccess={onPreload}
+    >
       <GameContainer>
-        <HowToPlayModal
-          isOpen={isHowToPlayModalOpen}
-          onClose={handleHowToPlayModalClose}
-        />
+        {!hasPlayed() && (
+          <HowToPlayModal
+            isOpen={isHowToPlayModalOpen}
+            onClose={handleHowToPlayModalClose}
+          />
+        )}
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
