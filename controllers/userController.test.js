@@ -21,8 +21,7 @@ beforeAll(() => {
 const myMock = jest.fn();
 
 describe("add user", () => {
-  it("return user data on success", async () => {
-    console.log("fug");
+  it(" saves user once", async () => {
     const req = {
       body: {
         name: "name",
@@ -39,7 +38,6 @@ describe("add user", () => {
     };
 
     await userController.addUser(req, res);
-    expect(sendFn.mock.calls[0][0].body.name).toEqual("bleh");
-    expect(sendFn.mock.calls[0][0].body.username).toEqual("foo");
+    expect(saveFn.mock.calls.length).toBe(1);
   });
 });
