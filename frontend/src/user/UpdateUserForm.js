@@ -4,7 +4,6 @@ import updateUser from "./UpdateUserApi";
 import SmallButton from "../shared/SmallButton";
 import Cookies from "js-cookie";
 import SmallTextEntry from "../shared/SmallTextEntry";
-import { Redirect } from "react-router";
 import "./userHomepageStyles.css";
 
 
