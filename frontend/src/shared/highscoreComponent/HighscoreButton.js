@@ -31,8 +31,6 @@ const HighscoreButton = ({ onClick }) => {
     })
   );
 
-  const handleClick = () => {};
-
   const classes = useStyle();
   return (
     <div className={classes.button}>
