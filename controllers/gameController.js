@@ -31,7 +31,6 @@ const addSessionStats = async (req, res) => {
 //get random trash for a level
 const getData = async (req, res) => {
   const amount = req.query.amount;
-  console.log(amount);
   let trash;
   if (amount === undefined) {
     trash = await Trash.find();
