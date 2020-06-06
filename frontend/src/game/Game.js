@@ -14,7 +14,6 @@ import {
   getTrash,
   postSessionStats,
   createHasPlayedCookie,
-  hasPlayed,
 } from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 import Preload from "react-preload";
@@ -32,6 +31,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const [isStarted, setIsStarted] = useState(false);
   const [allTrash, setAllTrash] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen);
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
@@ -98,7 +98,9 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const handleHowToPlayModalClose = () => {
     startGame();
     setHowToPlayModalOpen(false);
-    createHasPlayedCookie();
+    if (checked) {
+      createHasPlayedCookie();
+    }
   };
 
   const handleTimeOut = () => {
@@ -110,10 +112,8 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const onPreload = () => {
-    if (hasPlayed()) {
-      startGame();
-    }
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
   };
 
   if (isLoading) {
@@ -121,18 +121,13 @@ const Game = ({ points, setPoints, setShowGame }) => {
   }
 
   return (
-    <Preload
-      loadingIndicator={<p>Loading!</p>}
-      images={Images}
-      onSuccess={onPreload}
-    >
+    <Preload loadingIndicator={<p>Loading!</p>} images={Images}>
       <GameContainer>
-        {!hasPlayed() && (
-          <HowToPlayModal
-            isOpen={isHowToPlayModalOpen}
-            onClose={handleHowToPlayModalClose}
-          />
-        )}
+        <HowToPlayModal
+          isOpen={isHowToPlayModalOpen}
+          onClose={handleHowToPlayModalClose}
+          onChecked={handleCheckboxChange}
+        />
         <DndProvider backend={backend}>
           <div className="gameCenterWrapper">
             <TrashHolder visible={isStarted}>{trashElement}</TrashHolder>
