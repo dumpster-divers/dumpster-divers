@@ -1,17 +1,3 @@
-.expand-update.hide {
-  display: none;
-  padding: 10px;
-}
-
-.expand-update.show {
-  display: block;
-  position: absolute;
-  width: 100px;
-  height: 550px;
-  top: 100%;
-  right: 0%;
-}
-
 .update-name {
   color: #4d4125;
   margin: 1%;
