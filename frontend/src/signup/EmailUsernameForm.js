@@ -4,9 +4,9 @@ import addEmailApi from "./addEmailApi";
 import SmallButton from "../shared/SmallButton";
 import SmallTextEntry from "../shared/SmallTextEntry";
 
-export default function EmailUsernameForm(showUpdate) {
+export default function EmailUsernameForm() {
   const [inputEmail, setInputEmail] = useState();
-  const username = useState(getUsername());
+  const username = getUsername();
 
   function onSubmit() {
     // call add email function
