@@ -32,6 +32,7 @@ const Game = ({ points, setPoints, setShowGame }) => {
   const [isStarted, setIsStarted] = useState(false);
   const [allTrash, setAllTrash] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   const isIncorrectModalOpenRef = useRef(isIncorrectModalOpen);
   isIncorrectModalOpenRef.current = isIncorrectModalOpen;
@@ -110,10 +111,14 @@ const Game = ({ points, setPoints, setShowGame }) => {
     setIsStarted(false);
   };
 
-  const onPreload = () => {
+  const handlePreload = () => {
     if (hasPlayed()) {
       startGame();
     }
+  };
+
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
   };
 
   if (isLoading) {
@@ -124,13 +129,14 @@ const Game = ({ points, setPoints, setShowGame }) => {
     <Preload
       loadingIndicator={<p>Loading!</p>}
       images={Images}
-      onSuccess={onPreload}
+      onSuccess={handlePreload}
     >
       <GameContainer>
         {!hasPlayed() && (
           <HowToPlayModal
             isOpen={isHowToPlayModalOpen}
             onClose={handleHowToPlayModalClose}
+            onChecked={handleCheckboxChange}
           />
         )}
         <DndProvider backend={backend}>
