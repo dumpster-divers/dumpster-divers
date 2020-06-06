@@ -30,11 +30,14 @@ const HighscoreButton = ({ onClick }) => {
       },
     })
   );
+
+  const handleClick = () => {};
+
   const classes = useStyle();
   return (
     <div className={classes.button}>
       <Button onClick={onClick} size={"large"} className={classes.button}>
-        Leaderboard
+        Leaderboard ≡
       </Button>
     </div>
   );
