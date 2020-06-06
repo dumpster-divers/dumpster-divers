@@ -26,20 +26,18 @@ export default function UpdateUserForm(showUpdate) {
 
   return (
     <div className={`expand-update ${showUpdate.showUpdate ? "show" : "hide"}`}>
-    <div className="update-form">
-      <form>
+      <div className="update-form">
         <p className="update-name">Enter your new nickname</p>
-        <div style={{ marginBottom:"3%", marginTop:"3%" }}>
-        <SmallTextEntry
-          value={inputName}
-          onChange={(event) => {
-            setInputName(event.target.value);
-          }}
-          placeholderText={username}
-        />
+        <div style={{ marginBottom: "3%", marginTop: "3%" }}>
+          <SmallTextEntry
+            value={inputName}
+            onChange={(event) => {
+              setInputName(event.target.value);
+            }}
+            placeholderText={username}
+          />
         </div>
         <SmallButton buttonText="update" onClick={onSubmit}></SmallButton>
-      </form>
       </div>
     </div>
   );
