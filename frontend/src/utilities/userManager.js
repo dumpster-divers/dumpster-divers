@@ -65,8 +65,8 @@ const attemptLogin = async username => {
 };
 
 const attemptRecovery = async (email) => {
-  let url = "/api/users/get-all";
-  let response = await fetch(url);
+  const url = "/api/users/get-all";
+  const response = await fetch(url);
 
   var index;
 

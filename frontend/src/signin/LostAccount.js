@@ -6,7 +6,7 @@ import CantFindEmailModal from "./CantFindEmailModal";
 import { Link } from "react-router-dom";
 
 const LostAccount = () => {
-  let [errorVisible, setErrorVisible] = useState(false);
+  const [errorVisible, setErrorVisible] = useState(false);
   const handleError = () => {
     setErrorVisible(true);
   };
