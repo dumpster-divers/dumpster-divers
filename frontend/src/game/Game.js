@@ -14,7 +14,6 @@ import {
   getTrash,
   postSessionStats,
   createHasPlayedCookie,
-  hasPlayed,
 } from "../utilities/gameManager";
 import TrashHolder from "./TrashHolder";
 import Preload from "react-preload";
