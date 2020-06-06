@@ -6,7 +6,6 @@ import Cookies from "js-cookie";
 import SmallTextEntry from "../shared/SmallTextEntry";
 import "./userHomepageStyles.css";
 
-
 export default function UpdateUserForm(showUpdate) {
   const [inputName, setInputName] = useState(getName());
   const [username, setUsername] = useState(getUsername());
