@@ -84,9 +84,9 @@ describe("delete user", () => {
     );
   });
 
-  test("sends error to endpoint when error", () => {
-    mockUsers.findOneAndRemove = jest.fn().mockImplementation(() => {
-      console.log("shit");
+  test("sends correct response on success", () => {
+    Users.findOneAndRemove = jest.fn().mockImplementation((meh, callback) => {
+      callback(false, { username: "username" });
     });
 
     const req = {
@@ -100,9 +100,75 @@ describe("delete user", () => {
     userController.deleteUser(req, res);
 
     const expected = {
-      message: "User sucessfully deleted",
+      message: "User successfully deleted",
       username: "username",
     };
     expect(res.send.mock.calls[0][0]).toEqual(expected);
+  });
+
+  test("returns error if user not found", () => {
+    Users.findOneAndRemove = jest.fn().mockImplementation((meh, callback) => {
+      callback(false, false);
+    });
+
+    const req = {
+      body: {
+        username: "username",
+      },
+    };
+
+    const res = {};
+    res.send = jest.fn();
+    userController.deleteUser(req, res);
+
+    const expected = "User not found";
+
+    expect(res.send.mock.calls[0][0]).toEqual(expected);
+  });
+});
+
+describe("updateUser", () => {
+  it("sends updated user when updating user", () => {
+    const updatedUser = {
+      name: "name",
+      dateJoined: 0,
+      processedTotal: 100,
+      processedRecord: 100,
+      username: "username",
+    };
+    Users.findOneAndUpdate = jest
+      .fn()
+      .mockImplementation(({}, {}, {}, callback) => {
+        callback(false, updatedUser);
+      });
+
+    const req = {
+      body: updatedUser,
+    };
+    const res = {};
+    res.send = jest.fn();
+
+    userController.updateUser(req, res);
+
+    expect(res.send.mock.calls[0][0]).toEqual(updatedUser);
+  });
+  it("sends error if missing username in body", () => {
+    const updatedUser = {
+      name: "name",
+      dateJoined: 0,
+      processedTotal: 100,
+      processedRecord: 100,
+    };
+
+    const req = {
+      body: updatedUser,
+    };
+    const res = {};
+    res.send = jest.fn();
+    userController.updateUser(req, res);
+
+    expect(res.send.mock.calls[0][0]).toEqual(
+      "Error: Missing 'username' in body"
+    );
   });
 });
