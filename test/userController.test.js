@@ -8,7 +8,7 @@ const {
   loginUser,
 } = require("../controllers/userController");
 
-const allRecordCount = 36;
+const allRecordCount = 210;
 test(`The Users table has ${allRecordCount} records`, async () => {
   const userLists = await request("/api/users/get-all");
 
