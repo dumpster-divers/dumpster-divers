@@ -6,8 +6,9 @@ import { useState, useEffect } from "react";
 import { isLoggedIn } from "../utilities/userManager";
 import { Link } from "react-router-dom";
 import { isMobile } from "../utilities/display";
+import EditUser from "../user/UpdateUser";
 
-const DiverCard = ({ points = 0 }) => {
+const DiverCard = ({ points = 0, hasEdit = false }) => {
   //display this while waiting for fetch call
   const loadingUserStats = {
     processedTotal: "loading...",
@@ -123,6 +124,11 @@ const DiverCard = ({ points = 0 }) => {
           className={classes.card}
           alt="diver certification card"
         />
+      )}
+      {hasEdit && (
+        <div className="edit-button">
+          <EditUser />
+        </div>
       )}
     </div>
   );
