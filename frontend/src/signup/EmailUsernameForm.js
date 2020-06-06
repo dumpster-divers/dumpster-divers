@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { getUsername } from "../utilities/userManager";
 import addEmailApi from "./addEmailApi";
 import SmallButton from "../shared/SmallButton";
-import Cookies from "js-cookie";
 import SmallTextEntry from "../shared/SmallTextEntry";
 
 export default function EmailUsernameForm(showUpdate) {
   const [inputEmail, setInputEmail] = useState();
-  const [username, setUsername] = useState(getUsername());
+  const username = useState(getUsername());
 
   function onSubmit() {
     // call add email function

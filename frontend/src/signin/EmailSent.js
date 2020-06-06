@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
-import LostAccountForm from "./LostAccountForm";
-import CantFindEmailModal from "./CantFindEmailModal";
 import { Link } from "react-router-dom";
 
 const EmailSent = () => {
-  let [errorVisible, setErrorVisible] = useState(false);
-  const handleError = () => {
-    setErrorVisible(true);
-  };
-  const handleClose = () => {
-    console.log("attempted to close");
-    setErrorVisible(false);
-  };
 
   return (
     <GameContainer>
