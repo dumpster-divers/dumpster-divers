@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import { Link } from "react-router-dom";
