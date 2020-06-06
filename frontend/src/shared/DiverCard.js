@@ -107,8 +107,10 @@ const DiverCard = ({ points = 0, hasEdit = false }) => {
       </span>
       <br />
       <span style={{ fontWeight: "normal", fontStyle: "italic" }}>
-        To save your score, <Link to={"/signup"}>make an account</Link>
+        To save your score,
       </span>
+      <br />
+      <Link to={"/signup"}>make an account</Link>
     </div>
   );
 
