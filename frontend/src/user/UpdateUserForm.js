@@ -65,7 +65,7 @@ export default function UpdateUserForm(showUpdate) {
               placeholderText={username}
             />
           </div>
-          <SmallButton buttonText="update" onClick={onSubmit}></SmallButton>
+          <SmallButton buttonText="Update" onClick={onSubmit}></SmallButton>
         </form>
       </div>
     </div>
