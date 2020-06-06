@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
-import UpdateUserForm from "./UpdateUserForm";
+import "./userHomepageStyles.css";
 import { isLoggedIn } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
 
@@ -30,11 +30,10 @@ const UserHomepage = () => {
   return (
     <GameContainer>
       <div className="yellow-part">
-        <div style={{ marginTop: "8%" }}>
+        <div style={{ marginTop: "8%", marginBottom:"2%" }}>
           <DiverCard />
         </div>
         <ExitGameButton />
-        <UpdateUserForm />
       </div>
     </GameContainer>
   );

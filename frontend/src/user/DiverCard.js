@@ -3,6 +3,7 @@ import diver_cert_card from "../assets/diver_cert_card.png";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { getName, getUsername } from "../utilities/userManager";
 import { useState, useEffect } from "react";
+import EditUser from "./UpdateUser";
 
 const DiverCard = () => {
   //display this while waiting for fetch call
@@ -80,6 +81,9 @@ const DiverCard = () => {
         src={diver_cert_card}
         alt="diver certification card"
       />
+      <div className="edit-button">
+        <EditUser />
+      </div>
     </div>
   );
 };
