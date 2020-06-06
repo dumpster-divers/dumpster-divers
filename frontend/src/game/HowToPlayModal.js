@@ -4,7 +4,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Checkbox from "@material-ui/core/Checkbox";
 import { makeStyles } from "@material-ui/core/styles";
-import React, { useState } from "react";
+import React from "react";
 import ActionButton from "../shared/ActionButton";
 import HowToPlayGif from "../assets/howtoplay.gif";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
