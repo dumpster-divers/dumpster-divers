@@ -172,3 +172,32 @@ describe("updateUser", () => {
     );
   });
 });
+
+describe("login user", () => {
+  it("sends back the users details on successful find", async () => {
+    const user = {
+      username: "username",
+      name: "name",
+    };
+
+    const req = {
+      username: "username",
+    };
+
+    const allUsersObject = {};
+
+    allUsersObject.find = jest.fn().mockImplementation(() => user);
+
+    const promise = new Promise((resolve, reject) => {
+      resolve(allUsersObject);
+    });
+    Users.find = jest.fn().mockImplementation(() => promise);
+
+    const res = {};
+    res.send = jest.fn();
+
+    await userController.loginUser(req, res);
+    console.log(res.send.mock);
+    expect(res.send.mock.calls[0][0]).toEqual(user);
+  });
+});
