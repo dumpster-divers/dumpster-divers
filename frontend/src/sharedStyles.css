@@ -89,3 +89,7 @@ a {
 #GoBackButtonA:hover rect {
   fill: #ffe9e9;
 }
+
+#paper-popover {
+  border-radius: 50px !important;
+}

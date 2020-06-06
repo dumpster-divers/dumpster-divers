@@ -6,6 +6,7 @@ const GlobalTallyPopover = ({ children }) => {
   const useStyles = makeStyles((theme) => ({
     popover: {
       pointerEvents: "none",
+      color: "blue",
     },
   }));
 
@@ -23,12 +24,16 @@ const GlobalTallyPopover = ({ children }) => {
   const open = Boolean(anchorEl);
 
   const popover = (
-    <div style={{ padding: "10px", maxWidth: "300px" }}>
-      <p>
-        The Global Rubbish Remaining is a count of the total amount of rubbish
-        in the dumpster divers world!
-      </p>
-      <p>Dive and with your help we can drive this number to 0!</p>
+    <div
+      style={{
+        maxWidth: "300px",
+        padding: "10px",
+        backgroundColor: "#afd2db",
+        textAlign: "center",
+      }}
+    >
+      <p>The total amount of rubbish in the Dumpster Divers world.</p>
+      <p>With your help dumpster diving, we can drive this number to 0!</p>
     </div>
   );
 
@@ -46,6 +51,7 @@ const GlobalTallyPopover = ({ children }) => {
         className={classes.popover}
         open={open}
         anchorEl={anchorEl}
+        PaperProps={{ id: "paper-popover" }}
         anchorOrigin={{
           vertical: "center",
           horizontal: "right",
