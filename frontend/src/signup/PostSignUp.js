@@ -2,6 +2,7 @@ import React from "react";
 import GameContainer from "../shared/GameContainer";
 import GoBackButton from "../shared/GoBackButton";
 import PostSignUpForm from "./PostSignUpForm";
+import EmailUsernameModal from "./EmailUsernameModal";
 
 const PostSignUp = () => {
   return (
@@ -17,6 +18,9 @@ const PostSignUp = () => {
       </p>
       <div className="form-module">
         <PostSignUpForm />
+      </div>
+      <div className="modal-button">
+        <EmailUsernameModal />
       </div>
       <GoBackButton />
     </GameContainer>

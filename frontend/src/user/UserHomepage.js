@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import GameContainer from "../shared/GameContainer";
 import ExitGameButton from "../game/ExitGameButton";
 import DiverCard from "./DiverCard";
+import EmailUsernameModal from "../signup/EmailUsernameModal";
 import "./userHomepageStyles.css";
 import { isLoggedIn } from "../utilities/userManager";
 import { Redirect } from "react-router-dom";
@@ -34,6 +35,9 @@ const UserHomepage = () => {
           <DiverCard />
         </div>
         <ExitGameButton />
+        <div className="modal-button">
+          <EmailUsernameModal />
+        </div>
       </div>
     </GameContainer>
   );

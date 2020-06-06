@@ -7,6 +7,8 @@ import Signin from "./signin/Signin";
 import PostSignUp from "./signup/PostSignUp";
 import PostGame from "./game/PostGame";
 import UserHomepage from "./user/UserHomepage";
+import LostAccount from "./signin/LostAccount";
+import EmailSent from "./signin/EmailSent";
 
 import "./sharedStyles.css";
 import GamePage from "./game/GamePage";
@@ -16,31 +18,37 @@ export default function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/game">
-            <GamePage />
-          </Route>
-          <Route path="/postgame">
-            <PostGame />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/signin">
-            <Signin />
-          </Route>
-          <Route path="/postsignup">
-            <PostSignUp />
-          </Route>
-          <Route path="/userhomepage">
-            <UserHomepage />
-          </Route>
-          <Route path="/">
-            <FrontPage />
-          </Route>
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route path="/game">
+              <GamePage />
+            </Route>
+            <Route path="/postgame">
+              <PostGame />
+            </Route>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/signin">
+              <Signin />
+            </Route>
+            <Route path="/postsignup">
+              <PostSignUp/>
+            </Route>
+            <Route path="/userhomepage">
+              <UserHomepage/>
+            </Route>
+            <Route path="/lostaccount">
+              <LostAccount />
+            </Route>
+            <Route path="/emailsent">
+              <EmailSent />
+            </Route>
+            <Route path="/">
+              <FrontPage />
+            </Route>
+          </Switch>
+        </Router>
     </div>
   );
 }

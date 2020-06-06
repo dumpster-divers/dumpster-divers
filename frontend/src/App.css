@@ -46,7 +46,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 25%;
+  top: 22%;
   bottom: 0;
 
   font-family: Roboto, sans-serif;
@@ -63,7 +63,7 @@ body {
   position: absolute;
   left: 13.41%;
   right: 13.41%;
-  top: 40%;
+  top: 35%;
   bottom: 59.45%;
 
   font-family: Roboto, sans-serif;
@@ -78,7 +78,23 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 44%;
+  top: 37%;
   bottom: 0;
   margin-top: 100px;
 }
+
+.modal-button {
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+}
+
+.forgot-username {
+  position: absolute;
+  font-size: 20px;
+  bottom: 1%;
+  right: 0;
+  left: 0;
+}
+

@@ -28,6 +28,7 @@ const Signin = () => {
         <GoBackButton />
       </Link>
       <CantFindUserModal visible={errorVisible} onClose={handleClose} />
+      <Link to="/LostAccount" className="forgot-username">forgot your username?</Link>
     </GameContainer>
   );
 };
