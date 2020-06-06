@@ -5,6 +5,7 @@ import { getName, getUsername } from "../utilities/userManager";
 import { useState, useEffect } from "react";
 import { isLoggedIn } from "../utilities/userManager";
 import { Link } from "react-router-dom";
+import { isMobile } from "../utilities/display";
 
 const DiverCard = ({ points = 0 }) => {
   //display this while waiting for fetch call
@@ -60,6 +61,16 @@ const DiverCard = ({ points = 0 }) => {
         fontWeight: "bold",
         width: "315px",
       },
+      mobileCard: {
+        position: "relative",
+        height: "200px",
+        width: "529px",
+        backgroundColor: "#C8E8EF",
+        borderRadius: "5%",
+        borderStyle: "solid",
+        borderWidth: "5px",
+        borderColor: "#2167D0",
+      },
     })
   );
   const classes = useStyles();
@@ -104,11 +115,15 @@ const DiverCard = ({ points = 0 }) => {
   return (
     <div className={classes.wrapper}>
       {isLoggedIn() ? signedInText : guestText}
-      <img
-        className={classes.card}
-        src={diver_cert_card}
-        alt="diver certification card"
-      />
+      {isMobile() ? (
+        <div className={classes.mobileCard} alt="diver certification card" />
+      ) : (
+        <img
+          src={diver_cert_card}
+          className={classes.card}
+          alt="diver certification card"
+        />
+      )}
     </div>
   );
 };
