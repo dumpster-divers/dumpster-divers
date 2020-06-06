@@ -20,7 +20,7 @@ const ActionButton = ({
         borderRadius: "37.5px",
         fontSize: "36px",
         [theme.breakpoints.up("md")]: {
-          fontSize: "36px",
+          fontSize: "32px",
         },
         [theme.breakpoints.down("md")]: {
           fontSize: "28px",
