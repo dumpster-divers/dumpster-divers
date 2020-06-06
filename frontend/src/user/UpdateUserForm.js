@@ -5,10 +5,31 @@ import SmallButton from "../shared/SmallButton";
 import Cookies from "js-cookie";
 import SmallTextEntry from "../shared/SmallTextEntry";
 import "./userHomepageStyles.css";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function UpdateUserForm(showUpdate) {
   const [inputName, setInputName] = useState(getName());
   const [username, setUsername] = useState(getUsername());
+
+  //define modal style
+  const useStyles = makeStyles((theme) => ({
+    expandUpdateShow: {
+      position: "absolute",
+      width: "190px",
+      height: "550px",
+      top: "100%",
+      right: "0%",
+      [theme.breakpoints.up("sm")]: {
+        width: "472px",
+      },
+    },
+    expandUpdateHide: {
+      display: "none",
+      padding: "10px",
+    },
+  }));
+
+  const classes = useStyles();
 
   function onSubmit() {
     // call update user function
@@ -25,21 +46,27 @@ export default function UpdateUserForm(showUpdate) {
   }
 
   return (
-    <div className={`expand-update ${showUpdate.showUpdate ? "show" : "hide"}`}>
-    <div className="update-form">
-      <form>
-        <p className="update-name">Enter your new nickname</p>
-        <div style={{ marginBottom:"3%", marginTop:"3%" }}>
-        <SmallTextEntry
-          value={inputName}
-          onChange={(event) => {
-            setInputName(event.target.value);
-          }}
-          placeholderText={username}
-        />
-        </div>
-        <SmallButton buttonText="update" onClick={onSubmit}></SmallButton>
-      </form>
+    <div
+      className={
+        showUpdate.showUpdate
+          ? classes.expandUpdateShow
+          : classes.expandUpdateHide
+      }
+    >
+      <div className="update-form">
+        <form>
+          <p className="update-name">Enter your new nickname</p>
+          <div style={{ marginBottom: "3%", marginTop: "3%" }}>
+            <SmallTextEntry
+              value={inputName}
+              onChange={(event) => {
+                setInputName(event.target.value);
+              }}
+              placeholderText={username}
+            />
+          </div>
+          <SmallButton buttonText="update" onClick={onSubmit}></SmallButton>
+        </form>
       </div>
     </div>
   );
