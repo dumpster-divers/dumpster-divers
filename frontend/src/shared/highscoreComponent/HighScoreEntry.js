@@ -1,14 +1,14 @@
 import React from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 
-const HighScoreEntry = ({ name, score }) => {
+const HighScoreEntry = ({ name, score, index }) => {
   const useStyles = makeStyles(() =>
     createStyles({
       entry: {
         width: "337px",
         height: "40px",
         fontWeight: "600",
-        backgroundColor: "#FFB6B6",
+        backgroundColor: index % 2 === 0 ? "#FFB6B6" : "#FFDDDD",
         margin: "0 auto",
         display: "flex",
         flexDirection: "row",
@@ -18,11 +18,13 @@ const HighScoreEntry = ({ name, score }) => {
         fontWeight: "200",
         fontSize: "18px",
         float: "left",
+        color: "#33291b",
       },
       score: {
         fontWeight: "800",
         fontSize: "18px",
         float: "right",
+        color: "#33291b",
       },
     })
   );
@@ -31,8 +33,10 @@ const HighScoreEntry = ({ name, score }) => {
 
   return (
     <div className={classes.entry}>
-      <div style={{ width: "100%", padding: "0 10%" }}>
-        <span className={classes.name}>{name}</span>
+      <div style={{ width: "100%", padding: "0 6%" }}>
+        <span className={classes.name}>
+          {index + 1}. {name}
+        </span>
         <span className={classes.score}>{score}</span>
       </div>
     </div>

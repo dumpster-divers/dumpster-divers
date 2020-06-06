@@ -11,6 +11,7 @@ const HighscoreTable = ({ scores }) => {
         backgroundColor: "#FF7676",
         display: "flex",
         flexDirection: "column",
+        borderRadius: "0px 0px 6px 6px",
       },
     })
   );
@@ -22,11 +23,12 @@ const HighscoreTable = ({ scores }) => {
       {typeof scores === "undefined" || scores.length <= 0 ? (
         <h1>loading</h1>
       ) : (
-        scores.map((score) => (
+        scores.map((score, index) => (
           <HighScoreEntry
             key={score._id}
             name={score.name}
             score={score.processedTotal}
+            index={index}
           />
         ))
       )}
