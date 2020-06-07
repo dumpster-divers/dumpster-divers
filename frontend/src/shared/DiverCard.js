@@ -51,7 +51,7 @@ const DiverCard = ({ points = 0, hasEdit = false }) => {
         fontFamily: "Roboto",
         zIndex: "9",
         color: "#333436",
-        fontSize: "20px",
+        fontSize: "10px +10hmin",
         marginTop: "40px",
         paddingLeft: "130px",
         [theme.breakpoints.up("sm")]: {
@@ -60,7 +60,7 @@ const DiverCard = ({ points = 0, hasEdit = false }) => {
         },
         textAlign: "left",
         fontWeight: "bold",
-        width: isMobile() ? "250px" : "315px",
+        width: isMobile() ? "225px" : "315px",
       },
       mobileCard: {
         position: "relative",
@@ -119,7 +119,7 @@ const DiverCard = ({ points = 0, hasEdit = false }) => {
     <div className={classes.wrapper}>
       {isLoggedIn() ? signedInText : guestText}
       {isMobile() ? (
-        <div className={classes.mobileCard} alt="diver certification card" />
+        <div className={classes.mobileCard} />
       ) : (
         <img
           src={diver_cert_card}
