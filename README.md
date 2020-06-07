@@ -219,7 +219,7 @@ The global count is a real time tally displayed on the homepage. After finishing
 
 **GET https://dumpster-divers.herokuapp.com/api/game/data?amount=2**
 
-- Grab the requested amount of trash items to sort in a game round.
+- Grab the requested amount of trash items to sort in a game round. Samples without replacement.
 - Not specifying the amount returns all the trash data
 
 Example Response Body:

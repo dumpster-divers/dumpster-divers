@@ -10,23 +10,26 @@ const getAllUsers = (req, res) => {
 
 const addUser = async (req, res) => {
   let newUser = Users();
+
   let username = await generateUniqueId();
 
   newUser.name = req.body.name;
   newUser.dateJoined = Date.now();
-  newUser.processedTotal = req.body.processedTotal !== undefined ? req.body.processedTotal: 0
-  newUser.processedRecord = req.body.processedRecord !== undefined ? req.body.processedRecord: 0
+  newUser.processedTotal =
+    req.body.processedTotal !== undefined ? req.body.processedTotal : 0;
+  newUser.processedRecord =
+    req.body.processedRecord !== undefined ? req.body.processedRecord : 0;
   newUser.username = username;
 
   newUser.save((err, user) => {
     if (err) {
       console.log("Failed to save user");
       res.status(500);
-      res.render('error', {error: err});
+      res.render("error", { error: err });
     } else {
       res.send({
         name: req.body.name,
-        username: username
+        username: username,
       });
     }
   });
@@ -39,17 +42,20 @@ const deleteUser = (req, res) => {
     return;
   }
 
-  Users.findOneAndRemove({"username": req.body.username}, (err, deletedUser) => {
-    if (err) return res.status(500).send(err);
-    if (!deletedUser) return res.send("User not found");
+  Users.findOneAndRemove(
+    { username: req.body.username },
+    (err, deletedUser) => {
+      if (err) return res.status(500).send(err);
+      if (!deletedUser) return res.send("User not found");
 
-    const response = {
-      message: "User successfully deleted",
-      username: deletedUser.username
-    };
-    return res.send(response);
-  });
-}
+      const response = {
+        message: "User successfully deleted",
+        username: deletedUser.username,
+      };
+      return res.send(response);
+    }
+  );
+};
 
 const updateUser = (req, res) => {
   // If body doesn't exist or username not specified
@@ -60,25 +66,30 @@ const updateUser = (req, res) => {
 
   let username = req.body.username;
   let newUser = req.body;
-  Users.findOneAndUpdate({"username": username}, newUser, {new: true}, (err, updatedUser) => {
-    if (err) return res.status(500).send(err);
-    if (!updatedUser) return res.send("User not found");
-    res.send(updatedUser);
-  });
+  Users.findOneAndUpdate(
+    { username: username },
+    newUser,
+    { new: true },
+    (err, updatedUser) => {
+      if (err) return res.status(500).send(err);
+      if (!updatedUser) return res.send("User not found");
+      res.send(updatedUser);
+    }
+  );
 };
 
 const loginUser = async (req, res) => {
   const allUsers = await Users.find();
   // search for user in the database via their ID
-  const user = allUsers.find(user => user.username === req.query.username);
+  const user = allUsers.find((user) => user.username === req.query.username);
   if (user) {
     res.send({
       username: user.username,
-      name: user.name
+      name: user.name,
     });
   } else {
     // if an user is not found, return user does not exist.
-    res.send({error: "User Does Not Exist"});
+    res.send({ error: "User Does Not Exist" });
   }
 };
 
@@ -90,7 +101,7 @@ const generateUniqueId = async () => {
   let usernameUsed = await Users.exists({ username: generatedUsername });
 
   if (!usernameUsed) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve(generatedUsername);
     });
   } else {
@@ -103,5 +114,5 @@ module.exports = {
   getAllUsers,
   deleteUser,
   updateUser,
-  loginUser
+  loginUser,
 };
