@@ -24,13 +24,14 @@ Sample Login Username: `Holistic-Astonishing-Swallow`
 3.  `mongorestore -h localhost:27017`  (This loads our db to your local mongo instance) 
 *Ensure you are in the same directory as `dump`*
 
-4. `npm install`
-5. `npm start`
+4.  Set `DB_LOCATION=local` in .env file (not provided in this repo)
+5. `npm install`
+6. `npm start`
 
 #### Running Instructions (Atlas DB)
 
 1. `git clone https://github.com/dumpster-divers/dumpster-divers.git`
-2. Place `.env` file into root directory
+2.  Set `DB_LOCATION=prod` in .env file (not provided in this repo)
 3. `npm install`
 4. `npm start`
 
