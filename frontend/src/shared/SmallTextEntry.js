@@ -13,7 +13,8 @@ const SmallTextEntry = ({
       textEntry: {
         minWidth: "150px",
         maxWidth: "350px",
-        width: "60%",
+        margin: "auto 0",
+        width: "80%",
         backgroundColor: "white",
         height: "20px",
         borderRadius: "50px",

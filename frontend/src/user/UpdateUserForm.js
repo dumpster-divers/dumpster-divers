@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { getName, getUsername } from "../utilities/userManager";
 import updateUser from "./UpdateUserApi";
-import SmallButton from "../shared/SmallButton";
 import Cookies from "js-cookie";
 import SmallTextEntry from "../shared/SmallTextEntry";
 import "./userHomepageStyles.css";
 import { makeStyles } from "@material-ui/core/styles";
+import ActionButton from "../shared/ActionButton";
+import { isMobile } from "../utilities/display";
 
 export default function UpdateUserForm(showUpdate) {
   const [inputName, setInputName] = useState(getName());
@@ -16,7 +17,7 @@ export default function UpdateUserForm(showUpdate) {
     expandUpdateShow: {
       position: "absolute",
       width: "190px",
-      height: "550px",
+      height: isMobile() ? "300px" : "550px",
       top: "100%",
       right: "0%",
       [theme.breakpoints.up("sm")]: {
@@ -54,19 +55,17 @@ export default function UpdateUserForm(showUpdate) {
       }
     >
       <div className="update-form">
-        <form>
-          <p className="update-name">Enter your new nickname</p>
-          <div style={{ marginBottom: "3%", marginTop: "3%" }}>
-            <SmallTextEntry
-              value={inputName}
-              onChange={(event) => {
-                setInputName(event.target.value);
-              }}
-              placeholderText={username}
-            />
-          </div>
-          <SmallButton buttonText="Update" onClick={onSubmit}></SmallButton>
-        </form>
+        <p className="update-name">Enter your new nickname</p>
+        <div style={{ marginBottom: "3%", marginTop: "3%" }}>
+          <SmallTextEntry
+            value={inputName}
+            onChange={(event) => {
+              setInputName(event.target.value);
+            }}
+            placeholderText={username}
+          />
+        </div>
+        <ActionButton buttonText="update" onClick={onSubmit} />
       </div>
     </div>
   );

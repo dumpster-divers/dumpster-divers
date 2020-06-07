@@ -30,14 +30,13 @@ const UserHomepage = () => {
   }
   return (
     <GameContainer>
-      <div className="yellow-part">
-        <div style={{ marginTop: "8%", marginBottom: "2%" }}>
-          <DiverCard hasEdit={true} />
-        </div>
-        <ExitGameButton />
-        <div className="modal-button">
-          <EmailUsernameModal />
-        </div>
+      <div style={{ marginTop: "8%", marginBottom: "2%" }}>
+        <DiverCard hasEdit={true} />
+      </div>
+      <ExitGameButton />
+
+      <div className="modal-button">
+        <EmailUsernameModal />
       </div>
     </GameContainer>
   );
