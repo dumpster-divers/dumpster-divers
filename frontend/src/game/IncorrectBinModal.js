@@ -40,7 +40,7 @@ const IncorrectBinModal = ({ trashInfo, isOpen, onClose }) => {
     <div>
       <Modal
         aria-labelledby="modal-title"
-        aria-describedby="modal-content"
+        aria-describedby="simple-modal-description"
         className={classes.modal}
         open={isOpen}
         onClose={onClose}
@@ -55,8 +55,8 @@ const IncorrectBinModal = ({ trashInfo, isOpen, onClose }) => {
             <div className="modal-cross">
               <CrossSVG />
             </div>
-            <h2 className="modal-title">Oops</h2>
-            <p className="modal-content">{trashInfo}</p>
+            <h3 className="modal-title">Oops</h3>
+            <p>{trashInfo}</p>
             <Button className={classes.button} onClick={onClose}>
               click here to continue
             </Button>
