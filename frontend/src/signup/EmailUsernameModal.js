@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     height: "400px",
     width: isMobile() ? "auto" : "600px",
+    padding: "20px",
     margin: "0px",
   },
   button: {
