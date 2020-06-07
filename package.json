@@ -7,7 +7,8 @@
     "start": "concurrently -n \"express,react\" -c \"yellow,blue\" \"nodemon app.js\" \"cd frontend && npm run start\"",
     "install": "cd frontend && npm install",
     "start:prod": "node app.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "jest": "jest"
   },
   "engines": {
     "npm": "6.x",
@@ -30,7 +31,9 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   },
