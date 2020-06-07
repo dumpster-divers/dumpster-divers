@@ -22,7 +22,7 @@ Sample Login Username: `Holistic-Astonishing-Swallow`
 2. `cd dumpster-divers`
 3. `unzip sample-database.zip`
 3.  `mongorestore -h localhost:27017`  (This loads our db to your local mongo instance) 
-/Ensure you are in the same directory as `dump`/
+*Ensure you are in the same directory as `dump`*
 
 4. `npm install`
 5. `npm start`
