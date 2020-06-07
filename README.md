@@ -10,6 +10,7 @@ This was our semester long project for 2020 Semester 1!
 
 #### API Docs? [Click here](./apiREADME.md)
 
+#### Relevant URLs!
 Check it out:
 https://dumpster-divers.herokuapp.com/
 
