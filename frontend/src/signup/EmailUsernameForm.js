@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { getUsername } from "../utilities/userManager";
 import addEmailApi from "./addEmailApi";
-import SmallButton from "../shared/SmallButton";
 import SmallTextEntry from "../shared/SmallTextEntry";
 import { isMobile } from "../utilities/display";
 import ActionButton from "../shared/ActionButton";
@@ -63,7 +62,7 @@ export default function EmailUsernameForm() {
           marginRight: "auto",
         }}
       >
-        <ActionButton buttonText="submit" onClick={onSubmit}></ActionButton>
+        <ActionButton buttonText="submit" onClick={onSubmit} />
       </div>
     </>
   );
