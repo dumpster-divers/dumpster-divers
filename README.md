@@ -19,7 +19,7 @@ https://dumpster-divers.herokuapp.com/
 3. `npm install`
 4. `npm start`
 
-#### Testing instructions
+#### Unit Testing instructions
 
 Ensure that the previous instructions were run and run the following from the `dumpster-divers/` folder
 1. `npm run jest`
