@@ -14,7 +14,7 @@ Check it out:
 https://dumpster-divers.herokuapp.com/
 
 #### Running Instructions
-1. `git clone git@github.com:dumpster-divers/dumpster-divers.git`
+1. `git clone https://github.com/dumpster-divers/dumpster-divers.git`
 2. `cd dumpster-divers`
 3. `npm install`
 4. `npm run start`
