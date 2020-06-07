@@ -19,11 +19,11 @@ Sample Login Username: `Holistic-Astonishing-Swallow`
 #### Running Instructions (Local DB)
 
 1. `git clone https://github.com/dumpster-divers/dumpster-divers.git`
-2. Unzip sample-database
-3.  Run `mongorestore -h localhost:27017` inside the root of that unzipped folder (./dump should exist)
-2. `cd` back to root directory
-3. `npm install`
-4. `npm start`
+2. `cd dumpster-divers`
+3. `unzip sample-database.zip`
+3.  `mongorestore -h localhost:27017`  (This loads our db to your local mongo instance)
+4. `npm install`
+5. `npm start`
 
 #### Running Instructions (Atlas DB)
 
