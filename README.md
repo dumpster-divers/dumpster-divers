@@ -22,6 +22,6 @@ https://dumpster-divers.herokuapp.com/
 #### Testing instructions
 
 Ensure that the previous instructions were run and run the following from the `dumpster-divers/` folder
-`npm run jest`
+1. `npm run jest`
 
 
