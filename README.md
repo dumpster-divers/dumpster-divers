@@ -13,6 +13,8 @@ This was our semester long project for 2020 Semester 1!
 Check it out:
 https://dumpster-divers.herokuapp.com/
 
+Sample Login Username: `Holistic-Astonishing-Swallow`
+
 #### Running Instructions
 
 1. `git clone https://github.com/dumpster-divers/dumpster-divers.git`
