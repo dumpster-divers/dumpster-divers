@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
+import { isMobile } from "../utilities/display";
 
 //define modal style
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "light",
     marginLeft: "15%",
   },
+  text: {
+    color: "white",
+  },
 }));
 
 //render modal
@@ -55,8 +59,10 @@ const IncorrectBinModal = ({ trashInfo, isOpen, onClose }) => {
             <div className="modal-cross">
               <CrossSVG />
             </div>
-            <h2 className="modal-title">Oops</h2>
-            <p className="modal-content">{trashInfo}</p>
+            <h3 className="modal-title">Oops</h3>
+            <p className={isMobile() ? classes.text : "modal-content"}>
+              {trashInfo}
+            </p>
             <Button className={classes.button} onClick={onClose}>
               click here to continue
             </Button>
