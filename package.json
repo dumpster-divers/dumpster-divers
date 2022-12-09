@@ -15,13 +15,13 @@
     "node": "13.x"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "concurrently": "^5.1.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
-    "express": "~4.16.1",
+    "express": "~4.18.2",
     "gfycat-style-urls": "^1.0.3",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
